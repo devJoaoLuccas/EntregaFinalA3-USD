@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'black ops one';
+}
+
+body{
+    background-color: #303030;
+
+}
+.main {
+    width: auto;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    width: 738px;
+    height: 558px;
+
+    background-color: #111010;
+    border-radius: 20px;
+}
+
+.titulos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.titulos h1 {
+    margin-top: 40px;
+    color: white;  
+    font-weight: 100;
+}
+.titulos h1 > span {
+    color: #865dff;
+}
+
+.titulos h2 {
+    color: white;
+    margin-top: 30px;
+    font-weight: 100;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 40px;
+    margin-left: 118px;
+    margin-right: 118px;
+    
+}
+
+#btn {
+    padding: 20px 0px 20px 0px;
+
+    margin-bottom: 35px;
+
+    border-radius: 10px;
+
+    background-color: #ffa3fd;
+    color: #191825;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+.logotipo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    margin-top: 25px;
+    width: 105px;
+    height: 60px;
+}
+
+.nomeUsuario {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+
+    margin-top: -1%;
+    margin-right: 15px;
+}
+
+.nomeUsuarioMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+
+    margin-top: 5%;
+    margin-right: 15px;
+}
