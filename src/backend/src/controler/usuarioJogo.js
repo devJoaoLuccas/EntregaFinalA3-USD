@@ -9,29 +9,37 @@ const db = await openDb();
 
 export async function createTableUsuarioJogo() {
 
-    await db.run(`CREATE TABLE IF NOT EXISTS usuario_jogo (idUsuarioJogo INTENGER PRIMARY KEY AUTOINCREMENT, 
-                idUser INTENGER, idJogo INTENGER, FOREGEIN KEY (idUser) REFERENCES usuario(idUser),
-                FOREGEIN KEY (idJogo) REFERENCES jogos (idJogo) )`)
+    await db.run(
+            `
+            CREATE TABLE IF NOT EXISTS usuario_jogo 
+                (idUsuarioJogo INTEGER PRIMARY KEY AUTOINCREMENT,
+                idUser INTEGER, 
+                idJogo INTEGER, 
+                FOREIGN KEY (idUser) REFERENCES usuario(idUser) ON DELETE CASCADE,
+                FOREIGN KEY (idJogo) REFERENCES jogos (idJogo) ON DELETE CASCADE)
+            `
+            );
     
-    await db.run(`INSERT INTO usuario_jogo (idJogo, idUser) VALUES (1,10)`);
+}
 
-    await db.run(`INSERT INTO usuario_jogo (idJogo, idUser) VALUES (5,6)`);
+export async function initInserirUsuarioJogo() {
 
-    await db.run(`INSERT INTO usuario_jogo (idJogo, idUser) VALUES (4,2)`);
-
-    await db.run(`INSERT INTO usuario_jogo (idJogo, idUser) VALUES (3,1)`);
-
-    await db.run(`INSERT INTO usuario_jogo (idJogo, idUser) VALUES (4,9)`);
-
-    await db.run(`INSERT INTO usuario_jogo (idJogo, idUser) VALUES (9,8)`);
-
-    await db.run(`INSERT INTO usuario_jogo (idJogo, idUser) VALUES (5,5)`);
-
-    await db.run(`INSERT INTO usuario_jogo (idJogo, idUser) VALUES (10,7)`);
-
-    await db.run(`INSERT INTO usuario_jogo (idJogo, idUser) VALUES (8,6)`);
-
-    await db.run(`INSERT INTO usuario_jogo (idJogo, idUser) VALUES (5,4)`);
+    await db.run(
+            `
+            INSERT INTO usuario_jogo (idUsuarioJogo, idJogo, idUser)
+            VALUES
+                (1, 1, 10),
+                (2, 5, 6),
+                (3, 4, 2),
+                (4, 3, 1),
+                (5, 4, 9),
+                (6, 9, 8),
+                (7, 5, 5),
+                (8, 10, 7),
+                (9, 8, 6),
+                (10, 5, 4);
+            `
+    )
 
 }
 

@@ -9,29 +9,37 @@ const db = await openDb();
 
 export async function createTableJogosPlataformas() {
 
-    await db.run (`CREATE TABLE IF NOT EXISTS jogos_plataformas (idJogosPlataformas INTEGER PRIMARY KEY AUTOINCREMENT,
-                   idJogo INTEGER, idPlataforma INTEGER, FOREIGN KEY (idJogo) REFERENCES jogos (idJogo),
-                   FOREIGN KEY (idPlataforma) REFERENCES plataformas (idPlataforma) )`)
+    await db.run (
+            `
+            CREATE TABLE IF NOT EXISTS jogos_plataformas 
+                (idJogosPlataformas INTEGER PRIMARY KEY AUTOINCREMENT,
+                idJogo INTEGER, 
+                idPlataforma INTEGER, 
+                FOREIGN KEY (idJogo) REFERENCES jogos (idJogo) ON DELETE CASCADE,
+                FOREIGN KEY (idPlataforma) REFERENCES plataformas (idPlataforma) ON DELETE CASCADE)
+            `
+                 );
 
-    await db.run(`INSERT INTO jogos_plataformas (idJogo, idPlataforma) VALUES (1,5)`);
 
-    await db.run(`INSERT INTO jogos_plataformas (idJogo, idPlataforma) VALUES (4,3)`);
+}
 
-    await db.run(`INSERT INTO jogos_plataformas (idJogo, idPlataforma) VALUES (6,7)`);
+export async function initInserirJogoPlataforma() {
 
-    await db.run(`INSERT INTO jogos_plataformas (idJogo, idPlataforma) VALUES (5,4)`);
-
-    await db.run(`INSERT INTO jogos_plataformas (idJogo, idPlataforma) VALUES (3,2)`);
-
-    await db.run(`INSERT INTO jogos_plataformas (idJogo, idPlataforma) VALUES (10,1)`);
-
-    await db.run(`INSERT INTO jogos_plataformas (idJogo, idPlataforma) VALUES (9,2)`);
-
-    await db.run(`INSERT INTO jogos_plataformas (idJogo, idPlataforma) VALUES (3,6)`);
-
-    await db.run(`INSERT INTO jogos_plataformas (idJogo, idPlataforma) VALUES (3,10)`);
-
-    await db.run(`INSERT INTO jogos_plataformas (idJogo, idPlataforma) VALUES (7,8)`);
-
+    await db.run(
+            `
+            INSERT INTO jogos_plataformas (idJogosPlataformas, idJogo, idPlataforma)
+            VALUES
+                (1, 1, 5),
+                (2, 4, 3),
+                (3, 6, 7),
+                (4, 5, 4),
+                (5, 3, 2),
+                (6, 10, 1),
+                (7, 9, 2),
+                (8, 3, 6),
+                (9, 3, 10),
+                (10, 7, 8);
+            `
+    );
 
 }
