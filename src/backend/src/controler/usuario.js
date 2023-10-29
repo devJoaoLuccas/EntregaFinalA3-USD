@@ -8,28 +8,36 @@ const db = await openDb();
 
 export async function createTableUsuarios() {
 
-    await db.exec('CREATE TABLE IF NOT EXISTS usuarios (idUser INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT CHECK(LENGTH(username) <= 20) NOT NULL, email TEXT CHECK (LENGTH(email) <= 255) NOT NULL, password TEXT CHECK (LENGTH(password) <= 20) NOT NULL, data_nascimento BLOB NOT NULL)');
+    await db.exec(
+            `
+            CREATE TABLE IF NOT EXISTS usuarios 
+                (idUser INTEGER PRIMARY KEY AUTOINCREMENT,
+                username TEXT CHECK(LENGTH(username) <= 20) NOT NULL, 
+                email TEXT CHECK (LENGTH(email) <= 255) NOT NULL, 
+                password TEXT CHECK (LENGTH(password) <= 20) NOT NULL, 
+                data_nascimento BLOB NOT NULL)
+            `
+        );
 
-    await db.run('INSERT INTO usuarios (username, email, password, data_nascimento) VALUES ("joaodemais1503", "joao.marques@gmail.com", "Paula1503", "29/12/2003")');
+}
 
-    await db.run('INSERT INTO usuarios (username, email, password, data_nascimento) VALUES ("marcos1503", "marcos.marques@gmail.com", "marcos1503", "15/03/1998")');
-
-    await db.run('INSERT INTO usuarios (username, email, password, data_nascimento) VALUES ("nightwing", "dick.grayson@gmail.com", "robin01", "20/03/1995")');
-
-    await db.run('INSERT INTO usuarios (username, email, password, data_nascimento) VALUES ("sadmarques", "joaodemais29@gmail.com", "joaodemais1503", "29/11/2005")');
-
-    await db.run('INSERT INTO usuarios (username, email, password, data_nascimento) VALUES ("batman", "bruce.wayne@gmail.com", "selinakyle", "07/04/1985")');
-
-    await db.run('INSERT INTO usuarios (username, email, password, data_nascimento) VALUES ("kilerjoker", "joker.joker@outlook.com", "kilercrock", "19/09/1980")');
-
-    await db.run('INSERT INTO usuarios (username, email, password, data_nascimento) VALUES ("batgirl", "barbara.gordon@gmail.com", "barbsgordon", "15/03/2023")');
-
-    await db.run('INSERT INTO usuarios (username, email, password, data_nascimento) VALUES ("alfredp", "alfred.paniwhise@gmail.com", "cha1053", "08/02/1945")');
-
-    await db.run('INSERT INTO usuarios (username, email, password, data_nascimento) VALUES ("damianwayne005", "damian.wayne@gmail.com", "robin04", "19/12/2000")');
-
-    await db.run('INSERT INTO usuarios (username, email, password, data_nascimento) VALUES ("timdrake", "tim.drake@gmail.com", "robin03", "17/09/1999")');
-
+export async function initInserirUsuario() {
+    await db.run(
+            `
+            INSERT INTO usuarios (idUser, username, email, password, data_nascimento) 
+            VALUES
+                (1,"joaodemais1503", "joao.marques@gmail.com", "Paula1503", "29/12/2003"),
+                (2,"marcos1503", "marcos.marques@gmail.com", "marcos1503", "15/03/1998"),
+                (3,"sadmarques", "joaodemais29@gmail.com", "joaodemais1503", "29/11/2005"),
+                (4,"nightwing", "dick.grayson@gmail.com", "robin01", "20/03/1995"),
+                (5,"batman", "bruce.wayne@gmail.com", "selinakyle", "07/04/1985"),
+                (6,"kilerjoker", "joker.joker@outlook.com", "kilercrock", "19/09/1980"),
+                (7,"batgirl", "barbara.gordon@gmail.com", "barbsgordon", "15/03/2023"),
+                (8,"alfredp", "alfred.paniwhise@gmail.com", "cha1053", "08/02/1945"),
+                (9,"damianwayne005", "damian.wayne@gmail.com", "robin04", "19/12/2000"),
+                (10,"timdrake", "tim.drake@gmail.com", "robin03", "17/09/1999");
+            `
+    );
 }
 
 // Query feita para selecionar todos os Usuarios da tabela. 
