@@ -8,30 +8,35 @@ const db = await openDb();
 
 export async function createTablePlataformas() {
 
-    await db.exec(`CREATE TABLE IF NOT EXISTS plataformas (idPlataforma INTEGER PRIMARY KEY AUTOINCREMENT, 
-                   nome_plataforma TEXT CHECK (LENGTH(nome_plataforma) <= 50) NOT NULL)`);
+    await db.exec(
+            `
+            CREATE TABLE IF NOT EXISTS plataformas 
+                (idPlataforma INTEGER PRIMARY KEY AUTOINCREMENT, 
+                nome_plataforma TEXT CHECK (LENGTH(nome_plataforma) <= 50) NOT NULL)
+            `
+            );
 
-    await db.run(`INSERT INTO plataformas (nome_plataforma) values ("Steam")`);
-
-    await db.run(`INSERT INTO plataformas (nome_plataforma) values ("Epic Games")`);
-
-    await db.run(`INSERT INTO plataformas (nome_plataforma) values ("Playstation")`);
-
-    await db.run(`INSERT INTO plataformas (nome_plataforma) values ("Xbox")`);
-
-    await db.run(`INSERT INTO plataformas (nome_plataforma) values ("Nintendo")`);
-
-    await db.run(`INSERT INTO plataformas (nome_plataforma) values ("Battle.Net")`);
-
-    await db.run(`INSERT INTO plataformas (nome_plataforma) values ("Uplay")`);
-
-    await db.run(`INSERT INTO plataformas (nome_plataforma) values ("Origin")`);
-
-    await db.run(`INSERT INTO plataformas (nome_plataforma) values ("Mobile")`);
-
-    await db.run(`INSERT INTO plataformas (nome_plataforma) values ("Microsoft Store")`);
 }
 
+
+export async function initInserirPlataformas() {
+    await db.run (
+            `
+            INSERT INTO plataformas (idPlataforma, nome_plataforma) 
+            VALUES 
+                (1,"Steam"),
+                (2,"Epic Games"),
+                (3,"Playstation"),
+                (4,"Xbox"),
+                (5,"Nintendo"),
+                (6,"Battle.Net"),
+                (7,"Uplay"),
+                (8,"Origin"),
+                (9,"Mobile"),
+                (10,"Web");
+            `
+                );
+}
 // Query feita para selecionar todas as plataformas da tabela. 
 
 export async function selectPlataformas(req, res) {
