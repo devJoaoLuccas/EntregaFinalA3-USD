@@ -1,2 +1,2 @@
-backend/node_modules
-backend/database.db
+src/backend/node_modules
+src/backend/src/database.db
