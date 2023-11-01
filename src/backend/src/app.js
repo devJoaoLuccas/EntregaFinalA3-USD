@@ -28,6 +28,7 @@ createTablePlataformas();
 createTableUsuarioJogo();
 createTableJogosPlataformas();
 
+// Instância a inserção de dados por padrão nas tabelas, caso de erro, será enviada uma mensagem no console avisando que não foi possível adicionar os itens
 
 try {
    await initInserirJogos();   
