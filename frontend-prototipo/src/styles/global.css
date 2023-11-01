@@ -1,0 +1,99 @@
+:root {
+    --cor-fundo: #865dff;
+    --cor-primaria: #2f2841;
+    --cor-secundaria: #514869;
+    --sombra: #00000056;
+    --branco: #ffffffdc;
+    --placeholder: rgba(36, 32, 44, 0.795);
+    
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    width: auto;
+    height: 100vh;
+    background: var(--cor-fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.logo {
+    height: 100px;
+    width: 150px;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    flex-direction: column;
+    padding: 20px 50px;
+    background: var(--cor-primaria);
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px var(--sombra)
+    
+}
+
+.card > h1{
+    color: var(--branco);
+    font-weight: 800;
+}
+
+.textfield{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    margin: 10px 0px;
+}
+
+.textfield > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: var(--cor-secundaria);
+    color: var(--branco);
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px var(--sombra);
+    outline: none;
+    box-sizing: border-box;
+
+}
+
+.textfield > label{
+    color: var(--branco);
+    margin-bottom: 10px;
+}
+
+.textfield > input::placeholder{
+    color: rgba(36, 32, 44, 0.795);
+    
+}
+
+#submit {
+    width: 100%;
+    padding: 16px 0px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-weight: 900;
+    color:var(--cor-primaria);
+    cursor: pointer;
+    box-shadow: 0px 10px 40px var(--sombra);
+}
+
+#submit:hover{
+    background-color: var(--cor-secundaria);
+    color: var(--branco);
+    font-size: 14px;
+    transition: .3s;
+    box-shadow: 0px 10px 40px var(--sombra);
+}

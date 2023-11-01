@@ -1,2 +1,3 @@
 src/backend/node_modules
+node_modules
 src/backend/src/database.db
