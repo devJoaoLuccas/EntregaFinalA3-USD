@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "nodemon": 
+    "^3.0.1"
+  }, 
+   "scripts": {
+    "dev": "nodemon src/app.js",
+    "install": "cd src/backend/src && npm install",
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

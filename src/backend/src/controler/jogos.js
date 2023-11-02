@@ -30,7 +30,7 @@ export async function initInserirJogos() {
             INSERT INTO jogos (idJogo, name_game, developed_by, category_name, data_criacao, status, note) 
             VALUES
                 (1, "League Of Legends", "Riot Games", "MOBA","01/10/2009", "Jogando",8.50),
-                (2, "Assansis Creed II", "Ubsisoft", "Ação e Aventura", "17/09/2009", "Zerado", 10),
+                (2, "Assassin's Creed II", "Ubsisoft", "Ação e Aventura", "17/09/2009", "Zerado", 10),
                 (3, "The Witcher 3:Wild Hunt", "CD Projekt RED", "RPG", "19/05/2015","Jogando", 9.90),
                 (4, "Pokemon Go", "Niantic,Inc", "Realidade Aumentada", "06/07/2016", "Jogando", 8.50),
                 (5, "Fortnite", "Epic Games", "Battle Royale", "25/07/2017", "Jogando", 8.80),
@@ -47,7 +47,7 @@ export async function initInserirJogos() {
 
 export async function selectJogos(req, res) {
     
-    await db.all('SELECT * FROM jogos')
+    await db.all(`SELECT * FROM jogos`)
             .then(jogos => res.json(jogos));
 
 }
@@ -58,7 +58,7 @@ export async function selectJogo(req, res) {
 
     const name = req.body.name_game;
 
-    await db.get('SELECT * FROM jogos WHERE name_game=?', [name])
+    await db.get(`SELECT * FROM jogos WHERE name_game=?`,[name])
             .then(jogos => res.json(jogos));
 
 }
@@ -70,7 +70,8 @@ export async function adicionarJogo(req,res) {
 
     const jogo = req.body;
 
-    await db.run('INSERT INTO jogos (name_game, developed_by, category_name, data_criacao, status, note) VALUES (?,?,?,?,?,?)', [jogo.name_game, jogo.developed_by, jogo.category_name, jogo.data_criacao, jogo.status, jogo.note]);
+    await db.run(`INSERT INTO jogos (name_game, developed_by, category_name, data_criacao, status, note) VALUES (?,?,?,?,?,?)`, 
+                [jogo.name_game, jogo.developed_by, jogo.category_name, jogo.data_criacao, jogo.status, jogo.note]);
 
     res.json({
         "statusCode":200

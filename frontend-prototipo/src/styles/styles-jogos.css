@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #865dff;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: #191825;
+    padding: 5px;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+}
+#logo {
+    width: 120px;
+    height: 70px;
+
+}
+
+.grupo {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+
+    margin: 60px 150px 20px 200px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 300px;
+    height: 420px;
+    background-color: #3b3952;
+    border-radius: 15px;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF;    
+}
+
+.card-container-infos{ 
+    flex: 1;
+}
+
+.card-container-infos h2 {
+    margin-top: 2%;
+    text-align: center;
+
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.card-container-infos h3 {
+    margin-right: 15px;
+
+    display: flex;
+    justify-content: end;
+
+    color: white;
+    font-size: 30px;
+}
+
+
+.card-container-infos ul {
+    margin: 5% 10% 5% 12%;
+
+}
+
+.card-container-infos li{
+    margin-top: 2%;
+
+
+    font-size: 20px;
+    font-family: 'black ops one';
+}
+
+.class-container-button {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.class-container-button button {
+    margin: 0% 5% 5% 5%;
+    
+    font-size: 20px;
+    font-family: 'black ops one';
+
+    width: 270px;
+    height: 50px;
+
+    border-radius: 15px;
+    background-color: #ffa3fd;
+    cursor: pointer;
+    border: none;
+}
+
+.class-container-button button:hover {
+    margin: 0% 5% 5% 5%;
+
+    width: 300px;
+    height: 50px;
+
+    border-radius: 15px;
+    background-color: #fccbfc;
+    cursor: pointer;
+    border: none;
+}
+

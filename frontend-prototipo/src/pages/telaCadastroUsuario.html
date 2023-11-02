@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style-telaCadastro.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <title>Formulário</title>
+</head>
+
+<body>
+    <div class="main">
+        <form>
+            <fieldset>
+                <legend><b>Cadastrar-se</b></legend>
+                <br>
+                <div class="inputBox">
+                    <input type="text" nome="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="label_input">Nome Completo:</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" nome="nome_de_usuario" id="nome_de_usuario" class="inputUser" required>
+                    <label for="nome" class="label_input">Username:</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" nome="email" id="email" class="inputUser" required>
+                    <label for="nome" class="label_input">Email:</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="password" name="password" id="password" class="inputUser" required>
+                    <label for="password" class="label_input">Insira a senha:</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="password" name="password" id="password" class="inputUser" required>
+                    <label for="password" class="label_input">Confirme a senha:</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                    <input type="date" nome="data_nascimento" id="data_nascimento" required>
+                </div>
+                <br>
+                <input type="submit" id="submit" class="btn-cadastro">
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
