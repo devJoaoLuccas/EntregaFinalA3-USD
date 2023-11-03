@@ -1,0 +1,191 @@
+:root {
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+    --placeholder: rgba(36, 32, 44, 0.795);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: var(--cor-fundo);
+}
+
+
+.logo{
+    width: 150px;
+    height: 100px;
+}
+
+h1 {
+    font-family: 'black ops one';
+    font-weight: 100;
+
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+form {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    border-radius: 20px;
+    padding: 30px;
+    
+    
+    height: 600px;
+    max-width: 100%;
+    width: 700px;
+
+    background-color: var(--cor-card);
+}
+
+.textfield label{
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+    
+    margin-left: 5px;
+
+}
+
+#input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    width: 600px;
+    height: 40px;
+
+    color: white;
+    font: normal 15px 'Arial';
+    
+    padding-left: 5px;
+    margin-top: 3px;
+    margin-bottom: 30px;
+    
+    border: none;
+    border-radius: 10px;
+
+    background-color: var(--cor-secundaria);
+    
+}
+
+
+
+.infos-plataforma {
+    width: 600px;
+    color: white;
+
+    gap: 20px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.categoria-info label {
+    margin-left: 5px;
+}
+
+#select{
+    width: 290px;
+    height: 40px;
+
+    border-radius: 10px;
+    border: none;
+
+    background-color: var(--cor-secundaria);
+    color: white;
+
+    margin-top: 3px;
+    margin-bottom: 30px;
+    padding-left: 5px;
+
+    
+    cursor: pointer;
+}
+
+
+#data-select {
+    width: 165px;
+    height: 40px;
+
+    margin-left: 5px;
+    padding-left: 5px;
+
+    border-radius: 8px;
+    border: none;
+
+    background-color: var(--cor-secundaria);
+    color: white;
+
+    cursor: pointer;
+}
+
+.data {
+
+    width: 600px;
+
+    color: white;
+    font-size: 15px;
+
+}
+
+.button{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 290px;
+    height: 60px;
+
+    background-color: var(--botao);
+    color: var(--cor-card);
+    
+    border-radius: 10px;
+    border:none;
+    font-size: 20px;
+    cursor: pointer;
+ 
+
+}
+
+.button:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 290px;
+    height: 60px;
+    
+    background-color: var(--cor-fundo);
+    color: var(--branco);
+    
+    border-radius: 10px;
+    border:none;
+
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.botoes{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    border: none;
+}

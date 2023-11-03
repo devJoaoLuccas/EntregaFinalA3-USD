@@ -1,0 +1,124 @@
+:root {
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+    --placeholder: rgba(36, 32, 44, 0.795);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'black ops one';
+}
+
+body{
+    background-color: var(--cor-fundo);
+}
+
+
+
+.logo{
+    width: 150px;
+    height: 100px;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 40px;
+    font-weight: 100;
+}
+
+form {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 20px;
+    padding: 30px;
+    
+    height: 400px;
+    max-width: 100%;
+    width: 700px;
+
+    background-color: var(--cor-card);
+}
+
+
+
+.textfield label{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-left: 5px;
+}
+
+#input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    width: 610px;
+    height: 40px;
+
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font: normal 15px;
+
+    padding-left: 8px;
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: var(--cor-secundaria);
+    
+    cursor: pointer;
+}
+
+
+.button{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 300px;
+    height: 60px;
+    background-color: var(--botao);
+    color: var(--cor-card);
+    
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+
+    border: none;
+    
+}
+
+.button:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 300px;
+    height: 60px;
+    
+    background-color: var(--cor-fundo);
+    color: var(--branco);
+    
+    border-radius: 10px;
+    border: none;
+
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.botoes{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
