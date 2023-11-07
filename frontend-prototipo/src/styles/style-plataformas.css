@@ -14,16 +14,65 @@ header {
     padding: 5px;
 }
 
-
-
 .cabecalho {
     display: flex;
     align-items: center;
+    text-align: center;
+
+    gap: 50px;
+
+    font-family: 'black ops one';
+    color: white;
 }
+
 #logo {
     width: 120px;
     height: 70px;
 
+}
+
+.cabecalho a {
+    color: #FFF;
+}
+
+.cabecalho-dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.cabecalho-dropdown-text {
+    display: flex;
+    
+
+    font-size: 20px;
+}
+
+.cabecalho-dropdown-content {
+    display: none;
+    position: absolute;
+    
+    min-width: 140px;
+    
+    padding: 12px 16px;
+    
+    z-index: 1;
+    
+    font: normal 15px 'black ops one';
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #3b3952;
+}
+
+.cabecalho-dropdown:hover .cabecalho-dropdown-content {
+    display: block;
+  }
+
+.grupo {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+
+    margin: 60px 150px 20px 200px;
 }
 
 
