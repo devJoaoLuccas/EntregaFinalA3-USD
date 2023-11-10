@@ -93,11 +93,23 @@ header {
 }
 
 .card-container-infos h2 {
-    margin-top: 2%;
+    margin-top: 5%;
     text-align: center;
 
-    font-size: 30px;
-    font-weight: bolder;
+    font-size: 20px;
+    font-family: 'black ops one';
+}
+
+.card-container-infos figure{
+    text-align: center;
+    
+    margin-top: 2%;
+}
+
+.card-container-infos img {
+
+    width: 150px;
+    height: 110px;
 }
 
 .card-container-infos h3 {
@@ -119,9 +131,7 @@ header {
 .card-container-infos li{
     margin-top: 2%;
 
-
-    font-size: 20px;
-    font-family: 'black ops one';
+    font-size: 17px;
 }
 
 .class-container-button {
