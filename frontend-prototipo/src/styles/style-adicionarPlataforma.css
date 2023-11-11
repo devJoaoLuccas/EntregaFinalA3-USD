@@ -101,18 +101,9 @@ form {
 }
 
 .button:hover {
-    font-family: Arial, Helvetica, sans-serif;
-    width: 300px;
-    height: 60px;
-    
     background-color: var(--cor-fundo);
     color: var(--branco);
     
-    border-radius: 10px;
-    border: none;
-
-    font-size: 20px;
-    cursor: pointer;
 }
 
 

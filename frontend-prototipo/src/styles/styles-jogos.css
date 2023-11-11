@@ -8,27 +8,30 @@ body {
 }
 
 header {
-    display: flex;
-    justify-content: center;
     background-color: #191825;
     padding: 5px;
+
 }
 
 .cabecalho {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-
-    gap: 50px;
 
     font-family: 'black ops one';
     color: white;
+}
+
+.cabecalho-teste {
+    margin-right: 7%;
 }
 
 #logo {
     width: 120px;
     height: 70px;
 
+    justify-content: center;
 }
 
 .cabecalho a {
@@ -42,9 +45,9 @@ header {
 
 .cabecalho-dropdown-text {
     display: flex;
-    
 
     font-size: 20px;
+    padding-right: 2rem;
 }
 
 .cabecalho-dropdown-content {
@@ -63,9 +66,23 @@ header {
     background-color: #3b3952;
 }
 
+.cabecalho-dropdown-content a {
+        color: #fff;
+        padding: 5px;
+        text-decoration: none;
+        display: block;
+}
+
+.cabecalho-dropdown-content a:hover {
+    background-color: #865dff;
+    color: #000;
+    transition: .4s;
+}
+
 .cabecalho-dropdown:hover .cabecalho-dropdown-content {
     display: block;
   }
+
 
 .grupo {
     display: flex;
