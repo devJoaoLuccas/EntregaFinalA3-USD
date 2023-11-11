@@ -22,7 +22,7 @@ body{
     flex-direction: column;
 
     width: 738px;
-    height: 558px;
+    height: 620px;
 
     background-color: #111010;
     border-radius: 20px;
@@ -74,6 +74,13 @@ body{
 
     cursor: pointer;
 }
+
+#btn:hover {
+    transition: .4s;
+    background: #865dff;
+    color: #fff;
+}
+
 .logotipo {
     display: flex;
     align-items: center;
@@ -108,6 +115,5 @@ body{
     font-size: 15px;
     font-weight: 100;
 
-    margin-top: 5%;
     margin-right: 15px;
 }
