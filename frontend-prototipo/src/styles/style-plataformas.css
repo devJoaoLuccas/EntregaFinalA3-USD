@@ -75,6 +75,7 @@ header {
 
 .cabecalho-dropdown-content a:hover {
     background-color: #865dff;
+    color: #000;
     transition: .4s;
 }
 
