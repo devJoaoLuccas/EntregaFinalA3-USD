@@ -58,7 +58,7 @@ form {
 .textfield label{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 #input {
@@ -73,7 +73,7 @@ form {
     font-family:Arial, Helvetica, sans-serif;
     font: normal 15px;
 
-    padding-left: 8px;
+    padding-left: 10px;
     margin-top: 5px;
 
     border: none;
@@ -84,9 +84,12 @@ form {
     cursor: pointer;
 }
 
+#input:focus {
+    outline: 0;
+}
 
 .button{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'black ops one';
     width: 300px;
     height: 60px;
     background-color: var(--botao);
@@ -101,6 +104,7 @@ form {
 }
 
 .button:hover {
+    transition: .4s;
     background-color: var(--cor-fundo);
     color: var(--branco);
     

@@ -58,7 +58,7 @@ legend{
 
     top: -20px;
     font-size: 12px;
-    color: var(--bordas)
+    color: #fff;
 }
 
 #data_nascimento {
@@ -70,10 +70,38 @@ legend{
     font-size: 15px;
 }
 
-.btn-cadastro {
+.btn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
 
-    margin-top: 5px;
-    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    
+
 }
 
+.btn-cadastro {
+ 
+    font-size: 20px;
+    font-family: 'black ops one';
 
+    width: 250px;
+    height: 50px;
+    
+    color: #000;
+    background-color: #ffa3fd;
+    box-shadow: 0px 10px 40px var(--sombra);
+    
+    border-radius: 10px;
+    border: none;
+    
+    cursor: pointer;
+}
+
+.btn-cadastro:hover {
+    transition: .4s;
+    background-color: #865dff;
+    color: #fff;
+}

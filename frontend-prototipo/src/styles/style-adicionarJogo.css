@@ -42,6 +42,7 @@ form {
     align-items: center;
     justify-content: center;
 }
+
 .card{ 
     display: flex;
     flex-direction: column;
@@ -64,7 +65,8 @@ form {
 
     color: white;
     
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-bottom: 3px;
 
 }
 
@@ -79,7 +81,7 @@ form {
     color: white;
     font: normal 15px 'Arial';
     
-    padding-left: 5px;
+    padding-left: 10px;
     margin-top: 3px;
     margin-bottom: 30px;
     
@@ -88,6 +90,10 @@ form {
 
     background-color: var(--cor-secundaria);
     
+}
+
+#input:focus {
+    outline: 0;
 }
 
 
@@ -151,7 +157,7 @@ form {
 }
 
 .button{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'black ops one';
     width: 290px;
     height: 60px;
 
@@ -162,23 +168,15 @@ form {
     border:none;
     font-size: 20px;
     cursor: pointer;
- 
-
+    
 }
 
 .button:hover {
-    font-family: Arial, Helvetica, sans-serif;
-    width: 290px;
-    height: 60px;
+    transition: .4s;
     
     background-color: var(--cor-fundo);
     color: var(--branco);
-    
-    border-radius: 10px;
-    border:none;
 
-    font-size: 20px;
-    cursor: pointer;
 }
 
 .botoes{
