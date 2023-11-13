@@ -115,12 +115,12 @@ body{
     font: normal 15px 'black ops one';
 
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    background-color: #3b3952;
+    background-color: #ffa3fd;
     cursor: pointer;
 }
 
 .dropdown-content a {
-    color: #fff;
+    color: #000;
     padding: 5px;
     text-decoration: none;
     display: block;
@@ -128,7 +128,7 @@ body{
 
 .dropdown-content a:hover {
     background-color: #865dff;
-    color: #000;
+    color: #fff;
     transition: .4s;
 }
 
