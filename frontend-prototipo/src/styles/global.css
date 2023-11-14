@@ -78,6 +78,34 @@ body{
     
 }
 
+.btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3rem;
+}
+
+.btn-cadastro { 
+    width: 15rem;
+    height: 3rem;
+
+    font: 100 25px 'black ops one';
+    background-color: #ffa3fd;
+
+    border: none;
+    border-radius: .7rem;
+
+    cursor:pointer;
+}
+
+.btn-cadastro:hover {
+    background-color: #865dff;
+    color: #fff;
+    transition: .4s;
+}
+
 #submit {
     width: 100%;
     padding: 16px 0px;

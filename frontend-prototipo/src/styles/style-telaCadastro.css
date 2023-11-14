@@ -57,10 +57,9 @@ legend{
 }
 
 .inputUser:focus ~ .label_input, .inputUser:valid ~ .label_input{
-
     top: -20px;
     font-size: 12px;
-    color: var(--bordas)
+    color: var(--branco)
 }
 
 #data_nascimento {
