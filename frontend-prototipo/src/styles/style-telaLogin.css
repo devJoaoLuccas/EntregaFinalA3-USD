@@ -23,14 +23,12 @@ body {
 
 
     width: 600px;
-    height: 500px;
+    height: 530px;
     
     background-color: #2e2840;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 20px;
 
-    font-family: 'Roboto', Helvetica, sans-serif;
-    font-size: 15px;
 }
 
 .container h2 {
@@ -64,25 +62,33 @@ body {
     border: none;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
-    height: 35px;
+    outline: none;
+    color: #fff;
+    font: 100 18px 'Arial';
+
+    height: 40px;
     padding-left: 4%;
 }
 
+
 .container-user-login {
-    background-color: #FFFFFF;
+    background-color: #ffa3fd;
+    font: 400 1.4rem 'black ops one';
+
     border-radius: 8px;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
-    font: bold 15px 'Roboto';
-    
-    margin-top: 10%;
-    height: 40px;
+    margin-top: 8%;
+    height: 50px;
+
+    cursor: pointer;
 }
 
 .container-user-login:hover {
     background-color: #865eff;
     color: #fff;
+    transition: .4s;
 }
 
 

@@ -152,7 +152,9 @@ header {
     width: 220px;
     height: 45px;
     border-radius: 12px;
-    background-color: #fccbfc;
+    background-color: #865dff;
+    transition: .4s;
+    color: #fff;
     cursor: pointer;
     border: none;
 }
