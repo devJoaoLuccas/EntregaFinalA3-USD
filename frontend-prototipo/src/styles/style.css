@@ -148,3 +148,45 @@ body{
 
     padding-left: 2%;
 }
+
+@media only screen and (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%; 
+        max-width: 100%; 
+        max-height: fit-content;
+
+    .titulos h1 {
+        font-size: 24px;
+        margin-top: 15px;
+        margin-left: 2rem; 
+    }
+
+    .titulos h2 {
+        font-size: 18px; 
+        margin-top: 10px; 
+    }
+
+    #btn {
+        font-size: 18px;  
+        width: 15rem;
+        margin-bottom: 15px;  
+
+    .logo {
+        width: 80px; 
+        height: 40px;
+        margin-top: 10px; 
+    }
+
+    .dropdown-content {
+        min-width: 120px; 
+    }
+
+    .dropdown-text {
+        font-size: 14px; 
+    }
+    }
+}
+}

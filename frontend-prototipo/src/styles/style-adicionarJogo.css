@@ -47,7 +47,6 @@ form {
     flex-direction: column;
     align-items: center;
 
-
     border-radius: 20px;
     padding: 30px;
     
@@ -188,4 +187,84 @@ form {
     gap: 20px;
 
     border: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+        height: fit-content;
+        margin: 10vw;
+        align-items: center;
+    }
+
+    #input,
+    #select,
+    .button:hover {
+        width: 80%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #input, #select {
+        width: 52vw;
+        height: 2rem;
+    }
+
+    #data-select {
+        width: 52vw;
+        margin-left: 10px;
+    } label {
+        margin-left: 20px;
+    }
+
+    .infos-plataforma {
+        display: flex;
+        flex-direction: column;
+        width: 80%; 
+        
+    }
+
+    .categoria-info label,
+    .data {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .categoria-info {
+        margin-bottom: -30px;
+        margin-left: 50px;
+    }
+
+    .categoria-info label {
+        width: fit-content;
+        margin-left: 5px;
+    }
+
+    .data {
+        margin-left: 20%;
+        margin-top: 20px;
+    }
+
+
+    .botoes {
+        margin-top: 20px; 
+        display: flex;
+        flex-direction: row; 
+    }
+
+    .button {
+        height: 2.5rem;
+        width: 6rem; 
+    }
+
+    .form {
+        display: flex;
+    }
+
+    .textfield {
+        align-items: center;
+        margin-bottom: -10px
+    }
 }

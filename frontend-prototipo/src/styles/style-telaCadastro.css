@@ -10,11 +10,13 @@
  
 fieldset{
 
+    
     border: solid 3px var(--cor-secundaria);
     border-radius: 15px;
     height: min-content;
     width: 600px;
-    background-color: var(--cor-primaria)
+    background-color: var(--cor-primaria);
+
     
 }
 
@@ -74,6 +76,13 @@ legend{
 
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    fieldset {
+        width: 100%;
+        max-width: fit-content;
+    }
 }
 
 

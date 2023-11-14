@@ -84,7 +84,7 @@ header {
   }
 
 .main {
-    height: 90vh;
+    height: fit-content;
 
     display: flex;
     align-items: center;
@@ -93,8 +93,10 @@ header {
 
 .container {
 
-    width: 800px;
-    height: 820px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     
     background-color: #2e2840;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -149,4 +151,45 @@ header {
 #button-principal:hover {
     transition: .2s;
     background-color: #fccbfc;
+}
+
+@media only screen and (max-width: 768px) {
+
+    html {
+        min-width: fit-content;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #logo {
+        margin-bottom: 10px;
+    }
+
+    .cabecalho-teste {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .cabecalho-dropdown-text {
+        padding-right: 0;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .container-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+
+    }
+
+    .container-row-logo img {
+        margin-bottom: 10px;
+    }
 }
