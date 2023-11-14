@@ -34,7 +34,7 @@ form {
     padding: 3rem;
     
     
-    height: 60rem;
+    height: 63rem;
     max-width: 100%;
     width: 70rem;
 
@@ -84,6 +84,14 @@ form {
     margin-right: 1rem;
 }
 
+#assunto {
+    margin-left: 2.5rem;
+}
+
+#msg {
+    align-items: flex-start;
+}
+
 .card-form-text {
     color: #fff;
 
@@ -98,6 +106,135 @@ form {
     border: none;
 }
 
+.card-form::placeholder {
+    color: #9c8f8f;
+}
+
 .card-form-text:focus {
     outline: none;
+}
+
+.card-form-radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 1rem;
+    margin-top: .65rem;
+    height: 1rem;
+}
+
+.card-form-radio:nth-child(1n) {
+    margin-right: 1rem;
+}
+
+.card-form-row textarea {
+
+    width: 40rem;
+    height: 20rem;
+
+    padding-left: 1rem;
+    padding-top: 1rem;
+
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.card-form-row textarea:focus {
+    outline: none;
+}
+
+.card-form-row:last-child {
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 10.5rem;
+    padding-top: 3rem;
+    gap: 5rem;
+}
+
+.card-form-row button {
+    width: 20rem;
+    height: 5rem;
+
+    background-color: var(--botao);
+    font: 200 1.8rem 'black ops one';
+
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.card-form-row button:hover {
+    transition: .4s;
+    background-color: var(--cor-fundo);
+    color: #fff;
+}
+
+footer { 
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    justify-content: flex-start;
+
+    font-family: 'black ops one';
+    margin-right: 60rem;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    align-items: flex-end;
+    
+    min-width: 160px;
+    
+    margin-left: 2%;
+    padding: 10px 5px;
+    
+    z-index: 1;
+    
+    color: #fff;
+    font: normal 15px 'black ops one';
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #ffa3fd;
+    cursor: pointer;
+}
+
+.dropdown-content a {
+    color: #000;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #865dff;
+    color: #fff;
+    transition: .4s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
+.dropdown-text {
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+
+    padding-left: 2%;
 }
