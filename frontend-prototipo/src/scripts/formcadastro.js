@@ -11,13 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var confirmPassword = document.getElementById('password-confirm').value;
         var dataNascimento = document.getElementById('data_nascimento').value;
 
-        // Verifica se a senha e a confirmação de senha são iguais
         if (password !== confirmPassword) {
             alert('As senhas não coincidem');
             return;
         }
 
-        // Verifica se o formato do email é válido
         var emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!email.match(emailFormat)) {
             alert('Por favor, insira um email válido');
@@ -28,12 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
         var dataNasc = new Date(dataNascimento);
         var idade = hoje.getFullYear() - dataNasc.getFullYear();
 
-        // Se o aniversário ainda não ocorreu neste ano, subtrai 1 da idade
+    
         if (hoje.getMonth() < dataNasc.getMonth() || (hoje.getMonth() === dataNasc.getMonth() && hoje.getDate() < dataNasc.getDate())) {
             idade--;
         }
 
-        // Verifica se a idade é menor que 10
+
         if (idade < 10) {
             alert('É necessário ter pelo menos 10 anos para se cadastrar');
             return;
@@ -41,4 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         form.submit();
     });
+
+    var cancelarButton = document.querySelector('.btn-cadastro[value="Cancelar"]');
+  
+    cancelarButton.addEventListener('click', function () {
+       
+        window.location.href = "/frontend-prototipo/src/pages/telaLogin.html";
+    });
+
 });
+
