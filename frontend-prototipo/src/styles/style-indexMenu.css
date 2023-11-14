@@ -60,7 +60,7 @@ body{
     
 }
 
-#btn {
+button {
     padding: 20px 0px 20px 0px;
 
     margin-bottom: 35px;
@@ -75,7 +75,7 @@ body{
     cursor: pointer;
 }
 
-#btn:hover {
+button:hover {
     transition: .4s;
     background: #865dff;
     color: #fff;
