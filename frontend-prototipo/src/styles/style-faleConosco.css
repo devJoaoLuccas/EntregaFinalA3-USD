@@ -1,0 +1,103 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+}
+
+body {
+    background-color: var(--cor-fundo);
+}
+
+form {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 2rem;
+    padding: 3rem;
+    
+    
+    height: 60rem;
+    max-width: 100%;
+    width: 70rem;
+
+    background-color: var(--cor-card);
+}
+
+.card-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card h1 {
+    font-family: 'black ops one';
+    font-size: 3.5rem;
+    font-weight: 100;
+
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.card-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    margin-top: 2rem;
+    margin-right: 10rem;
+
+    font: lighter 1.8rem 'Arial';
+    color: #fff;
+}
+
+.card-form-row { 
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 1.5rem;
+}
+
+.card-form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.card-form-text {
+    color: #fff;
+
+    background-color: var(--cor-secundaria);
+    width: 40rem;
+    height: 4rem;
+
+    margin-left: 1rem;
+    padding-left: 1rem;
+
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.card-form-text:focus {
+    outline: none;
+}

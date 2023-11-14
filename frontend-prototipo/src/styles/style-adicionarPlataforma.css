@@ -7,20 +7,17 @@
     --placeholder: rgba(36, 32, 44, 0.795);
 }
 
-
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'black ops one';
 }
 
-body{
+body {
     background-color: var(--cor-fundo);
 }
 
-
-
-.logo{
+.logo {
     width: 150px;
     height: 100px;
 }
@@ -33,87 +30,85 @@ h1 {
 
 form {
     height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.card{ 
+
+.card {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     border-radius: 20px;
     padding: 30px;
-    
-    height: 400px;
     max-width: 100%;
     width: 700px;
-
     background-color: var(--cor-card);
 }
 
-
-
-.textfield label{
+.textfield label {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 #input {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    
     width: 610px;
     height: 40px;
-
     color: white;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font: normal 15px;
-
-    padding-left: 10px;
+    padding-left: 8px;
     margin-top: 5px;
-
     border: none;
     border-radius: 10px;
-
     background-color: var(--cor-secundaria);
-    
     cursor: pointer;
 }
 
-#input:focus {
-    outline: 0;
-}
-
-.button{
-    font-family: 'black ops one';
+.button {
+    font-family: Arial, Helvetica, sans-serif;
     width: 300px;
     height: 60px;
     background-color: var(--botao);
     color: var(--cor-card);
-    
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
-
     border: none;
-    
 }
 
 .button:hover {
-    transition: .4s;
     background-color: var(--cor-fundo);
     color: var(--branco);
-    
 }
 
-
-.botoes{
+.botoes {
     margin-top: 80px;
     display: flex;
     flex-direction: row;
     gap: 20px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 90%; 
+        max-width: 100%; 
+    }
+
+    #input{
+        width: 18rem; 
+    }
+
+    .botoes {
+        width: 40%;
+        flex-direction: column; 
+        align-items: center; 
+        margin-top: 40px;
+    }
 }
