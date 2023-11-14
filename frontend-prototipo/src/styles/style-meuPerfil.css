@@ -24,7 +24,6 @@ body {
 .card{ 
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     border-radius: 2rem;
     padding: 3rem;
@@ -37,4 +36,90 @@ body {
     background-color: var(--cor-card);
 }
 
+header { 
+    display: flex;
+    flex-direction: column;
 
+    align-items: center;
+    justify-content: center;
+}
+
+.userPhoto {
+    width: 20rem;
+}
+
+header h1 {
+    font: 400 2rem 'black ops one';
+    color: #fff;
+}
+
+.card-infos {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 10rem;
+    gap: 5rem;
+}
+
+.card-infos-row {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+
+    margin-left: 3rem;
+}
+
+.card-infos-row label {
+    color: #fff;
+    font: 400 1.5rem 'Arial';
+
+    margin-right: 1rem;
+}
+
+.card-infos-row input {
+    border: none;
+    background: none;
+    
+    border-bottom: solid .1rem #fff;
+    padding-left: 0.5rem;
+
+    width: 40rem;
+    cursor:not-allowed;
+}
+
+.card-infos-row input::placeholder {
+    color: #fff;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 17rem;
+    
+}
+
+.logo {
+    width: 15rem;
+}
+
+.footer button {
+    width: 15rem;
+    height: 4rem;
+
+    font: 400 1.5rem 'black ops one';
+    
+    background-color: var(--botao);
+    border: none;
+    border-radius: 1rem;
+    
+    cursor: pointer;
+}
+
+.footer button:hover {
+    transition: .4s;
+    background-color: var(--cor-fundo);
+    color: #fff;
+}
