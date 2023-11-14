@@ -42,12 +42,10 @@ form {
     align-items: center;
     justify-content: center;
 }
-
 .card{ 
     display: flex;
     flex-direction: column;
     align-items: center;
-
 
     border-radius: 20px;
     padding: 30px;
@@ -65,8 +63,7 @@ form {
 
     color: white;
     
-    margin-left: 10px;
-    margin-bottom: 3px;
+    margin-left: 5px;
 
 }
 
@@ -81,7 +78,7 @@ form {
     color: white;
     font: normal 15px 'Arial';
     
-    padding-left: 10px;
+    padding-left: 5px;
     margin-top: 3px;
     margin-bottom: 30px;
     
@@ -90,10 +87,6 @@ form {
 
     background-color: var(--cor-secundaria);
     
-}
-
-#input:focus {
-    outline: 0;
 }
 
 
@@ -157,7 +150,7 @@ form {
 }
 
 .button{
-    font-family: 'black ops one';
+    font-family: Arial, Helvetica, sans-serif;
     width: 290px;
     height: 60px;
 
@@ -168,15 +161,23 @@ form {
     border:none;
     font-size: 20px;
     cursor: pointer;
-    
+ 
+
 }
 
 .button:hover {
-    transition: .4s;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 290px;
+    height: 60px;
     
     background-color: var(--cor-fundo);
     color: var(--branco);
+    
+    border-radius: 10px;
+    border:none;
 
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .botoes{
@@ -186,4 +187,84 @@ form {
     gap: 20px;
 
     border: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+        height: fit-content;
+        margin: 10vw;
+        align-items: center;
+    }
+
+    #input,
+    #select,
+    .button:hover {
+        width: 80%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #input, #select {
+        width: 52vw;
+        height: 2rem;
+    }
+
+    #data-select {
+        width: 52vw;
+        margin-left: 10px;
+    } label {
+        margin-left: 20px;
+    }
+
+    .infos-plataforma {
+        display: flex;
+        flex-direction: column;
+        width: 80%; 
+        
+    }
+
+    .categoria-info label,
+    .data {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .categoria-info {
+        margin-bottom: -30px;
+        margin-left: 50px;
+    }
+
+    .categoria-info label {
+        width: fit-content;
+        margin-left: 5px;
+    }
+
+    .data {
+        margin-left: 20%;
+        margin-top: 20px;
+    }
+
+
+    .botoes {
+        margin-top: 20px; 
+        display: flex;
+        flex-direction: row; 
+    }
+
+    .button {
+        height: 2.5rem;
+        width: 6rem; 
+    }
+
+    .form {
+        display: flex;
+    }
+
+    .textfield {
+        align-items: center;
+        margin-bottom: -10px
+    }
 }

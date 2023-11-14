@@ -34,7 +34,7 @@ body {
 }
 
 .container h2 {
-    font: lighter 28px 'black ops one';
+    font: bold 30px 'Arial';
     color: #fff;
     margin: 2%;
 
@@ -64,13 +64,8 @@ body {
     border: none;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
-    color: #fff;
     height: 35px;
     padding-left: 4%;
-}
-
-.container-user-input:focus {
-    outline: 0;
 }
 
 .container-user-login {
@@ -79,14 +74,13 @@ body {
     border: none;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     
-    font: lighter 20px 'black ops one';
+    font: bold 15px 'Roboto';
     
     margin-top: 10%;
     height: 40px;
 }
 
 .container-user-login:hover {
-    transition: .4s;
     background-color: #865eff;
     color: #fff;
 }
@@ -110,6 +104,6 @@ body {
     font-family: 'Roboto', Helvetica, sans-serif;
     font-size: 12px;
 
-    margin-top: 2%;
+    margin-top: 3%;
     text-align: center;
 }
