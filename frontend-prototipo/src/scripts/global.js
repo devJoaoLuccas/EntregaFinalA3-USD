@@ -5,5 +5,5 @@ document.getElementById("cadastre-se-link").addEventListener("click", function(e
 
 document.getElementById("login-link").addEventListener("click", function(event) {
     event.preventDefault(); 
-    window.location.href = "/frontend-prototipo/src/pages/jogos.html"
+    window.location.href = "/frontend-prototipo/src/pages/index-menu.html"
 }); 
