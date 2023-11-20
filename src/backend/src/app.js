@@ -44,7 +44,7 @@ try {
    await initInserirJogoPlataforma();
    await initInserirNotasJogos();
 } catch (error) {
-    console.log("Não foi possivel adicionar os itens, provavelmente já foram adicionados.")
+    console.log(`Não foi possivel adicionar os itens, provavelmente já foram adicionados.`)
 }
 
 // O servidor está ouvindo pela porta 3000 

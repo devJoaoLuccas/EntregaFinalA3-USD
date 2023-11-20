@@ -89,20 +89,21 @@ export async function initInserirNotasJogos() {
 
 }
 
+
 export async function selectNotasJogos(req, res) {
     
     try {
         await db.all( 
             `
-            SELECT FROM notas_jogos
+            SELECT usuarios.username, jogos.name_game, notas_jogos.note
             FROM notas_jogos
-            INNER JOIN usuarios 
-            ON notas_jogos.idUser = usuarios.idUser
+            JOIN usuarios ON notas_jogos.idUser = usuarios.idUser
+            JOIN jogos ON notas_jogos.idJogo = jogos.idJogo;
             `
             )
     .then(notasJogos => res.json(notasJogos));
     } catch (error) {
-        console.log("Não foi possível selecionar os itens!");
+        console.log(`Não foi possivel selecionar os itens em notas_jogos`)
     }
 
 }

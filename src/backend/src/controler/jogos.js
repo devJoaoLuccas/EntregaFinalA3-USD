@@ -17,7 +17,7 @@ export async function createTableJogos() {
                 category_name TEXT CHECK (LENGTH(category_name) <= 50) NOT NULL,
                 data_criacao BLOB NOT NULL,
                 status TEXT CHECK(status IN ("Jogando", "Zerado", "Para jogar")) NOT NULL,
-                note REAL NOT NULl)
+                note REAL NOT NULL)
             `
                 );
 }
