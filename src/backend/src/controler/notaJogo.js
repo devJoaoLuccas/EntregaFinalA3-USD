@@ -107,3 +107,51 @@ export async function selectNotasJogos(req, res) {
     }
 
 }
+
+export async function adicionarNotaJogo(req, res) {
+
+    try {
+        const notas = req.body;
+
+        await db.run(
+            `
+                INSERT INTO notas_jogos 
+                (idUser, note, idJogo)
+                VALUES
+                (?,?,?)
+            `,
+            [notas.idUser, notas.note, notas.idJogo]
+        );
+
+        res.json({
+            "statusCode":200
+        });
+
+    } catch(error) {
+        console.log("Não foi possivel adicionar o item em notas_jogos")
+    }
+
+}
+
+export async function deleteNotaJogo(req, res) {
+
+    const nota = req.body.idNotaJogo;
+
+        try {
+        
+            await db.run (
+                `
+                DELETE
+                FROM notas_jogos
+                WHERE idNotaJogo = ?
+                `, [nota]
+            );
+
+            res.json({
+                "statusCode":201
+            })
+
+        } catch(error) {
+            console.log(`Não foi possivel deletar o jogo com id = ${nota} `)
+        }
+}

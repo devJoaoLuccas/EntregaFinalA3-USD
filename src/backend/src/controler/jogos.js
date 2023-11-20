@@ -17,7 +17,8 @@ export async function createTableJogos() {
                 category_name TEXT CHECK (LENGTH(category_name) <= 50) NOT NULL,
                 data_criacao BLOB NOT NULL,
                 status TEXT CHECK(status IN ("Jogando", "Zerado", "Para jogar")) NOT NULL,
-                note REAL NOT NULL)
+                note REAL NOT NULL,
+                FOREIGN KEY (note) REFERENCES notas_jogos (note) ON DELETE CASCADE)
             `
                 );
 }
@@ -47,8 +48,13 @@ export async function initInserirJogos() {
 
 export async function selectJogos(req, res) {
     
-    await db.all(`SELECT * FROM jogos`)
+    try {
+        await db.all(`SELECT * FROM jogos`)
             .then(jogos => res.json(jogos));
+    } catch (error) {
+        console.log("Não foi possivel selecionar as informações na tabela")
+    }
+    
 
 }
 
