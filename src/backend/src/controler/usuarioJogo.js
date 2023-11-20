@@ -15,7 +15,7 @@ export async function createTableUsuarioJogo() {
                 (idUsuarioJogo INTEGER PRIMARY KEY AUTOINCREMENT,
                 idUser INTEGER, 
                 idJogo INTEGER, 
-                FOREIGN KEY (idUser) REFERENCES usuario(idUser) ON DELETE CASCADE,
+                FOREIGN KEY (idUser) REFERENCES usuarios(idUser) ON DELETE CASCADE,
                 FOREIGN KEY (idJogo) REFERENCES jogos (idJogo) ON DELETE CASCADE)
             `
             );
