@@ -12,7 +12,7 @@ import { createTableJogosPlataformas, initInserirJogoPlataforma } from './contro
 
 const app = express();
 
-// Diz que o nosso servidor vai usar express cm json
+// Diz que o nosso servidor vai usar json
 
 app.use(express.json());
 
