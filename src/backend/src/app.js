@@ -6,6 +6,7 @@ import { createTableUsuarioJogo, initInserirUsuarioJogo } from './controler/usua
 
 import router from './routes.js';
 import { createTableJogosPlataformas, initInserirJogoPlataforma } from './controler/jogoPlataforma.js';
+import { createTableNotasJogos, initInserirNotasJogos } from './controler/notaJogo.js';
 
 
 // criar o nosso servidor e instancia a biblioteca express do node 
@@ -26,6 +27,7 @@ createTableUsuarios();
 createTableJogos(); 
 createTablePlataformas();
 createTableUsuarioJogo();
+createTableNotasJogos();
 createTableJogosPlataformas();
 
 // Instância a inserção de dados por padrão nas tabelas, caso de erro, será enviada uma mensagem no console avisando que não foi possível adicionar os itens
@@ -36,6 +38,7 @@ try {
    await initInserirPlataformas();
    await initInserirUsuarioJogo();
    await initInserirJogoPlataforma();
+   await initInserirNotasJogos();
 } catch (error) {
     console.log("Não foi possivel adicionar os itens, provavelmente já foram adicionados.")
 }

@@ -22,7 +22,7 @@ export async function createTableNotasJogos() {
 
 }
 
-export async function initTableNotasJogos() {
+export async function initInserirNotasJogos() {
 
     await db.exec(
         `
