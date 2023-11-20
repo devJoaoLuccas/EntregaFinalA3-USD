@@ -2,6 +2,7 @@ import { Router } from "express";
 import { selectUsuarios, selectUsuario, adicionarUsuario, updateUsuario, deleteUsuario } from './controler/usuario.js';
 import { selectJogo, selectJogos, adicionarJogo, updateJogo, deleteJogo } from "./controler/jogos.js";
 import { adicionarPlataforma, deletePlataforma, selectPlataforma, selectPlataformas, updatePlataforma } from "./controler/plataformas.js";
+import { selectNotasJogos } from "./controler/notaJogo.js";
 
 const router = Router();
 
@@ -10,6 +11,7 @@ const router = Router();
 router.get('/jogo', selectJogo);
 router.get('/usuario', selectUsuario);
 router.get('/plataforma', selectPlataforma);
+router.get('/notasJogos', selectNotasJogos)
 // router.get('/usuarioJogo', selectUsuarioJogo);
 
 router.get('/jogos', selectJogos);

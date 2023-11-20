@@ -7,7 +7,7 @@ const db = await openDb();
 
 export async function createTableNotasJogos() {
     
-        await db.run(
+        await db.exec(
             `
             CREATE TABLE IF NOT EXISTS notas_jogos 
                 (idNotaJogo INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -25,9 +25,9 @@ export async function createTableNotasJogos() {
 export async function initInserirNotasJogos() {
 
     try {
-        await db.exec(
+        await db.run(
             `
-            INSERT INTO notasJogos (idNotaJogo, idUser, note, idJogo)
+            INSERT INTO notas_jogos (idNotaJogo, idUser, note, idJogo)
             VALUES
             (1, 1, 10, 1),
             (2, 2, 5, 1),
@@ -43,7 +43,7 @@ export async function initInserirNotasJogos() {
             (12, 2, 7.5, 3),
             (13, 3, 8.0, 3),
             (14, 4, 9.5, 3),
-            (15, 5, 10, 3, 4),
+            (15, 5, 10, 3),
             (16, 1, 8.5, 4),
             (17, 2, 9, 4),
             (18, 3, 7.5, 4),
@@ -81,9 +81,28 @@ export async function initInserirNotasJogos() {
             (50, 5, 5, 10)
             `
         );
+
     } catch (error) {
         console.log("Erro ao adicionar as informações em notas_jogos")
     }
 
+
+}
+
+export async function selectNotasJogos(req, res) {
+    
+    try {
+        await db.all( 
+            `
+            SELECT FROM notas_jogos
+            FROM notas_jogos
+            INNER JOIN usuarios 
+            ON notas_jogos.idUser = usuarios.idUser
+            `
+            )
+    .then(notasJogos => res.json(notasJogos));
+    } catch (error) {
+        console.log("Não foi possível selecionar os itens!");
+    }
 
 }
