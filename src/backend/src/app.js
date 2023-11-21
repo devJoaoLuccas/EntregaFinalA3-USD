@@ -2,10 +2,10 @@ import express from 'express';
 import { createTableUsuarios, initInserirUsuario } from './controler/usuario.js';
 import { createTableJogos, initInserirJogos } from './controler/jogos.js';
 import { createTablePlataformas, initInserirPlataformas } from './controler/plataformas.js';
-import { createTableUsuarioJogo, initInserirUsuarioJogo } from './controler/usuarioJogo.js';
 
 import router from './routes.js';
 import { createTableJogosPlataformas, initInserirJogoPlataforma } from './controler/jogoPlataforma.js';
+import { createTableNotasJogos, initInserirNotasJogos } from './controler/notaJogo.js';
 
 
 // criar o nosso servidor e instancia a biblioteca express do node 
@@ -25,16 +25,14 @@ app.use(router);
 createTableUsuarios();
 createTableJogos(); 
 createTablePlataformas();
-createTableUsuarioJogo();
 createTableJogosPlataformas();
+createTableNotasJogos();
 
 
 try {
    await initInserirJogos();   
    await initInserirUsuario(); 
    await initInserirPlataformas();
-   await initInserirUsuarioJogo();
-   await initInserirJogoPlataforma();
 } catch (error) {
     console.log("Não foi possivel adicionar os itens, provavelmente já foram adicionados.")
 }
