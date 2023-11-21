@@ -124,3 +124,27 @@ export async function adicionarPlataformaJogos(req, res) {
     }
 
 }
+
+export async function deletePlataformaJogos(req, res) {
+
+    const plataformaJogo = req.body.idPlataformaJogo;
+
+    try {
+        
+        await db.run(
+            `
+                DELETE FROM plataformas_jogos 
+                WHERE 
+                idPlataformaJogo=?
+            `, [plataformaJogo]
+        );
+
+        res.json({
+            "statusCode":201
+        });
+
+    } catch (error) {
+        console.log(`Não foi possível deletar o id ${plataformaJogo}`);
+    }
+
+}

@@ -4,7 +4,7 @@ import { selectUsuarios, selectUsuario, adicionarUsuario, updateUsuario, deleteU
 import { selectJogo, selectJogos, adicionarJogo, updateJogo, deleteJogo } from "./controler/jogos.js";
 import { adicionarPlataforma, deletePlataforma, selectPlataforma, selectPlataformas, updatePlataforma } from "./controler/plataformas.js";
 import { adicionarNotaJogo, deleteNotaJogo, selectNotasJogos, updateNotaJogo } from "./controler/notaJogo.js";
-import { adicionarPlataformaJogos, selectPlataformaJogos } from "./controler/jogoPlataforma.js";
+import { adicionarPlataformaJogos, deletePlataformaJogos, selectPlataformaJogos } from "./controler/jogoPlataforma.js";
 
 
 const router = Router();
@@ -42,5 +42,6 @@ router.delete('/deleteUsuario', deleteUsuario);
 router.delete('/deleteJogo', deleteJogo);
 router.delete('/deletePlataforma', deletePlataforma);
 router.delete('/deleteNotaJogo', deleteNotaJogo);
+router.delete('/deletePlataformaJogo', deletePlataformaJogos)
 
 export default router;
