@@ -1,9 +1,12 @@
 import express from 'express';
+
+import router from './router/routes.js';
+
 import { createTableUsuarios, initInserirUsuario } from './model/usuario.js';
 import { createTableJogos, initInserirJogos } from './model/jogos.js';
 import { createTablePlataformas, initInserirPlataformas } from './model/plataformas.js';
 
-import router from './router/routes.js';
+
 import { createTableJogosPlataformas, initInserirJogoPlataforma } from './model/jogoPlataforma.js';
 import { createTableNotasJogos, initInserirNotasJogos } from './model/notaJogo.js';
 

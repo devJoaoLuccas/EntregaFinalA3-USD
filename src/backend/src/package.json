@@ -1,10 +1,10 @@
 {
-  "name": "entregafinala3-usd",
+  "name": "src",
   "version": "1.0.0",
-  "description": "Projeto A3 - UNIFACS",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "dev": "cd src/backend/src && nodemon app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,5 +14,6 @@
     "nodemon": "^3.0.1",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.6"
-  }
+  },
+  "type":"module"
 }
