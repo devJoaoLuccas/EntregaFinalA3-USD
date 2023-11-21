@@ -1,11 +1,13 @@
 {
-  "name": "src",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/app.js",
+    "install": "cd src && npm install sqlite && npm install sqlite3 && npm install express",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +17,5 @@
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.6"
   },
-  "type":"module"
+  "type": "module"
 }
