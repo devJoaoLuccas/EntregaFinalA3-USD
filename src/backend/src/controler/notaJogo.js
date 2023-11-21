@@ -95,13 +95,12 @@ export async function selectNotasJogos(req, res) {
     try {
         await db.all( 
             `
-            SELECT usuarios.username, jogos.name_game, notas_jogos.note
-            FROM notas_jogos
-            JOIN usuarios ON notas_jogos.idUser = usuarios.idUser
-            JOIN jogos ON notas_jogos.idJogo = jogos.idJogo;
+                SELECT usuarios.username, jogos.name_game, notas_jogos.note
+                FROM notas_jogos
+                JOIN usuarios ON notas_jogos.idUser = usuarios.idUser
+                JOIN jogos ON notas_jogos.idJogo = jogos.idJogo;
             `
-            )
-    .then(notasJogos => res.json(notasJogos));
+            ).then(notasJogos => res.json(notasJogos)); 
     } catch (error) {
         console.log(`Não foi possivel selecionar os itens em notas_jogos`)
     }
@@ -119,8 +118,7 @@ export async function adicionarNotaJogo(req, res) {
                 (idUser, note, idJogo)
                 VALUES
                 (?,?,?)
-            `,
-            [notas.idUser, notas.note, notas.idJogo]
+            `, [notas.idUser, notas.note, notas.idJogo]
         );
 
         res.json({
@@ -129,6 +127,30 @@ export async function adicionarNotaJogo(req, res) {
 
     } catch(error) {
         console.log("Não foi possivel adicionar o item em notas_jogos")
+    }
+
+}
+
+export async function updateNotaJogo(req, res) {
+    
+    const nota = req.body;
+
+    try {
+
+        await db.run(
+            `
+                UPDATE notas_jogos
+                SET idUser=?,note=?,idJogo=?
+                WHERE idNotaJogo=?
+            `,[nota.idUser, nota.note, nota.idJogo, nota.idNotaJogo]
+        );
+
+        res.json({
+            "statusCode":200
+        })
+
+    } catch(error) {
+        console.log(`Não foi possivel atualizar o item ${nota.idNotaJogo}`)
     }
 
 }
