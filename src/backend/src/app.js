@@ -33,6 +33,8 @@ try {
    await initInserirJogos();   
    await initInserirUsuario(); 
    await initInserirPlataformas();
+   await initInserirJogoPlataforma();
+   await initInserirNotasJogos();
 } catch (error) {
     console.log("Não foi possivel adicionar os itens, provavelmente já foram adicionados.")
 }

@@ -27,8 +27,8 @@ export async function initInserirJogoPlataforma() {
 
     await db.run(
             `
-            INSERT INTO jogos_plataformas (idJogosPlataformas, idJogo, idPlataforma)
-            VALUES
+            INSERT INTO plataformas_jogos (idPlataformaJogo, idPlataforma, idJogo)
+            VALUES 
                 (1, 1, 1),
                 (2, 1, 2),
                 (3, 1, 3),
@@ -78,7 +78,7 @@ export async function initInserirJogoPlataforma() {
                 (47, 10, 2),
                 (48, 10, 3),
                 (49, 10, 4),
-                (50, 10, 5);
+                (50, 10, 5)
             `
     );
 
