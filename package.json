@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "nodemon src/app.js",
-    "install": "cd src/backend/src && npm install",
+    "install": "cd src/backend/src && npm install && npm install sqlite3 && npm install sqlite && npm install express",
     "start": "node src/backend/src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
