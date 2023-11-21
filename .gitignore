@@ -1,2 +1,4 @@
-EntregaFinalA3-USD/src/backend/node_modules
-EntregaFinalA3-USD/src/backend/database.db
+src/backend/src/node_modules
+src/backend/database.db
+
+node_modules

@@ -5,6 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "dev": "nodemon src/app.js",
+    "install": "cd src && npm install sqlite && npm install sqlite3 && npm install express",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js"
   },
@@ -13,7 +14,7 @@
   "dependencies": {
     "express": "^4.18.2",
     "nodemon": "^3.0.1",
-    "sqlite": "^5.0.1",
+    "sqlite": "^5.1.1",
     "sqlite3": "^5.1.6"
   },
   "type": "module"

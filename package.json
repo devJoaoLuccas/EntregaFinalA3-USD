@@ -1,0 +1,15 @@
+{
+  "name": "entregafinala3-usd",
+  "version": "1.0.0",
+  "description": "Projeto A3 - UNIFACS",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "install":"cd src/backend/src && npm install sqlite && npm install sqlite3 && npm install express",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
