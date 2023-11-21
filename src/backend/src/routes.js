@@ -4,7 +4,7 @@ import { selectUsuarios, selectUsuario, adicionarUsuario, updateUsuario, deleteU
 import { selectJogo, selectJogos, adicionarJogo, updateJogo, deleteJogo } from "./controler/jogos.js";
 import { adicionarPlataforma, deletePlataforma, selectPlataforma, selectPlataformas, updatePlataforma } from "./controler/plataformas.js";
 import { adicionarNotaJogo, deleteNotaJogo, selectNotasJogos, updateNotaJogo } from "./controler/notaJogo.js";
-import { adicionarPlataformaJogos, deletePlataformaJogos, selectPlataformaJogos } from "./controler/jogoPlataforma.js";
+import { adicionarPlataformaJogos, deletePlataformaJogos, selectPlataformaJogos, updatePlataformaJogos } from "./controler/jogoPlataforma.js";
 
 
 const router = Router();
@@ -35,6 +35,7 @@ router.put('/updateUsuario', updateUsuario);
 router.put('/updateJogo', updateJogo);
 router.put('/updatePlataforma', updatePlataforma);
 router.put('/updateNotaJogo', updateNotaJogo);
+router.put('/updatePlataformaJogo', updatePlataformaJogos);
 
 // Os metódos DELETE da nossa API, chamando as querys de cada banco.
 

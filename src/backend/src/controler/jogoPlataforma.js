@@ -117,10 +117,37 @@ export async function adicionarPlataformaJogos(req, res) {
 
         res.json({
             "statusCode":200
-        })
+        });
 
     } catch (error) {
         console.log("Não foi possível adicionar o item em plataformas_jogos");
+    }
+
+}
+
+export async function updatePlataformaJogos(req, res) {
+
+    const plataformaJogo = req.body;
+
+    try {
+        
+        await db.run(
+            `
+                UPDATE plataformas_jogos
+                SET 
+                idPlataforma=?, 
+                idJogo=? 
+                WHERE 
+                idPlataformaJogo=?
+            `, [plataformaJogo.idPlataforma, plataformaJogo.idJogo, plataformaJogo.idPlataformaJogo]
+        );
+
+        res.json({
+            "statusCode":200
+        });
+
+    } catch (error) {
+        console.log(`Não foi possivel atualizar o item de id ${plataformaJogo.idPlataformaJogo}`);
     }
 
 }
