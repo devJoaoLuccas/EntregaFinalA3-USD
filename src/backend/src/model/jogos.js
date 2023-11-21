@@ -47,9 +47,15 @@ export async function initInserirJogos() {
 
 export async function selectJogos(req, res) {
     
-    await db.all(`SELECT * FROM jogos`)
-            .then(jogos => res.json(jogos));
-
+    try {
+        await db.all(
+            `
+                SELECT * FROM jogos
+            `).then(jogos => res.json(jogos));
+    
+    } catch (error) {
+        console.log(`Não foi possivel selecionar todos os jogos.`)        
+    }
 }
 
 // Query feita para selecionar um jogo da tabela, pelo nome. 
@@ -58,8 +64,16 @@ export async function selectJogo(req, res) {
 
     const name = req.body.name_game;
 
-    await db.get(`SELECT * FROM jogos WHERE name_game=?`,[name])
-            .then(jogos => res.json(jogos));
+    try {
+        await db.get(
+            `
+                SELECT * FROM jogos WHERE name_game=?
+            `,[name])
+                .then(jogos => res.json(jogos)
+        );
+    } catch (error) {
+        console.log(`Não foi possivel selecionar o jogo.`)
+    }
 
 }
 
@@ -70,12 +84,20 @@ export async function adicionarJogo(req,res) {
 
     const jogo = req.body;
 
-    await db.run(`INSERT INTO jogos (name_game, developed_by, category_name, data_criacao, status, note) VALUES (?,?,?,?,?,?)`, 
-                [jogo.name_game, jogo.developed_by, jogo.category_name, jogo.data_criacao, jogo.status, jogo.note]);
+    try {
+        await db.run(
+            `
+                INSERT INTO jogos (name_game, developed_by, category_name, data_criacao, status, note) VALUES (?,?,?,?,?,?)
+            `,[jogo.name_game, jogo.developed_by, jogo.category_name, jogo.data_criacao, jogo.status, jogo.note]
+        );
+    
+        res.json({
+            "statusCode":200
+        });
+    } catch (error) {
+        console.log(`Não foi possivel adicionar o jogo na tabela`);
+    }
 
-    res.json({
-        "statusCode":200
-    });
 
 }
 
@@ -83,13 +105,21 @@ export async function adicionarJogo(req,res) {
 
 export async function updateJogo(req, res) {
 
-    let jogo = req.body;
+    const jogo = req.body;
 
-    await db.run('UPDATE jogos SET name_game=?,developed_by=?,category_name=?,status=?,note=? WHERE idJogo=?',[jogo.name_game, jogo.developed_by, jogo.category_name, jogo.status, jogo.note, jogo.idJogo]);
-
-    res.json({
-        "statusCode":200
-    });
+    try {
+        await db.run(
+            `
+                UPDATE jogos SET name_game=?,developed_by=?,category_name=?,status=?,note=? WHERE idJogo=?
+            `,[jogo.name_game, jogo.developed_by, jogo.category_name, jogo.status, jogo.note, jogo.idJogo]
+        );
+    
+        res.json({
+            "statusCode":200
+        });
+    } catch (error) {
+        console.log(`Não foi possivel atualizar o jogo na tabela.`);
+    }
 
 }
 
@@ -97,14 +127,21 @@ export async function updateJogo(req, res) {
 
 export async function deleteJogo(req, res){ 
 
-    let name = req.body.name_game;
+    const name = req.body.name_game;
 
-    await db.run('DELETE FROM jogos WHERE name_game=?',[name]);
+    try {
+        await db.run(
+            `
+                DELETE FROM jogos WHERE name_game=? 
+            `,[name]
+        );
        
-
-    res.json({
-        "statusCode":201
-    });
+        res.json({
+            "statusCode":201
+        });
+    } catch (error) {
+        console.log(`Não foi possivel deletar o jogo na tabela.`);
+    }
 }
 
 
