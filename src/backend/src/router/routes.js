@@ -1,10 +1,10 @@
 import { Router } from "express";
 
-import { selectUsuarios, selectUsuario, adicionarUsuario, updateUsuario, deleteUsuario } from './model/usuario.js';
-import { selectJogo, selectJogos, adicionarJogo, updateJogo, deleteJogo } from "./model/jogos.js";
-import { adicionarPlataforma, deletePlataforma, selectPlataforma, selectPlataformas, updatePlataforma } from "./model/plataformas.js";
-import { adicionarNotaJogo, deleteNotaJogo, selectNotasJogos, updateNotaJogo } from "./model/notaJogo.js";
-import { adicionarPlataformaJogos, deletePlataformaJogos, selectPlataformaJogos, updatePlataformaJogos } from "./model/jogoPlataforma.js";
+import { selectUsuarios, selectUsuario, adicionarUsuario, updateUsuario, deleteUsuario } from '../model/usuario.js';
+import { selectJogo, selectJogos, adicionarJogo, updateJogo, deleteJogo } from "../model/jogos.js";
+import { adicionarPlataforma, deletePlataforma, selectPlataforma, selectPlataformas, updatePlataforma } from "../model/plataformas.js";
+import { adicionarNotaJogo, deleteNotaJogo, selectNotasJogos, updateNotaJogo } from "../model/notaJogo.js";
+import { adicionarPlataformaJogos, deletePlataformaJogos, selectPlataformaJogos, updatePlataformaJogos } from "../model/jogoPlataforma.js";
 
 
 const router = Router();
