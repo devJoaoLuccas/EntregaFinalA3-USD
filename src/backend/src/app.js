@@ -25,11 +25,15 @@ app.use(router);
 
 // Instância das querys de criação de tabelas padrões (é nescessário rodar no começo da API)
 
-createTableUsuarios();
-createTableJogos(); 
-createTablePlataformas();
-createTableJogosPlataformas();
-createTableNotasJogos();
+try {
+    createTableUsuarios();
+    createTableJogos(); 
+    createTablePlataformas();
+    createTableJogosPlataformas();
+    createTableNotasJogos();
+    } catch (error) {
+    console.log(`Não é possível criar as tabelas!`)
+}
 
 // Instância a inserção de dados por padrão nas tabelas, caso de erro, será enviada uma mensagem no console avisando que não foi possível adicionar os itens
 
