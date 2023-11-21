@@ -83,3 +83,44 @@ export async function initInserirJogoPlataforma() {
     );
 
 }
+
+export async function selectPlataformaJogos(req, res) {
+
+    try {
+        
+        await db.all(
+            `
+                SELECT jogos.name_game, plataformas.nome_plataforma
+                FROM plataformas_jogos
+                JOIN jogos ON plataformas_jogos.idJogo = jogos.idJogo
+                JOIN plataformas ON plataformas_jogos.idPlataforma = plataformas.idPlataforma;
+            `
+        ).then(plataformasJogos => res.json(plataformasJogos));
+    } catch (error) {
+        console.log("Não foi possivel buscar os valores de plataformas_jogos")
+    }
+}
+
+export async function adicionarPlataformaJogos(req, res) {
+
+    const plataformaJogo = req.body;
+
+    try {
+        
+        await db.run(
+            `
+                INSERT INTO plataformas_jogos (idPlataforma, idJogo)
+                VALUES
+                (?,?)
+            `, [plataformaJogo.idPlataforma, plataformaJogo.idJogo]
+        );
+
+        res.json({
+            "statusCode":200
+        })
+
+    } catch (error) {
+        console.log("Não foi possível adicionar o item em plataformas_jogos");
+    }
+
+}
