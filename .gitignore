@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 src/backend/src/node_modules
 src/backend/database.db
 
 node_modules
+=======
+src/backend/node_modules
+node_modules
+src/backend/src/database.db
+>>>>>>> main
