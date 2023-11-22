@@ -14,7 +14,7 @@ const router = Router();
 router.get('/jogo', selectJogo);
 router.get('/usuario', selectUsuario);
 router.get('/plataforma', selectPlataforma);
-router.get('/usuariosJogos', selectNotasJogos);
+router.get('/notasJogos', selectNotasJogos);
 router.get('/plataformasJogos', selectPlataformaJogos);
 
 router.get('/jogos', selectJogos);
