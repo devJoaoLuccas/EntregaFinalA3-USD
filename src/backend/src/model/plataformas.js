@@ -41,19 +41,38 @@ export async function initInserirPlataformas() {
 
 export async function selectPlataformas(req, res) {
 
-    await db.all(`SELECT * FROM plataformas`)
-            .then(plataformas => res.json(plataformas));
+    try {
+        await db.all(
+            `
+                SELECT * 
+                FROM plataformas
+            `)
+        .then(plataformas => res.json(plataformas));
 
+    } catch (error) {
+        console.log(`Não foi possivel selecionar as plataformas`);
+    }
 }
 
 // Query feita para selecionar uma plataforma da tabela, pelo nome. 
 
 export async function selectPlataforma(req, res) {
 
-    let plataforma = req.body;
+    const plataforma = req.body;
 
-    await db.run(`SELECT * FROM plataformas WHERE nome_plataforma =?`, [plataforma.nome_plataforma])
-            .then(plataformas => res.json(plataformas));
+    try {   
+
+        await db.run(
+            `
+                SELECT *
+                FROM plataformas 
+                WHERE nome_plataforma =?
+            `, [plataforma.nome_plataforma])
+        .then(plataformas => res.json(plataformas));
+} catch (error) {
+        console.log(`Não foi possivel selecionar a plataforma ${plataforma.nome_plataforma}`);       
+  }
+
 }
 
 
@@ -61,13 +80,26 @@ export async function selectPlataforma(req, res) {
 
 export async function adicionarPlataforma(req, res) {
 
-    let plataforma = req.body;
+    const plataforma = req.body;
 
-    await db.run(`INSERT INTO plataformas (nome_plataforma) values ("?")`, [plataforma.nome_plataforma]);
+    try {
 
-    res.json({
-        "statusCode":200
-    });
+        await db.run(
+            `
+                INSERT INTO plataformas 
+                (nome_plataforma) 
+                VALUES ("?")
+            `, [plataforma.nome_plataforma]);
+
+        res.json({
+            "statusCode":200
+        });
+                
+    } catch (error) {
+        console.log("Não foi possivel inserir os dados em plataformas");
+    }
+
+  
 
 }
 
@@ -75,13 +107,23 @@ export async function adicionarPlataforma(req, res) {
 
 export async function updatePlataforma(req, res) {
 
-    let plataforma = req.body;
+    const plataforma = req.body;
 
-    await db.run(`UPDATE plataformas SET nome_plataforma =?, WHERE ID =? `);
+    try {
+        await db.run(
+            `
+                UPDATE plataformas 
+                SET nome_plataforma =?, 
+                WHERE id =?
+            `);
 
     res.json({
         "statusCode":200
     });
+
+    } catch (error) {
+        console.log(`Não foi possivel atualizar a plataforma de id ${plataforma.idPlataforma}`);   
+    }
 
 }
 
@@ -89,11 +131,23 @@ export async function updatePlataforma(req, res) {
 
 export async function deletePlataforma(req,res) {
 
-    let plataforma = req.body;
+    const plataforma = req.body;
 
-    await db.run(`DELETE FROM plataformas WHERE nome_plataforma =?`, [plataforma.nome_plataforma]);
+    try {
+        await db.run(
+                    `
+                        DELETE 
+                        FROM plataformas 
+                        WHERE nome_plataforma =?    
+                    `, [plataforma.nome_plataforma]);
 
     res.json({
         "statusCode":201
-    });
+    });    
+
+    } catch (error) {
+        console.log(`Não foi possivel deletar o plataformas ${plataforma.nome_plataforma}`);
+    }
+
+    
 }
