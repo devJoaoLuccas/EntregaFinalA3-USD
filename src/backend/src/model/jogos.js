@@ -50,7 +50,9 @@ export async function selectJogos(req, res) {
     try {
         await db.all(
             `
-                SELECT * FROM jogos
+                SELECT * 
+                FROM
+                jogos
             `).then(jogos => res.json(jogos));
     
     } catch (error) {
@@ -67,7 +69,9 @@ export async function selectJogo(req, res) {
     try {
         await db.get(
             `
-                SELECT * FROM jogos WHERE name_game=?
+                SELECT * 
+                FROM 
+                jogos WHERE name_game=?
             `,[name])
                 .then(jogos => res.json(jogos)
         );
@@ -87,7 +91,10 @@ export async function adicionarJogo(req,res) {
     try {
         await db.run(
             `
-                INSERT INTO jogos (name_game, developed_by, category_name, data_criacao, status, note) VALUES (?,?,?,?,?,?)
+                INSERT INTO 
+                jogos 
+                (name_game, developed_by, category_name, data_criacao, status, note) 
+                VALUES (?,?,?,?,?,?)
             `,[jogo.name_game, jogo.developed_by, jogo.category_name, jogo.data_criacao, jogo.status, jogo.note]
         );
     
@@ -110,7 +117,10 @@ export async function updateJogo(req, res) {
     try {
         await db.run(
             `
-                UPDATE jogos SET name_game=?,developed_by=?,category_name=?,status=?,note=? WHERE idJogo=?
+                UPDATE 
+                jogos 
+                SET name_game=?,developed_by=?,category_name=?,status=?,note=? 
+                WHERE idJogo=?
             `,[jogo.name_game, jogo.developed_by, jogo.category_name, jogo.status, jogo.note, jogo.idJogo]
         );
     
@@ -132,7 +142,9 @@ export async function deleteJogo(req, res){
     try {
         await db.run(
             `
-                DELETE FROM jogos WHERE name_game=? 
+                DELETE 
+                FROM jogos
+                 WHERE name_game=? 
             `,[name]
         );
        
