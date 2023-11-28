@@ -12,7 +12,7 @@ export async function createTablePlataformas() {
             `
             CREATE TABLE IF NOT EXISTS plataformas 
                 (idPlataforma INTEGER PRIMARY KEY AUTOINCREMENT, 
-                nome_plataforma TEXT CHECK (LENGTH(nome_plataforma) <= 50) NOT NULL)
+                nome_plataforma NOT NULL)
             `
             );
 
@@ -80,24 +80,23 @@ export async function selectPlataforma(req, res) {
 
 export async function adicionarPlataforma(req, res) {
 
-    const plataforma = req.body;
+    const plataforma = req.body.nome_plataforma;
 
-    try {
+       try {
+            await db.run(
+                `
+                    INSERT INTO plataformas 
+                    (nome_plataforma) 
+                    VALUES (?)
+                `, [plataforma]) ;
 
-        await db.run(
-            `
-                INSERT INTO plataformas 
-                (nome_plataforma) 
-                VALUES ("?")
-            `, [plataforma.nome_plataforma]);
-
-        res.json({
-            "statusCode":200
-        });
+            res.json({
+                "statusCode":200
+            });
                 
-    } catch (error) {
-        console.log("Não foi possivel inserir os dados em plataformas");
-    }
+       } catch (error) {
+            console.log("Não foi possivel adicionar a plataforma.")
+       }
 
   
 
