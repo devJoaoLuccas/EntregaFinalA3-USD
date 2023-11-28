@@ -16,8 +16,7 @@ export async function createTableJogos() {
                 developed_by TEXT CHECK (LENGTH(developed_by) <= 50) NOT NULL,
                 category_name TEXT CHECK (LENGTH(category_name) <= 50) NOT NULL,
                 data_criacao BLOB NOT NULL,
-                note REAL NOT NULl,
-                FOREIGN KEY (note) REFERENCES notas_jogos (note) ON DELETE CASCADE)
+                note REAL NOT NULL)
             `
                 );
 }
@@ -25,22 +24,30 @@ export async function createTableJogos() {
 // Querry feita para adicionar 10 valores por padrão. 
 
 export async function initInserirJogos() {
-    await db.run(
+     
+    try {
+        await db.run(
             `
-                INSERT INTO jogos (idJogo, name_game, developed_by, category_name, data_criacao, note) 
-                VALUES
-                    (1, 'League Of Legends', 'Riot Games', 'MOBA','2009-10-01', 10),
-                    (2, 'Assassin"s Creed II', 'Ubsisoft', 'Ação e Aventura', '2009-09-17', 10),
-                    (3, 'The Witcher 3:Wild Hunt', 'CD Projekt RED', 'RPG', '2015-05-10' 10),
-                    (4, 'Pokemon Go', 'Niantic,Inc', 'Realidade Aumentada', '2016-07-06', 10),
-                    (5, 'Fortnite', 'Epic Games', 'Battle Royale', '2017-07-25', 10),
-                    (6, 'Dark Souls', 'FromSoftware', 'RPG de ação', '2011-09-22', 10),
-                    (7, 'Minecraft', 'Mojang Studios', 'Sandbox', '2011-01-01', 10),
-                    (8, 'The Elder Scrolls V: Skyrim', 'Bethesda', 'RPG de ação', '2011-11-11', 10),
-                    (9, 'Grand Thef Auto V', 'Rockstart North', 'Ação-Aventura', '2013-09-17', 10),
-                    (10, 'The Legend of Zelda: Ocarina of Time', 'Nintendo', 'Ação-Aventura', '1998-01-01', 10)
+            INSERT INTO jogos (idJogo, name_game, developed_by, category_name, data_criacao, note) 
+            VALUES
+                (1,'League Of Legends', 'Riot Games', 'MOBA', '2009-10-01', 8.50),
+                (2,'Assassin''s Creed II', 'Ubisoft', 'Ação e Aventura', '2009-09-17', 10),
+                (3,'The Witcher 3: Wild Hunt', 'CD Projekt RED', 'RPG', '2015-05-19', 9.90),
+                (4,'Pokemon Go', 'Niantic, Inc', 'Realidade Aumentada', '2016-07-06', 8.50),
+                (5,'Fortnite', 'Epic Games', 'Battle Royale', '2017-07-25', 8.80),
+                (6,'Dark Souls', 'FromSoftware', 'RPG de ação', '2011-09-22', 9.60),
+                (7,'Minecraft', 'Mojang Studios', 'Sandbox', '2011-01-01', 10),
+                (8,'The Elder Scrolls V: Skyrim', 'Bethesda', 'RPG de ação', '2011-11-11', 9.40),
+                (9,'Grand Thef Auto V', 'Rockstar North', 'Ação-Aventura', '2013-09-17', 9.70),
+                (10,'The Legend of Zelda: Ocarina of Time', 'Nintendo', 'Ação-Aventura', '1998-01-01', 10);
+            
             `
-);
+); 
+    } catch (error) {
+        console.log("Não foi possivel inicializar os dados na tabela de jogos.");
+    }
+  
+
 }
 
 // Query feita para selecionar todos os jogos da tabela. 
