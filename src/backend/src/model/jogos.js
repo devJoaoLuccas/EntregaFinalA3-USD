@@ -28,18 +28,18 @@ export async function initInserirJogos() {
     try {
         await db.run(
             `
-            INSERT INTO jogos (name_game, developed_by, category_name, data_criacao, note) 
+            INSERT INTO jogos (idJogo, name_game, developed_by, category_name, data_criacao, note) 
             VALUES
-                ('League Of Legends', 'Riot Games', 'MOBA', '2009-10-01', 8.50),
-                ('Assassin''s Creed II', 'Ubisoft', 'Ação e Aventura', '2009-09-17', 10),
-                ('The Witcher 3: Wild Hunt', 'CD Projekt RED', 'RPG', '2015-05-19', 9.90),
-                ('Pokemon Go', 'Niantic, Inc', 'Realidade Aumentada', '2016-07-06', 8.50),
-                ('Fortnite', 'Epic Games', 'Battle Royale', '2017-07-25', 8.80),
-                ('Dark Souls', 'FromSoftware', 'RPG de ação', '2011-09-22', 9.60),
-                ('Minecraft', 'Mojang Studios', 'Sandbox', '2011-01-01', 10),
-                ('The Elder Scrolls V: Skyrim', 'Bethesda', 'RPG de ação', '2011-11-11', 9.40),
-                ('Grand Thef Auto V', 'Rockstar North', 'Ação-Aventura', '2013-09-17', 9.70),
-                ('The Legend of Zelda: Ocarina of Time', 'Nintendo', 'Ação-Aventura', '1998-01-01', 10);
+                (1,'League Of Legends', 'Riot Games', 'MOBA', '2009-10-01', 8.50),
+                (2,'Assassin''s Creed II', 'Ubisoft', 'Ação e Aventura', '2009-09-17', 10),
+                (3,'The Witcher 3: Wild Hunt', 'CD Projekt RED', 'RPG', '2015-05-19', 9.90),
+                (4,'Pokemon Go', 'Niantic, Inc', 'Realidade Aumentada', '2016-07-06', 8.50),
+                (5,'Fortnite', 'Epic Games', 'Battle Royale', '2017-07-25', 8.80),
+                (6,'Dark Souls', 'FromSoftware', 'RPG de ação', '2011-09-22', 9.60),
+                (7,'Minecraft', 'Mojang Studios', 'Sandbox', '2011-01-01', 10),
+                (8,'The Elder Scrolls V: Skyrim', 'Bethesda', 'RPG de ação', '2011-11-11', 9.40),
+                (9,'Grand Thef Auto V', 'Rockstar North', 'Ação-Aventura', '2013-09-17', 9.70),
+                (10,'The Legend of Zelda: Ocarina of Time', 'Nintendo', 'Ação-Aventura', '1998-01-01', 10);
             
             `
 ); 
