@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 
 import router from './router/routes.js';
 
@@ -18,6 +19,8 @@ const app = express();
 // Diz que o nosso servidor vai usar express cm json
 
 app.use(express.json());
+
+app.use(cors());
 
 // Diz que o nosso servidor esta utilizando as rotas de router. 
 
