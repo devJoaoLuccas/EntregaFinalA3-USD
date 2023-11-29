@@ -1,0 +1,154 @@
+:root {
+    font-size: 62.5%;
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+    --cinza: #cac2c2;
+}
+
+h2 { 
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+main {
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerPlataform {
+    background-color: #865dff;
+}
+
+.cardPlataform {
+    display: flex;
+    flex-direction: column;
+
+    width: 20rem;
+    height: 20em;
+
+    align-items: center;
+    color: #fff;
+
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: 2rem;
+
+    transition: all .4s ease-in-out;
+    cursor:pointer;
+}
+
+.cardGame {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    background-color: var(--cor-card);
+
+    width: 30rem;
+    height: 48rem;
+
+    border-radius: 1.5rem;
+    gap: 3rem;
+}
+
+.cardPlataform:hover {
+    transition: .4s;
+    transform: scale(1.1);
+
+    background-color: var(--botao);
+    color: #000;
+}
+
+.card-row, .card-rowGames {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    gap: 10rem;
+    
+    margin-top: 10rem;
+    height: 100vh;
+}
+
+.card-rowGames {
+    gap: 5rem;
+}
+
+.grupo { 
+    display: flex;
+    width: 120rem;
+}
+
+.grupo-game {
+    display: flex;
+    align-items: center;
+    width: 140rem;
+}
+
+.plataform-icon {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 15rem;
+    height: 12.5rem;
+}
+
+.game-icon {
+    width: 25rem;
+    height: 20rem;
+}
+
+.plataform-text {
+    font: 300 1.8rem 'black ops one';
+}
+
+.game-info { 
+    font: 300 1.6rem 'Arial';
+    color: #fff;
+}
+
+.game-info li {
+    margin-bottom: 0.3rem;
+    margin-left: 1.5rem;
+}
+
+.button-avaliar{ 
+    width: 25rem;
+    height: 4rem;
+
+    background-color: var(--botao);
+    border: none;
+    border-radius: 1rem;
+
+    font: 400 2rem 'black ops one';
+    
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.button-avaliar:hover {
+    transition: .4s;
+    transform: scale(1.1);
+    background-color: var(--cor-fundo);
+    color: #fff;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    html { 
+        min-width: fit-content;
+    }
+
+    .grupo { 
+        width: 60rem;
+    }
+}

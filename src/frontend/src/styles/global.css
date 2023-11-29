@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@300&family=Teko:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+}
+
+body {
+    background-color: var(--cor-fundo);
+}
+
+header { 
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+header h1 {
+    font: 500 3rem 'Arial';
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    background-color: #865dff;
+}
+
+
+.card-login {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 70rem;
+    height: 60rem;
+
+    background-color: #191825;
+    border-radius: 2.5rem;
+    border: none;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card-infos, .card-infosF {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    text-align: center;
+
+    margin-top: 3rem;
+    gap: 4rem;
+
+    font: 400 1.5rem 'Arial';
+    color: #fff;
+    
+}
+
+.card-infosF {
+    gap: 3rem;
+}
+
+.card-inputs {
+    display: flex;
+    flex-direction: column;
+
+    text-align: start;
+
+    gap: 2rem;
+}
+
+.logo { 
+    margin-left: 2.5rem;
+    width: 15rem;
+}
+
+
+
+.input-text {
+    width: 60rem;
+    height: 4.5rem;
+    padding-left: 1.5rem;
+
+    border: none;
+    border-radius: 1rem;
+    
+    background-color: #514769;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: #fff;
+    
+    outline: none;
+}
+
+.input-text::placeholder {
+    color: lightgray;
+}
+
+.input-label {
+    font: 400 1.5rem 'Arial';
+    padding-left: 0.5rem;
+}
+
+
+.footer-login {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+}
+
+.footer-login button { 
+    width: 60rem;
+    height: 5rem;
+}
+
+.footer-login a {
+    color: #fff;
+
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    
+}
+
+.dropdown-text, .dropdown-textF {
+    font: 300 1.5rem 'black ops one';
+    color: #fff;
+}
+
+.dropdown-textF {
+    margin-right: 55rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    align-items: flex-end;
+    
+    min-width: 160px;
+    
+    margin-left: 2%;
+    padding: 10px 5px;
+    
+    z-index: 1;
+    
+    color: #fff;
+    font: normal 15px 'black ops one';
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #ffa3fd;
+    cursor: pointer;
+}
+
+.dropdown-content a {
+    color: #000;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #865dff;
+    color: #fff;
+    transition: .4s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+  }

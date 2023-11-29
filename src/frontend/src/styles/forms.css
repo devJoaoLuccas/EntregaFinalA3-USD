@@ -1,0 +1,263 @@
+:root {
+    font-size: 62.5%;
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+    --cinza: #cac2c2;
+}
+
+
+.containerForms {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: 100vh;
+    background-color: var(--cor-fundo);
+}
+
+.card-addPlataform, .card-addGames, .card-avaliar {
+    display: flex;
+    flex-direction: column;
+
+    width: 70rem;
+    height: 40rem;
+
+    background-color: var(--cor-card);
+    border-radius: 2rem;
+    border: none;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card-addGames { 
+    width: 70rem;
+    height: 60rem;
+}
+
+.card-avaliar {
+    height: 33rem;
+}
+
+
+.card-infoPlataform, .card-infoGames {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+
+    gap: 2rem;
+    
+}
+
+.card-infosFaleConosco {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    text-align: center;
+
+    margin-top: 3rem;
+    gap: 0rem;
+
+    font: 400 1.5rem 'Arial';
+    color: #fff;
+}
+
+.card-infoGames-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardRow-avaliar {
+    display: flex;
+
+    gap: 4rem;
+}
+
+.cardColumn-avaliar {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.card-infoGames-inputText, .card-inputDate, .card-inputMsg, .card-info-inputNumber {
+    width: 54rem;
+    height: 4rem;
+
+    border: none;
+    outline: none;
+    border-radius: 0.8rem;
+
+    background-color: var(--cor-secundaria);
+    color: rgb(255, 255, 255);
+
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+}
+
+.card-infoGames-inputText::placeholder, .card-inputDate::placeholder {
+    color: var(--cinza);
+}
+
+.card-info-faleConosco {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    margin-top: 2rem;
+    margin-right: 10rem;
+
+    font: lighter 1.8rem 'Arial';
+    color: #fff;
+}
+
+.card-inputMsg {
+    width: 40rem;
+    height: 4rem;
+
+    margin-left: 1.2rem;
+}
+
+.card-inputMsg-x {
+    width: 40rem;
+    height: 4rem;
+    
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    outline: none;
+    border-radius: 0.8rem;
+
+    background-color: var(--cor-secundaria);
+
+    margin-left: 2.8rem;
+    padding-left: 1rem;
+}
+
+.card-info-inputNumber {
+    width: 20rem; 
+    height: 4rem;   
+}
+
+
+.card-infos-row { 
+    display: flex;
+    flex-direction: row;
+
+}
+
+.infosLabel {
+    display: flex;
+    align-items: center;
+
+    margin-right: 1rem;
+    font: 400 1.7rem 'Arial';
+}
+
+.input-label-avaliar, .input-label-avaliarX, .input-label-avaliarY {
+    margin-right: 1rem;
+    font: 400 1.8rem 'Arial';
+}
+
+.input-label-avaliarX {
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    text-align: start;
+}
+
+.input-label-avaliarY {
+    text-align: end;
+}
+
+
+.card-infoGames-select, .card-infoGames-selectX {
+    width: 25rem;
+    height: 4rem;
+
+    outline: none;
+    border: none;
+    border-radius: 0.8rem;
+
+    font: 600 1.3rem 'Arial';
+    cursor: pointer;
+    padding-left: 0.5rem;
+
+    background-color: var(--cor-secundaria);
+    color: var(--branco);
+}
+
+.card-infoGames-selectX {
+    width: 20rem;
+}
+
+.card-infoGames-label {
+    padding-left: 0.5rem;
+    font: 400 1.5rem 'Arial';
+    
+    margin-bottom: 0.5rem;
+}
+
+.card-infoGames h1 {
+    font: 500 3rem 'black ops one';
+}
+
+.card-inputDate {
+    width: 12rem;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+}
+
+.card-faleConosco-textArea {
+    width: 40rem;
+    height: 20rem;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
+    padding-left: 1rem;
+    padding-top: 1rem;
+    
+    color: #fff;
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: 0.8rem;
+    outline: none;
+}
+
+.infosLabel-x {
+    margin-top: 2rem;
+    margin-right: 1rem;
+}
+
+
+.cardColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-plataform {
+    display:flex;
+    flex-direction: row;
+
+    gap: 5rem;
+}
+
+.logoPlataform {
+    margin-top: 3rem;
+    width: 15rem;
+}
+
+

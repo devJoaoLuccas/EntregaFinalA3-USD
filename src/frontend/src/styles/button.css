@@ -1,0 +1,50 @@
+.buttonLogin {
+    border: none;
+    border-radius: 0.8rem;
+
+    width: 15rem;
+    height: 4rem;
+    
+    background-color: #ffa3fd;
+    font: bolder 2rem 'Arial';
+
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.buttonLogin:hover, .buttonMenu:hover, .buttonAddPlataform:hover, .buttonAddGames:hover{
+    transition: .5s;
+    transform: scale(1.02);
+
+    background-color: #865dff;
+    color: #fff;
+}
+
+.buttonMenu, .buttonAddPlataform, .buttonAddGames {
+    border: none;
+    border-radius: 0.8rem;
+
+    width: 50rem;
+    height: 7rem;
+
+    background-color: #ffa3fd;
+    font: bolder 2.5rem 'black ops one';
+
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.buttonAddPlataform {
+    width: 20rem;
+    height: 5rem;
+
+    font-size: 2rem;
+
+}
+
+.buttonAddGames {
+    width: 25rem;
+    height: 5rem;
+
+    font-size: 2rem;
+}
