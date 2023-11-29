@@ -12,9 +12,6 @@ import Plataforma from './pages/menus/Plataforma.jsx';
 
 function App() {
 
-  return (
-    <Jogos />
-  )
 }
 
 export default App;
