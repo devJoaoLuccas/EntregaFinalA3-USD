@@ -1,0 +1,86 @@
+nav {
+    height: 8rem;
+    background-color: #000;
+
+}
+
+footer {
+    height: 2rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'black ops one';
+    color: #fff;
+}
+
+.cabecalho-teste {
+    margin-right: 7%;
+}
+.cabecalho a {
+    color: #FFF;
+}
+
+.cabecalho-dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.cabecalho-dropdown-text {
+    display: flex;
+
+    margin-top: 3rem;
+    padding-right: 2rem;
+
+    font: 300 1.8rem 'black ops one';
+    color: #fff;
+}
+
+.cabecalho-dropdown-content {
+    display: none;
+    position: absolute;
+    
+    min-width: 160px;
+    
+    padding: 10px 5px;
+    
+    z-index: 1;
+    
+    font: normal 15px 'black ops one';
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #3b3952;
+}
+
+.cabecalho-dropdown-content a {
+        color: #fff;
+        padding: 5px;
+        text-decoration: none;
+        display: block;
+}
+
+.cabecalho-dropdown-content a:hover {
+    background-color: #865dff;
+    color: #000;
+    transition: .4s;
+}
+
+.cabecalho-dropdown:hover .cabecalho-dropdown-content {
+    display: block;
+  }
+
+.logoNav {
+    margin-top: 1rem;
+    margin-left: 17.5rem;
+    width: 12rem;
+    height: 7rem;
+}

@@ -44,8 +44,16 @@ export async function initInserirUsuario() {
 
 export async function selectUsuarios(req, res) {
     
-    await db.all('SELECT * FROM usuarios')
-                .then(usuario => res.json(usuario));
+    try {
+        await db.all(
+            `
+                SELECT * 
+                FROM usuarios
+            `)
+            .then(usuario => res.json(usuario));
+    } catch (error) {
+        console.log(`Não foi possivel selectionar todos os usuários`);
+    }
                   
 }
 
@@ -53,10 +61,20 @@ export async function selectUsuarios(req, res) {
 
 export async function selectUsuario(req,res) {
 
-    let username = req.body.username;
+    const username = req.body.username;
 
-    await db.get('SELECT * FROM usuarios WHERE username=?', [username])
-                    .then(usuario => res.json(usuario));
+    try {    
+        await db.get(
+            `
+                SELECT *
+                FROM usuarios 
+                WHERE username=? 
+            `, [username])
+                .then(usuario => res.json(usuario));
+    } catch (error) {
+        console.log(`Não foi possivel selecionar o usuario`)
+    }
+
   
 }
 
@@ -64,27 +82,45 @@ export async function selectUsuario(req,res) {
 
 export async function adicionarUsuario(req,res) {
 
-    let usuario = req.body;
+    const usuario = req.body;
 
-    await db.run('INSERT INTO usuarios (username, email, password, data_nascimento) VALUES (?,?,?,?)', [usuario.username, usuario.email,usuario.password, usuario.data_nascimento]);
+    try {
+        await db.run(
+            `
+                INSERT INTO usuarios 
+                (username, email, password, data_nascimento) 
+                VALUES (?,?,?,?)'
+            `, [usuario.username, usuario.email,usuario.password, usuario.data_nascimento]);
 
-    res.json ({
-        "statusCode": 200
-    });
-
+        res.json ({
+            "statusCode": 200
+        });    
+    } catch (error) {
+        console.log(`Não foi possivel adicionar usuário`);
+    }
+    
 }
 
 // Query feita para atualizar um usuário em especificio da tabela. 
 
 export async function updateUsuario(req, res) {
 
-    let usuario = req.body;
+    const usuario = req.body;
 
-    await db.run('UPDATE usuarios SET username=?,password=? WHERE idUser=?', [usuario.username, usuario.password, usuario.idUser]);
+    try {
+        await db.run(
+            `
+                UPDATE usuarios
+                SET username=?,password=? 
+                WHERE idUser=?
+            `, [usuario.username, usuario.password, usuario.idUser]);
 
-    res.json ({
-        "statusCode": 200
-    });
+        res.json ({
+            "statusCode": 200
+        });
+    } catch (error) {
+        console.log(`Não foi possivel atualizar o usuário`)        
+    }
 
 }
 
@@ -92,9 +128,23 @@ export async function updateUsuario(req, res) {
 
 export async function deleteUsuario(req, res) {
 
-    let username = req.body.username;
+    const username = req.body.username;
 
-    await db.all('DELETE FROM usuarios WHERE username=?', [username])
-                .then(usuario => res.json(usuario));
+    try {
+        await db.all(
+            `
+                DELETE FROM
+                usuarios 
+                WHERE username=?
+            `, [username]);
+
+        res.json ({
+                "statusCode": 200
+        });
+        
+    } catch (error) {
+       console.log(`Não foi possivel deletar o usuario`) 
+    }
+
 
 }
