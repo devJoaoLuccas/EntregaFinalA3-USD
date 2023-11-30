@@ -14,7 +14,7 @@ export async function createTableNotasJogos() {
                 idUser INTEGER NOT NULL, 
                 note REAL NOT NULL,
                 idJogo INTEGER NOT NULL, 
-                status TEXT,
+                categoria TEXT,
                 FOREIGN KEY (idUser) REFERENCES usuarios (idUser) ON DELETE CASCADE,
                 FOREIGN KEY (status) REFERENCES jogos (stauts) ON DELETE CASCADE,
                 FOREIGN KEY (idJogo) REFERENCES jogos (idJogo) ON DELETE CASCADE)
