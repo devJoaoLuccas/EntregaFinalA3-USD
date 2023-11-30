@@ -16,7 +16,6 @@ export async function createTableJogos() {
                 developed_by TEXT CHECK (LENGTH(developed_by) <= 50) NOT NULL,
                 category_name TEXT CHECK (LENGTH(category_name) <= 50) NOT NULL,
                 data_criacao BLOB NOT NULL,
-                status TEXT,
                 note REAL)
             `
                 );

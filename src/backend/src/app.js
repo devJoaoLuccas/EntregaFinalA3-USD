@@ -10,6 +10,7 @@ import { createTablePlataformas, initInserirPlataformas } from './model/platafor
 
 import { createTableJogosPlataformas, initInserirJogoPlataforma } from './model/jogoPlataforma.js';
 import { calcularMedia, createTableNotasJogos, initInserirNotasJogos } from './model/notaJogo.js';
+import { createTableCategorias, initCategorias } from './model/categoria.js';
 
 
 // criar o nosso servidor e instancia a biblioteca express do node 
@@ -34,23 +35,24 @@ try {
     createTablePlataformas();
     createTableJogosPlataformas();
     createTableNotasJogos();
+    createTableCategorias();
     } catch (error) {
     console.log(`Não é possível criar as tabelas!`)
 }
 
 // Instância a inserção de dados por padrão nas tabelas, caso de erro, será enviada uma mensagem no console avisando que não foi possível adicionar os itens
 
-try {
    await initInserirJogos();   
    await initInserirUsuario(); 
    await initInserirPlataformas();
    await initInserirJogoPlataforma();
    await initInserirNotasJogos();
-} catch (error) {
-    console.log("Não foi possivel adicionar os itens, provavelmente já foram adicionados.")
-}
+   await initCategorias();
 
-calcularMedia();
+
+// Função para calcular a média dos jogos e inserir na tabela jogos a partir do idJogo  
+    
+    calcularMedia();
 
 // O servidor está ouvindo pela porta 3000 
 
