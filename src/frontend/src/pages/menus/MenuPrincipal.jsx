@@ -15,9 +15,15 @@ function MenuPrincipal() {
                 <div className="card-infos">
                     <h1>BEM VINDO AO <span>THE GAME BAY</span></h1>
                     <h2>MENU:</h2>
-                    <ButtonMenu texto="JOGOS" />
-                    <ButtonMenu texto="PLATAFORMAS" />
-                    <ButtonMenu texto="FALE CONOSCO" />
+                    <ButtonMenu 
+                        texto="JOGOS" 
+                    />
+                    <ButtonMenu 
+                        texto="PLATAFORMAS" 
+                    />
+                    <ButtonMenu 
+                        texto="FALE CONOSCO" 
+                    />
                 </div>
                 <div className="footerMenu">
                     <div class="dropdown">

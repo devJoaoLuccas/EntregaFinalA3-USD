@@ -14,10 +14,18 @@ function PainelDeAdministrador() {
                 <div className="card-infos">
                     <h1>PAINEL DE <span>ADMINISTRADOR</span></h1>
                     <h2>MENU:</h2>
-                    <ButtonMenu texto="ADICIONAR JOGOS" />
-                    <ButtonMenu texto="ADICIONAR PLATAFORMAS" />
-                    <ButtonMenu texto="EDITAR E DELETAR" />
-                    <ButtonMenu texto="<- VOLTAR" />
+                        <ButtonMenu 
+                            texto="ADICIONAR JOGOS" 
+                        />
+                        <ButtonMenu 
+                            texto="ADICIONAR PLATAFORMAS" 
+                        />
+                        <ButtonMenu 
+                            texto="EDITAR E DELETAR" 
+                        />
+                        <ButtonMenu 
+                            texto="<- VOLTAR" 
+                        />
                 </div>
                 <div className="footerMenu">
                     <div class="dropdown">

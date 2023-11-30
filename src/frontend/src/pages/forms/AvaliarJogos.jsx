@@ -8,7 +8,6 @@ import '../../styles/global.css';
 
 function AvaliarJogo() {
 
-
     return (
 
         <main className="container">
@@ -23,18 +22,27 @@ function AvaliarJogo() {
                                     <SelectStatus 
                                         classeLabel='input-label-avaliarX'  
                                         classeSelect='card-infoGames-selectX'
-                                        texto='Status' />
+                                        texto='Status' 
+                                    />
                                 </div>
                                 <div className="cardColumn-avaliar">
                                     <InputNumber 
                                         texto='Selecione a nota:'
-                                        classeInput="card-info-inputNumber" classeLabel='input-label-avaliarY' />
+                                        classeInput="card-info-inputNumber" 
+                                        classeLabel='input-label-avaliarY' 
+                                    />
                                 </div>
                         </div>
                         <footer>
                             <div className='footer-plataform'>
-                                <ButtonLogin texto='Enviar'  classe='buttonAddPlataform'/>
-                                <ButtonLogin texto='Cancelar'  classe='buttonAddPlataform'/>
+                                <ButtonLogin 
+                                    texto='Enviar'  
+                                    classe='buttonAddPlataform'
+                                />
+                                <ButtonLogin 
+                                    texto='Cancelar'  
+                                    classe='buttonAddPlataform'
+                                />
                             </div>
                         </footer>
                         <div class="dropdown">

@@ -56,10 +56,21 @@ function AddPlataform() {
                         <div>
                             <h1>Adicionar Plataforma</h1>
                         </div>
-                        <InputText label="Nome da plataforma" classe="input-text" textoCapturado={setPlataformName}  classeLabel='input-label' />
+                        <InputText 
+                            label="Nome da plataforma" 
+                            classe="input-text" 
+                            textoCapturado={setPlataformName}  
+                            classeLabel='input-label' 
+                        />
                         <div className='footer-plataform'>
-                            <ButtonLogin texto='Enviar'  classe='buttonAddPlataform'/>
-                            <ButtonLogin texto='Cancelar'  classe='buttonAddPlataform'/>
+                            <ButtonLogin 
+                                texto='Enviar'  
+                                classe='buttonAddPlataform'
+                            />
+                            <ButtonLogin 
+                                texto='Cancelar'  
+                                classe='buttonAddPlataform'
+                            />
                         </div>   
                 </form>
             </section>

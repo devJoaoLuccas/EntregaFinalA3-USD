@@ -30,7 +30,9 @@ function Jogos() {
                 <main>
                     <section className="grupo-game">
                         <div className="card-rowGames">
-                            <CardGame jogos={jogos} />
+                            <CardGame 
+                                jogos={jogos} 
+                            />
                         </div>  
                     </section>
                 </main>

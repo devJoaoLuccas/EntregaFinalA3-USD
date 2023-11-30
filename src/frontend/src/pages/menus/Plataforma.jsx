@@ -31,7 +31,9 @@ function Plataforma() {
             <main className="container">
                     <section className="grupo">
                         <div className="card-row">
-                            <CardPlataform plataformas={plataforma} />
+                            <CardPlataform 
+                                plataformas={plataforma} 
+                            />
                         </div>
                     </section>
             </main>

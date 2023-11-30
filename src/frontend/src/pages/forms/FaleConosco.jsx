@@ -46,7 +46,8 @@ function FaleConosco() {
                                 </label>
                                 <InputText 
                                 classe='card-inputMsg-x' 
-                                texto='Assunto' />
+                                texto='Assunto' 
+                                />
                             </div>
                             <div className='card-infos-row'>
                               <TextArea 
@@ -57,8 +58,14 @@ function FaleConosco() {
                             </div>
                         </div>
                         <div className='footer-plataform'>
-                            <ButtonLogin texto='Enviar'  classe='buttonAddPlataform'/>
-                            <ButtonLogin texto='Cancelar'  classe='buttonAddPlataform'/>
+                            <ButtonLogin 
+                                texto='Enviar'  
+                                classe='buttonAddPlataform'
+                            />
+                            <ButtonLogin 
+                                texto='Cancelar'  
+                                classe='buttonAddPlataform'
+                            />
                         </div>   
                     </div>
                 </form>
