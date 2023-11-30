@@ -1,5 +1,7 @@
 import ButtonLogin from "../../components/buttons/ButtonLogin";
 import ButtonMenu from "../../components/buttons/ButtonMenu";
+import { useNavigate } from "react-router-dom";
+
 
 import '../../styles/menu.css'
 import '../../styles/global.css'
@@ -7,6 +9,21 @@ import '../../styles/global.css'
 
 
 function MenuPrincipal() {
+
+
+    const navigate = useNavigate();
+    
+    const handleContactJogos = () => {
+        return navigate("/jogos")
+    }
+
+    const handleContactPlataforma = () => {
+        return navigate("/plataforma")
+    }
+
+    const handleContactFaleConosco = () => {
+        return navigate("/faleConosco")
+    }
 
     return (
 
@@ -16,12 +33,15 @@ function MenuPrincipal() {
                     <h1>BEM VINDO AO <span>THE GAME BAY</span></h1>
                     <h2>MENU:</h2>
                     <ButtonMenu 
+                        onclick={handleContactJogos}
                         texto="JOGOS" 
                     />
                     <ButtonMenu 
+                        onclick={handleContactPlataforma}
                         texto="PLATAFORMAS" 
                     />
                     <ButtonMenu 
+                        onclick={handleContactFaleConosco}
                         texto="FALE CONOSCO" 
                     />
                 </div>
