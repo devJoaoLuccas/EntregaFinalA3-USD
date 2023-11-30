@@ -14,7 +14,9 @@ export async function createTableNotasJogos() {
                 idUser INTEGER NOT NULL, 
                 note REAL NOT NULL,
                 idJogo INTEGER NOT NULL, 
+                status TEXT,
                 FOREIGN KEY (idUser) REFERENCES usuarios (idUser) ON DELETE CASCADE,
+                FOREIGN KEY (status) REFERENCES jogos (stauts) ON DELETE CASCADE,
                 FOREIGN KEY (idJogo) REFERENCES jogos (idJogo) ON DELETE CASCADE)
             `
 
@@ -173,4 +175,39 @@ export async function deleteNotaJogo(req, res) {
         } catch(error) {
             console.log(`Não foi possivel deletar o jogo com id = ${nota} `)
         }
+}
+
+export const calcularMedia = () => {
+    
+
+         db.each(
+            `
+                SELECT idjogo,
+                AVG(note) AS medias_notas 
+                FROM notas_jogos 
+                GROUP BY idJogo
+            `,
+            (err, row) => {
+                if (err) {
+                    console.log(`Errou ao calcular média de notas ${err.message}`);
+                } else {
+                    db.run(
+                        `
+                            UPDATE jogos
+                            SET note =?
+                            WHERE idJogo = ?
+                        `, 
+                        [row.medias_notas, row.idJogo],
+                        (error) => {
+                            if(error) {
+                                console.log(`Erro ao atualizar as notas do jogo: ${row.idJogo}`)
+                            } else {
+                                console.log("Notas foram atualizads com sucesso.")
+                            }
+                        }
+                        
+                    )
+                }
+            }
+        )
 }

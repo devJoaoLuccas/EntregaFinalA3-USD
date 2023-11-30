@@ -9,7 +9,7 @@ import { createTablePlataformas, initInserirPlataformas } from './model/platafor
 
 
 import { createTableJogosPlataformas, initInserirJogoPlataforma } from './model/jogoPlataforma.js';
-import { createTableNotasJogos, initInserirNotasJogos } from './model/notaJogo.js';
+import { calcularMedia, createTableNotasJogos, initInserirNotasJogos } from './model/notaJogo.js';
 
 
 // criar o nosso servidor e instancia a biblioteca express do node 
@@ -49,6 +49,8 @@ try {
 } catch (error) {
     console.log("Não foi possivel adicionar os itens, provavelmente já foram adicionados.")
 }
+
+calcularMedia();
 
 // O servidor está ouvindo pela porta 3000 
 
