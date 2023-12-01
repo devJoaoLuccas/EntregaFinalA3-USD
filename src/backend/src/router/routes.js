@@ -5,6 +5,7 @@ import { selectJogo, selectJogos, adicionarJogo, updateJogo, deleteJogo } from "
 import { adicionarPlataforma, deletePlataforma, selectPlataforma, selectPlataformas, updatePlataforma } from "../model/plataformas.js";
 import { adicionarNotaJogo, deleteNotaJogo, selectNotasJogos, updateNotaJogo } from "../model/notaJogo.js";
 import { adicionarPlataformaJogos, deletePlataformaJogos, selectPlataformaJogos, updatePlataformaJogos } from "../model/jogoPlataforma.js";
+import { selectCategorias } from "../model/categoria.js";
 
 
 const router = Router();
@@ -17,6 +18,7 @@ router.get('/plataforma', selectPlataforma);
 router.get('/notasJogos', selectNotasJogos);
 router.get('/plataformasJogos', selectPlataformaJogos);
 
+router.get('/categorias', selectCategorias);
 router.get('/jogos', selectJogos);
 router.get('/usuarios', selectUsuarios);
 router.get('/plataformas', selectPlataformas);

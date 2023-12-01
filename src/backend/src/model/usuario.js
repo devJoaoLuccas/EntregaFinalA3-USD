@@ -22,22 +22,29 @@ export async function createTableUsuarios() {
 }
 
 export async function initInserirUsuario() {
-    await db.run(
-        `
-        INSERT INTO usuarios (idUser, username, email, password, data_nascimento) 
-        VALUES
-            (1,"joaodemais1503", "joao.marques@gmail.com", "Paula1503", "29/12/2003"),
-            (2,"marcos1503", "marcos.marques@gmail.com", "marcos1503", "15/03/1998"),
-            (3,"sadmarques", "joaodemais29@gmail.com", "joaodemais1503", "29/11/2005"),
-            (4,"nightwing", "dick.grayson@gmail.com", "robin01", "20/03/1995"),
-            (5,"batman", "bruce.wayne@gmail.com", "selinakyle", "07/04/1985"),
-            (6,"kilerjoker", "joker.joker@outlook.com", "kilercrock", "19/09/1980"),
-            (7,"batgirl", "barbara.gordon@gmail.com", "barbsgordon", "15/03/2023"),
-            (8,"alfredp", "alfred.paniwhise@gmail.com", "cha1053", "08/02/1945"),
-            (9,"damianwayne005", "damian.wayne@gmail.com", "robin04", "19/12/2000"),
-            (10,"timdrake", "tim.drake@gmail.com", "robin03", "17/09/1999");
+
+    try {
+        await db.run(
             `
-    );
+            INSERT INTO usuarios (idUser, username, email, password, data_nascimento) 
+            VALUES
+                (1,"joaodemais1503", "joao.marques@gmail.com", "Paula1503", "29/12/2003"),
+                (2,"marcos1503", "marcos.marques@gmail.com", "marcos1503", "15/03/1998"),
+                (3,"sadmarques", "joaodemais29@gmail.com", "joaodemais1503", "29/11/2005"),
+                (4, "nightwing", "dick.grayson@bludhavenmail.com", "W1ngs_N1ght", "20/03/1995"),
+                (5, "batman", "the_dark_knight@wayneenterprises.com", "G0th@m!T3rr1t0ry", "07/04/1985"),
+                (6, "kilerjoker", "jokerized@arkhamasylum.com", "H@h@H@_Sm1l3", "19/09/1980"),
+                (7, "batgirl", "oracle_rises@gmail.com", "B@tG1rlB@rbara", "15/03/2023"),
+                (8, "alfredp", "butlerextraordinaire@gmail.com", "TeaT1m3_Bruce", "08/02/1945"),
+                (9, "damianwayne005", "robin5@waynecorp.com", "S0n_0f_B@t", "19/12/2000"),
+                (10, "timdrake", "tim.drake@redrobin.com", "R0b1nR3b0rn", "17/09/1999");
+                `
+        );
+    } catch (error) {
+        console.log("Não foi possivel inserir o login dos usuários");
+    }
+
+
 }
 
 // Query feita para selecionar todos os Usuarios da tabela. 
