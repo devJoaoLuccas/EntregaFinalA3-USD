@@ -8,6 +8,7 @@ import ErrorPage from './pages/menus/ErrorPage.jsx';
 import Login from './pages/login/Login.jsx';
 import MenuPrincipal from './pages/menus/MenuPrincipal.jsx';
 import Jogos from './pages/menus/Jogos.jsx';
+import JogosDetails from './pages/details/JogosDetails.jsx';
 import Plataforma from './pages/menus/Plataforma.jsx';
 import PlataformDetails from './pages/details/PlataformDetails.jsx';
 import EditarDeletar from './pages/menus/EditarDeletar.jsx';
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         {
           path:'/jogos',
           element:<Jogos />,
+        },
+        {
+          path:'jogos/:idJogos',
+          element: <JogosDetails />,
         },
         {
           path:'/plataforma',

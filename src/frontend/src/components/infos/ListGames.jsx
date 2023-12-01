@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate, Link } from 'react-router-dom';
 
 function ListGames() {
 
@@ -18,14 +19,16 @@ function ListGames() {
             .catch((err) => console.log(err))
     , []});
 
+
+
     return (
         <>
             <h2>Jogos</h2>
             <ul>
                 {jogos.map((jogo) => (
-                    <a href="">
+                    <Link to={`/jogos/${jogo.idJogo}`}>
                         <li>{jogo.name_game}</li>
-                    </a>
+                    </Link>
                 ))
                 }
             </ul>
