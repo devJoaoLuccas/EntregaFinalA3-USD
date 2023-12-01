@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import InputText from "../../components/forms/InputText";
 import InputDate from "../../components/forms/InputDate";
 import InputNumber from "../../components/forms/inputNumber";
@@ -7,6 +7,7 @@ import SelectPlataforma from "../../components/forms/SelectPlataforma";
 import ButtonLogin from "../../components/buttons/ButtonLogin"
 
 import '../../styles/details.css'
+import ButtonMenu from "../../components/buttons/ButtonMenu";
 
 
 function JogosDetails() {
@@ -14,6 +15,12 @@ function JogosDetails() {
     const { idJogos } = useParams();
     const [jogos, setJogos] = useState([]);
     const [plataforma, setPlataformas] = useState([]);
+
+    const navigate = useNavigate();
+
+    const handleContactVoltar = () => {
+        navigate('/editarDeletar');
+  }
 
     useEffect(() => {
       fetch(`http://localhost:3000/jogo/${idJogos}`, {
@@ -86,10 +93,17 @@ function JogosDetails() {
                   </div>
                   <div className='footer-details'>
                             <div className="button-row">
-                              <ButtonLogin texto='Enviar'  classe='button-details'/>
-                              <ButtonLogin texto='Deletar'  classe='button-details'/>
+                              <ButtonMenu 
+                                texto='Enviar'  classe='button-details'
+                              />
+                              <ButtonMenu 
+                                texto='Deletar'  classe='button-details'
+                              />
                             </div>
-                            <ButtonLogin texto='Cancelar'  classe='button-details'/>
+                            <ButtonMenu 
+                              texto='Voltar'  classe='button-details'
+                              event={handleContactVoltar}
+                            />
                         </div>   
               </section>
             </main>

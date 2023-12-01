@@ -32,15 +32,18 @@ function MenuPrincipal() {
                     <h2>MENU:</h2>
                     <ButtonMenu 
                         texto="JOGOS"
-                        onclick={handleContactJogos} 
+                        classe='buttonMenu'
+                        event={handleContactJogos} 
                     />
                     <ButtonMenu 
                         texto="PLATAFORMAS"
-                        onclick={handleContactPlataforma} 
+                        classe='buttonMenu'
+                        event={handleContactPlataforma} 
                     />
                     <ButtonMenu 
                         texto="FALE CONOSCO"
-                        onclick={handleContactFaleConosco} 
+                        classe='buttonMenu'
+                        event={handleContactFaleConosco} 
                     />
                 </div>
                 <div className="footerMenu">

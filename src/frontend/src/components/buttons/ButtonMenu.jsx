@@ -1,12 +1,12 @@
 import '../../styles/button.css'
 
-function ButtonMenu({texto, onclick}) {
+function ButtonMenu({texto, event, classe}) {
 
     return (
         <>
             <button 
-                className='buttonMenu'
-                onClick={onclick}>
+                className={classe}
+                onClick={event}>
                     {texto}
             </button>
         </>
