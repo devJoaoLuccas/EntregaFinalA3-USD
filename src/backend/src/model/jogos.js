@@ -71,19 +71,30 @@ export async function selectJogos(req, res) {
 
 export async function selectJogo(req, res) {
 
-    const name = req.body.name_game;
+    const id = req.params.idJogos; 
+
+    console.log(`Id convertido é igual a:${id}`);
 
     try {
-        await db.get(
+        const jogo = await db.get(
             `
                 SELECT * 
                 FROM 
-                jogos WHERE name_game=?
-            `,[name])
-                .then(jogos => res.json(jogos)
+                jogos WHERE idJogo=?
+            `,
+            [id]
         );
+    
+        console.log('Jogo encontrado:', jogo); // Verifique se o jogo foi encontrado
+    
+        if (!jogo) {
+            return res.status(404).json({ error: 'Jogo não encontrado' });
+        }
+    
+        res.json(jogo);
     } catch (error) {
-        console.log(`Não foi possivel selecionar o jogo.`)
+        console.log('Erro ao selecionar o jogo:', error);
+        res.status(500).json({ error: 'Erro interno ao selecionar o jogo' });
     }
 
 }
@@ -162,6 +173,3 @@ export async function deleteJogo(req, res){
         console.log(`Não foi possivel deletar o jogo na tabela.`);
     }
 }
-
-
-

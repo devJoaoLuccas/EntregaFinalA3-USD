@@ -12,7 +12,7 @@ const router = Router();
 
 // Os metódos GET da nossa API, chamando as querys de cada banco. 
 
-router.get('/jogo', selectJogo);
+router.get('/jogo/:idJogos', selectJogo);
 router.get('/usuario', selectUsuario);
 router.get('/plataforma', selectPlataforma);
 router.get('/notasJogos', selectNotasJogos);
