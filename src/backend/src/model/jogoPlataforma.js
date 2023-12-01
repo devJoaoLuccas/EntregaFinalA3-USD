@@ -25,7 +25,9 @@ export async function createTableJogosPlataformas() {
 
 export async function initInserirJogoPlataforma() {
 
-    await db.run(
+    try {
+        
+        await db.run(
             `
             INSERT INTO plataformas_jogos (idPlataformaJogo, idPlataforma, idJogo)
             VALUES 
@@ -81,6 +83,10 @@ export async function initInserirJogoPlataforma() {
                 (50, 10, 5)
             `
     );
+
+    } catch (error) {
+        console.log("Não foi possivel inserir os jogos nas plataformas");
+    }
 
 }
 

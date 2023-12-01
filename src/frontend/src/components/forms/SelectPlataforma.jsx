@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function SelectPlataforma({nome, texto, classeSelect, classeLabel}) {
+function SelectPlataforma({nome, texto, classeSelect, classeLabel, valor}) {
 
     
     const [plataformas, setPlataformas] = useState([]);
@@ -23,11 +23,23 @@ function SelectPlataforma({nome, texto, classeSelect, classeLabel}) {
     return (
 
         <>
-            <label className={classeLabel} htmlFor={nome}>{texto}</label>
-            <select className={classeSelect} name={nome} id={nome}>
-                <option value="" selected disabled>Escolha uma plataforma:</option>
+            <label 
+                className={classeLabel} 
+                htmlFor={nome}>
+                    {texto}
+            </label>
+            <select 
+                className={classeSelect} 
+                name={nome} 
+                id={nome}>
+                <option 
+                    selected disabled>{valor}</option>
                     {plataformas.map((plataforma) => (
-                        <option value={plataforma.id} key={plataforma.id}>{plataforma.nome_plataforma}</option>
+                        <option 
+                            value={plataforma.id} 
+                            key={plataforma.id}>
+                                {plataforma.nome_plataforma}
+                        </option>
                     ))
 
                     }

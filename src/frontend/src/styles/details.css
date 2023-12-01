@@ -1,0 +1,129 @@
+:root {
+    font-size: 62.5%;
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+    --cinza: #cac2c2;
+}
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+.cardDetails {
+    display: flex;
+    flex-direction: column;
+
+    width: 80rem;
+    height: 58rem;
+
+    border: none;
+    border-radius: 3rem;
+
+    background-color: var(--cor-card);
+}
+
+h1 {
+    font: 600 4rem 'black ops one';
+    text-align: center;
+
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+}
+
+.cardDetails-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 5rem;
+}
+
+.imgDetails { 
+    width: 35rem;
+    height: 30rem;
+
+    border-radius: 2rem;
+}
+
+.gameDetails { 
+    display: flex;
+    flex-direction: column;
+    
+    width: 25rem;
+    height: 30rem;
+}
+
+.details-label { 
+    font: 300 1.8rem 'Arial';
+    color: #fff;
+
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.details-input, .details-input-select {
+    font: 300 1.3rem 'Arial';
+    color: #fff;
+
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: 0.5rem;
+
+    padding-left: 1rem;
+
+    width: 24rem;
+    height: 3rem;
+}
+
+.details-input::placeholder {
+    color: #fff;
+}
+
+.details-input-select {
+    width: 25rem;
+}
+
+.footer-details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-details {
+    background-color: var(--botao);
+    border: none;
+    border-radius: 0.6rem;
+
+    font: 400 1.8rem 'black ops one';
+    color: #000;
+
+    width: 15rem;
+    height: 4rem;
+    
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.button-details:hover {
+    transition: .4s;
+    transform: scale(1.1);
+    
+    background-color: var(--cor-fundo);
+    color: #fff;
+}
+
+.button-details:last-child {
+    margin-right: 4rem;
+}
+
+.button-row {
+    margin-left: 5rem;
+    display: flex;
+    gap: 1rem;
+}

@@ -1,4 +1,4 @@
-import { openDb } from "../configDb.js";
+import { openDb } from '../configDb.js';
 
 // const db é uma varíavel que espera a conexão com o banco, facilitando o nosso codigo. 
 
@@ -20,22 +20,29 @@ export async function createTablePlataformas() {
 
 
 export async function initInserirPlataformas() {
-    await db.run (
+ 
+    try {
+
+        await db.run (
             `
-            INSERT INTO plataformas (idPlataforma, nome_plataforma) 
-            VALUES 
-                (1,"Steam"),
-                (2,"Epic Games"),
-                (3,"Playstation"),
-                (4,"Xbox"),
-                (5,"Nintendo"),
-                (6,"Battle.Net"),
-                (7,"Uplay"),
-                (8,"Origin"),
-                (9,"Mobile"),
-                (10,"Web");
+                INSERT INTO plataformas (idPlataforma, nome_plataforma) 
+                VALUES 
+                    (1,"Steam"),
+                    (2,"Epic Games"),
+                    (3,"Playstation"),
+                    (4,"Xbox"),
+                    (5,"Nintendo"),
+                    (6,"Battle.Net"),
+                    (7,"Uplay"),
+                    (8,"Origin"),
+                    (9,"Mobile"),
+                    (10,"Web");
             `
                 );
+    } catch (error) {
+            console.log("Não foi possivel inserir os dados nas plataformas")
+    }
+
 }
 // Query feita para selecionar todas as plataformas da tabela. 
 

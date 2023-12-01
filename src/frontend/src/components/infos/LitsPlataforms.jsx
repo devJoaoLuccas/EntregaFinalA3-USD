@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 function ListPlataforms() {
 
@@ -23,9 +24,9 @@ function ListPlataforms() {
             <h2>Plataformas</h2>
             <ul>
                 {plataformas.map((plataforma) => (
-                    <a href="">
+                    <Link to={`/plataformas/${plataforma.idPlataforma}`} >
                         <li>{plataforma.nome_plataforma}</li>
-                    </a>
+                    </Link>
                 ))
                 }
             </ul>

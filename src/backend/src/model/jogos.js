@@ -28,18 +28,18 @@ export async function initInserirJogos() {
     try {
         await db.run(
             `
-            INSERT INTO jogos (idJogo, name_game, developed_by, category_name, data_criacao, note) 
+            INSERT INTO jogos (idJogo, name_game, developed_by, category_name, data_criacao) 
             VALUES
-                (1,'League Of Legends', 'Riot Games', 'MOBA', '2009-10-01', 8.50),
-                (2,'Assassin''s Creed II', 'Ubisoft', 'Ação e Aventura', '2009-09-17', 10),
-                (3,'The Witcher 3 - Wild Hunt', 'CD Projekt RED', 'RPG', '2015-05-19', 9.90),
-                (4,'Pokemon Go', 'Niantic, Inc', 'Realidade Aumentada', '2016-07-06', 8.50),
-                (5,'Fortnite', 'Epic Games', 'Battle Royale', '2017-07-25', 8.80),
-                (6,'Dark Souls', 'FromSoftware', 'RPG', '2011-09-22', 9.60),
-                (7,'Minecraft', 'Mojang Studios', 'Sandbox', '2011-01-01', 10),
-                (8,'The Elder Scrolls V - Skyrim', 'Bethesda', 'RPG', '2011-11-11', 9.40),
-                (9,'Grand Thef Auto V', 'Rockstar North', 'Ação-Aventura', '2013-09-17', 9.70),
-                (10,'Super Mario 64', 'Nintendo', 'Plataforma', '1996-06-26', 10);
+                (1,'League Of Legends', 'Riot Games', 'MOBA', '2009-10-01'),
+                (2,'Assassin''s Creed II', 'Ubisoft', 'Ação e Aventura', '2009-09-17'),
+                (3,'The Witcher 3 - Wild Hunt', 'CD Projekt RED', 'RPG', '2015-05-19'),
+                (4,'Pokemon Go', 'Niantic, Inc', 'Realidade Aumentada', '2016-07-06'),
+                (5,'Fortnite', 'Epic Games', 'Battle Royale', '2017-07-25'),
+                (6,'Dark Souls', 'FromSoftware', 'RPG', '2011-09-22'),
+                (7,'Minecraft', 'Mojang Studios', 'Sandbox', '2011-01-01'),
+                (8,'The Elder Scrolls V - Skyrim', 'Bethesda', 'RPG', '2011-11-11'),
+                (9,'Grand Thef Auto V', 'Rockstar North', 'Ação-Aventura', '2013-09-17'),
+                (10,'Super Mario 64', 'Nintendo', 'Plataforma', '1996-06-26');
             
             `
 ); 
@@ -71,19 +71,30 @@ export async function selectJogos(req, res) {
 
 export async function selectJogo(req, res) {
 
-    const name = req.body.name_game;
+    const id = req.params.idJogos; 
+
+    console.log(`Id convertido é igual a:${id}`);
 
     try {
-        await db.get(
+        const jogo = await db.get(
             `
                 SELECT * 
                 FROM 
-                jogos WHERE name_game=?
-            `,[name])
-                .then(jogos => res.json(jogos)
+                jogos WHERE idJogo=?
+            `,
+            [id]
         );
+    
+        console.log('Jogo encontrado:', jogo); // Verifique se o jogo foi encontrado
+    
+        if (!jogo) {
+            return res.status(404).json({ error: 'Jogo não encontrado' });
+        }
+    
+        res.json(jogo);
     } catch (error) {
-        console.log(`Não foi possivel selecionar o jogo.`)
+        console.log('Erro ao selecionar o jogo:', error);
+        res.status(500).json({ error: 'Erro interno ao selecionar o jogo' });
     }
 
 }
@@ -162,6 +173,3 @@ export async function deleteJogo(req, res){
         console.log(`Não foi possivel deletar o jogo na tabela.`);
     }
 }
-
-
-
