@@ -10,6 +10,7 @@ import '../../styles/global.css'
 function MenuPrincipal() {
 
     const navigate = useNavigate();
+    const userId = localStorage.getItem('userId');
 
     const handleContactJogos = () => {
         return navigate('/jogos');
@@ -50,7 +51,7 @@ function MenuPrincipal() {
                     <div class="dropdown">
                         <div>
                             <span class="dropdown-text">
-                                GUILHERMEX2
+                                {userId}
                             </span>
                             <div class="dropdown-content">
                                 <a href="" id="perfil-link">Meu Perfil</a>

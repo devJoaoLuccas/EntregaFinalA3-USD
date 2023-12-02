@@ -33,7 +33,8 @@ function Login() {
             .then((data) => {
                 if(data.statusCode === 200) {
                     window.alert("Login efetuado com sucesso!");
-                    localStorage.setItem('userId', data.idUser);
+                    const id = parseInt(data.idUser);
+                    localStorage.setItem('userId', id);
                     navigate('/menuPrincipal');
                 } else if(data.statusCode === 401) {
                     window.alert('Não foi possivel fazer login, credenciais inválidas')

@@ -181,11 +181,11 @@ export async function verificarUsuario(req, res) {
             return
         }     
 
-        console.log('Login efetuado com sucesso, o id selecionado foi: ', id)
+        console.log('Login efetuado com sucesso, o id selecionado foi: ', id.idUser)
 
         res.json({
             "statusCode":200,
-            "idUser":id
+            "idUser":id.idUser
         })
     } catch (error) {
         console.log("ERROR!", error);
