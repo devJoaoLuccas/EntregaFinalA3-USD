@@ -163,7 +163,7 @@ export async function deleteJogo(req, res){
             `
                 DELETE 
                 FROM jogos
-                 WHERE idJogo=? 
+                WHERE idJogo=? 
             `,[id]
         );
        

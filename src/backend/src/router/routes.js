@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { selectUsuarios, selectUsuario, adicionarUsuario, updateUsuario, deleteUsuario } from '../model/usuario.js';
+import { selectUsuarios, selectUsuario, adicionarUsuario, updateUsuario, deleteUsuario, verificarUsuario } from '../model/usuario.js';
 import { selectJogo, selectJogos, adicionarJogo, updateJogo, deleteJogo } from "../model/jogos.js";
 import { adicionarPlataforma, deletePlataforma, selectPlataforma, selectPlataformas, updatePlataforma } from "../model/plataformas.js";
 import { adicionarNotaJogo, deleteNotaJogo, selectNotasJogos, updateNotaJogo } from "../model/notaJogo.js";
@@ -46,5 +46,9 @@ router.get('/deleteJogo/:idJogos', deleteJogo);
 router.get('/deletePlataforma/:idPlataforma', deletePlataforma);
 router.delete('/deleteNotaJogo', deleteNotaJogo);
 router.delete('/deletePlataformaJogo', deletePlataformaJogos)
+
+//  O metodo para verificar se possui login
+
+router.post('/login', verificarUsuario);
 
 export default router;

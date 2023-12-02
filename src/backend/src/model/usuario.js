@@ -155,3 +155,44 @@ export async function deleteUsuario(req, res) {
 
 
 }
+
+export async function verificarUsuario(req, res) {
+
+    const login = req.body;
+
+    try {
+
+        const id =  await db.get (
+            `
+                SELECT idUser 
+                FROM usuarios
+                WHERE (email=? OR username=?) AND password=?
+            `,[login.user, login.user, login.password]
+        )
+
+
+        if(!id) {
+            res.json({
+                "statusCode":401,
+                "message":"Credenciais inválidas"
+            })
+
+            console.log(`Não foi possivel encontrar o usuário com o user ${login.user}`);
+            return
+        }     
+
+        console.log('Login efetuado com sucesso, o id selecionado foi: ', id)
+
+        res.json({
+            "statusCode":200,
+            "idUser":id
+        })
+    } catch (error) {
+        console.log("ERROR!", error);
+        res.status(500).json({
+            "statusCode": 500,
+            "message": "Erro interno do servidor"
+        });
+    }
+
+}
