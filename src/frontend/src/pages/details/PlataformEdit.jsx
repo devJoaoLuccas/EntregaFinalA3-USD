@@ -6,46 +6,49 @@ import ButtonMenu from "../../components/buttons/ButtonMenu";
 
 import '../../styles/details.css'
 
-function PlataformDetails() {
+function PlataformEdit() {
 
     const { idPlataforma } = useParams();
     const [plataformas, setPlataformas] = useState([]);
+    const [nomePlataforma, setNomePlataforma] = useState();
     const navigate = useNavigate();
 
     const handleContactVoltar = () => {
-        navigate('/editarDeletar');
+        navigate(`/plataforma/${idPlataforma}`);
     }
 
-    const handleContactEdit = () => {
-        navigate('editPlataforma')
-    }
-
-
-    const handleDeletePlataforma = () => {
-        const confirmation = window.confirm(`Tem certeza que deseja excluir a plataforma ${plataformas.nome_plataforma}?`);
+    const handleContactEnviar = () => {
+        const confirmation = window.confirm(`Tem certeza que deseja editar a plataforma ${plataformas.nome_plataforma}?`);
 
         if(confirmation) {
-            fetch(`http://localhost:3000/deletePlataforma/${plataformas.idPlataforma}`, {
-                method:'GET',
+            console.log(nomePlataforma);
+            fetch(`http://localhost:3000/updatePlataforma`, {
+                method:'PUT',
                 headers: {
-                    'Content-Type':'application/json',
-                }
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify({
+                    nome_plataforma:nomePlataforma,
+                    idPlataforma:idPlataforma
+                })
             })
-                .then(resp => {
+                .then((resp) => {
                     if(!resp.ok) {
-                        throw new Error('Erro ao excluir a plataforma');
+                        throw new Error('Erro ao editar a plataforma');
                     }
+
                     return resp.json();
                 })
                 .then(() => {
-                    window.alert(`A plataforma ${plataformas.nome_plataforma} foi deletada!`);
-                    navigate('/editarDeletar');
+                    window.alert(`A plataforma ${nomePlataforma} foi atualizada com sucesso!`);
+                    navigate(`/plataforma/${idPlataforma}`);
                 })
                 .catch((err) => {
-                    console.log(`Erro ao excluir a plataforma ${err}`);
-                    window.alert(`Erro ao excluir a plataforma ${plataformas.nome_plataforma}`);
+                    console.log(`Erro ao atualizar a plataforma ${err}`);
+                    window.alert(`Erro ao atualizar a plataforma`);
                 })
         }
+
     }
 
 
@@ -84,22 +87,17 @@ function PlataformDetails() {
                                 label="Nome da Plataforma:"
                                 classeLabel="details-label"
                                 texto={plataformas.nome_plataforma}
-                                classe="details-inputPlataform"
-                                desativado={true}
+                                classe="details-inputPlataform-enabled"
+                                textoCapturado={setNomePlataforma}
+                                desativado={false}
                             />
                         </div>
                         <div className='footer-details'>
                             <div className="button-row">
                               <ButtonMenu 
-                                texto='Editar'  
+                                texto='Enviar'  
                                 classe='button-details'
-                                event={handleContactEdit}
-                                
-                              />
-                              <ButtonMenu 
-                                texto='Deletar'  
-                                classe='button-details'
-                                event={handleDeletePlataforma}
+                                event={handleContactEnviar}
                               />
                             </div>
                             <ButtonMenu 
@@ -116,4 +114,5 @@ function PlataformDetails() {
 }
 
 
-export default PlataformDetails;
+export default PlataformEdit;
+

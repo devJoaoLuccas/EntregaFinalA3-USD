@@ -1,11 +1,19 @@
 
 
-function InputDate({classe, classeLabel, texto, textoCapturado, valor}) {
+function InputDate({classe, classeLabel, texto, textoCapturado, valor, desativado, placeholder}) {
 
     return (
         <>
             <label className={classeLabel} htmlFor="data">{texto}</label>
-            <input className={classe} value={valor} type="date" id="data-select" onChange={(e) => textoCapturado(e.target.value)}></input>
+            <input 
+                className={classe} 
+                value={valor} 
+                placeholder={placeholder}
+                type="date" 
+                id="data-select" 
+                onChange={(e) => textoCapturado(e.target.value)}
+                disabled={desativado}
+                ></input>
         </>
     )
 

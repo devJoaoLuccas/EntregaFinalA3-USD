@@ -5,7 +5,7 @@ function InputText({label,texto, textoCapturado, classe, desativado, classeLabel
 
     return (
         <>
-            <label className={classeLabel} name="username">{label}</label>
+            <label className={classeLabel} name="username" htmlFor={texto}>{label}</label>
             <input 
                 className={classe}
                 disabled={desativado}

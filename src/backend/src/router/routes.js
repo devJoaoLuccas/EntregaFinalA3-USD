@@ -14,7 +14,7 @@ const router = Router();
 
 router.get('/jogo/:idJogos', selectJogo);
 router.get('/usuario', selectUsuario);
-router.get('/plataforma', selectPlataforma);
+router.get('/plataforma/:idPlataforma', selectPlataforma);
 router.get('/notasJogos', selectNotasJogos);
 router.get('/plataformasJogos', selectPlataformaJogos);
 
@@ -42,8 +42,8 @@ router.put('/updatePlataformaJogo', updatePlataformaJogos);
 // Os metódos DELETE da nossa API, chamando as querys de cada banco.
 
 router.delete('/deleteUsuario', deleteUsuario);
-router.delete('/deleteJogo', deleteJogo);
-router.delete('/deletePlataforma', deletePlataforma);
+router.get('/deleteJogo/:idJogos', deleteJogo);
+router.get('/deletePlataforma/:idPlataforma', deletePlataforma);
 router.delete('/deleteNotaJogo', deleteNotaJogo);
 router.delete('/deletePlataformaJogo', deletePlataformaJogos)
 

@@ -9,8 +9,13 @@ import Login from './pages/login/Login.jsx';
 import MenuPrincipal from './pages/menus/MenuPrincipal.jsx';
 import Jogos from './pages/menus/Jogos.jsx';
 import JogosDetails from './pages/details/JogosDetails.jsx';
+import AddGames from './pages/forms/AddGames.jsx';
+import GameEdit from './pages/details/GameEdit.jsx';
+import AvaliarJogos from './pages/forms/AvaliarJogos.jsx';
 import Plataforma from './pages/menus/Plataforma.jsx';
 import PlataformDetails from './pages/details/PlataformDetails.jsx';
+import AddPlataform from './pages/forms/AddPlataform.jsx';
+import PlataformEdit from './pages/details/PlataformEdit.jsx';
 import EditarDeletar from './pages/menus/EditarDeletar.jsx';
 import FaleConosco from './pages/forms/faleConosco.jsx';
 
@@ -41,12 +46,28 @@ const router = createBrowserRouter([
           element: <JogosDetails />,
         },
         {
+          path:'jogos/:idJogos/editJogos',
+          element: <GameEdit />,
+        },
+        {
+          path:'jogos/adicionarJogo',
+          element: <AddGames />
+        },
+        {
           path:'/plataforma',
           element:<Plataforma />,
         },
         {
           path:'/plataforma/:idPlataforma',
           element: <PlataformDetails />
+        },
+        {
+          path:'/plataforma/:idPlataforma/editPlataforma',
+          element: <PlataformEdit />
+        },
+        {
+          path:'plataforma/adicionarPlataforma',
+          element:<AddPlataform.jsx />
         },
         {
           path:'/editarDeletar',

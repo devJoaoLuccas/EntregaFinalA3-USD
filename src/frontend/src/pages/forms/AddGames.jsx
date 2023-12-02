@@ -92,7 +92,7 @@ function AddGames() {
                                         classeLabel='card-infoGames-label' 
                                         classeSelect='card-infoGames-select' 
                                         textoCapturado={handleChangeCategory}
-                                        variavel={category} />
+                                        valor={category} />
                                 </div>    
                                 <div className='cardColumn'>
                                     <SelectPlataforma 

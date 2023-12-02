@@ -24,7 +24,7 @@ function ListPlataforms() {
             <h2>Plataformas</h2>
             <ul>
                 {plataformas.map((plataforma) => (
-                    <Link to={`/plataformas/${plataforma.idPlataforma}`} >
+                    <Link to={`/plataforma/${plataforma.idPlataforma}`} >
                         <li>{plataforma.nome_plataforma}</li>
                     </Link>
                 ))

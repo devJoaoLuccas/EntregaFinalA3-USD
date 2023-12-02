@@ -73,8 +73,6 @@ export async function selectJogo(req, res) {
 
     const id = req.params.idJogos; 
 
-    console.log(`Id convertido é igual a:${id}`);
-
     try {
         const jogo = await db.get(
             `
@@ -137,15 +135,18 @@ export async function updateJogo(req, res) {
             `
                 UPDATE 
                 jogos 
-                SET name_game=?,developed_by=?,category_name=?,status=?,note=? 
+                SET name_game=?,developed_by=?,category_name=?, data_criacao=?
                 WHERE idJogo=?
-            `,[jogo.name_game, jogo.developed_by, jogo.category_name, jogo.status, jogo.note, jogo.idJogo]
+            `,[jogo.name_game, jogo.developed_by, jogo.category_name, jogo.data_criacao, jogo.idJogo]
         );
     
+        console.log(`O jogo de ${jogo.idJogo}, foi atualizado com sucesso`);
+
         res.json({
             "statusCode":200
         });
     } catch (error) {
+        console.log(error)
         console.log(`Não foi possivel atualizar o jogo na tabela.`);
     }
 
@@ -155,21 +156,26 @@ export async function updateJogo(req, res) {
 
 export async function deleteJogo(req, res){ 
 
-    const name = req.body.name_game;
+    const id = req.params.idJogos;
 
     try {
         await db.run(
             `
                 DELETE 
                 FROM jogos
-                 WHERE name_game=? 
-            `,[name]
+                 WHERE idJogo=? 
+            `,[id]
         );
        
+        console.log(`O jogo de ${id}, foi deletado com sucesso!`)
+
         res.json({
             "statusCode":201
         });
     } catch (error) {
+        res.json({
+            "statusCode":402
+        })
         console.log(`Não foi possivel deletar o jogo na tabela.`);
     }
 }

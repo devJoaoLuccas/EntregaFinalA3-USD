@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react'
 
-function SelectCategorias({nome, texto, classeSelect, classeLabel, textoCapturado, variavel, desativado}) {
+function SelectCategorias({nome, texto, classeSelect, classeLabel, textoCapturado, valor, desativado, placeholder}) {
 
     return (
 
         <>
             <label className={classeLabel} htmlFor={nome}>{texto}</label>
             <select 
-            value={variavel} 
+            value={valor} 
             className={classeSelect} 
             name={nome} 
             id={nome} 
             onChange={textoCapturado}
             disabled={desativado}>
-                <option selected disabled>Escolha uma categoria:</option>
+                <option selected disabled>{placeholder}</option>
                 <option value="Ação">Ação</option>
                 <option value="Aventura">Aventura</option>
                 <option value="MOBA">Moba</option>

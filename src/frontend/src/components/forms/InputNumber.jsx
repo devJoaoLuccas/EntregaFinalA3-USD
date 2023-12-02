@@ -1,7 +1,7 @@
 
 
 
-function InputNumber({classe, classeLabel, texto, textoCapturado, valor, desativado}) {
+function InputNumber({classe, classeLabel, texto, textoCapturado, valor, desativado, evento}) {
 
     return (
         <>
@@ -11,15 +11,15 @@ function InputNumber({classe, classeLabel, texto, textoCapturado, valor, desativ
                     {texto}
             </label>
             <input 
-                value={valor} 
                 disabled={desativado}
                 className={classe} 
                 type="number" 
                 id="data-select" 
                 onChange={(e) => textoCapturado(e.target.value)} 
+                onClick={evento}
                 min='0' 
                 max='10' 
-                placeholder="0">
+                placeholder={valor}>
             </input>
         </>
     )

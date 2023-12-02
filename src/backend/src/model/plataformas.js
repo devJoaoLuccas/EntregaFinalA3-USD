@@ -65,19 +65,27 @@ export async function selectPlataformas(req, res) {
 
 export async function selectPlataforma(req, res) {
 
-    const plataforma = req.body;
+    const id = req.params.idPlataforma;
 
     try {   
 
-        await db.run(
+        const plataforma = await db.get(
             `
                 SELECT *
                 FROM plataformas 
-                WHERE nome_plataforma =?
-            `, [plataforma.nome_plataforma])
-        .then(plataformas => res.json(plataformas));
+                WHERE idPlataforma =?
+            `, [id])
+        
+        console.log(`A plataforma foi encontrada`, plataforma)
+            
+        if (!plataforma) {
+            return res.status(404).json({error: 'Plataforma não encontrada'});
+        }
+
+        res.json(plataforma)
 } catch (error) {
-        console.log(`Não foi possivel selecionar a plataforma ${plataforma.nome_plataforma}`);       
+        console.log(`Não foi possivel selecionar a plataforma ${plataforma.nome_plataforma}`);   
+        res.status(500).json({error:'Erro interno ao selecionar a plataforma'})    
   }
 
 }
@@ -115,21 +123,18 @@ export async function updatePlataforma(req, res) {
 
     const plataforma = req.body;
 
-    try {
         await db.run(
             `
                 UPDATE plataformas 
-                SET nome_plataforma =?, 
-                WHERE id =?
-            `);
+                SET nome_plataforma =?
+                WHERE idPlataforma =?
+            `,[plataforma.nome_plataforma, plataforma.idPlataforma]
+            );
 
     res.json({
         "statusCode":200
     });
 
-    } catch (error) {
-        console.log(`Não foi possivel atualizar a plataforma de id ${plataforma.idPlataforma}`);   
-    }
 
 }
 
@@ -137,21 +142,26 @@ export async function updatePlataforma(req, res) {
 
 export async function deletePlataforma(req,res) {
 
-    const plataforma = req.body;
+    const id = req.params.idPlataforma;
 
     try {
         await db.run(
                     `
                         DELETE 
                         FROM plataformas 
-                        WHERE nome_plataforma =?    
-                    `, [plataforma.nome_plataforma]);
+                        WHERE idPlataforma =?    
+                    `, [id]);
+
+    console.log(`A plataforma de ${id}, foi deletado com sucesso!`);
 
     res.json({
         "statusCode":201
     });    
 
     } catch (error) {
+        res.json({
+            "statusCode":402
+        })
         console.log(`Não foi possivel deletar o plataformas ${plataforma.nome_plataforma}`);
     }
 
