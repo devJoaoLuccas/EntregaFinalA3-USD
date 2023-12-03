@@ -155,16 +155,17 @@ export async function updateUsuario(req, res) {
 
 export async function deleteUsuario(req, res) {
 
-    const username = req.body.username;
+    const id = req.params.idUser;
 
     try {
         await db.all(
             `
                 DELETE FROM
                 usuarios 
-                WHERE username=?
-            `, [username]);
+                WHERE idUser=?
+            `, [id]);
 
+    console.log(`O usuário de ${id} id, foi deletado do nosso banco`);
 
         res.json ({
                 "statusCode": 200

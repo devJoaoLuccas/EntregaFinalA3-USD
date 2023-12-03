@@ -42,7 +42,7 @@ router.put('/updatePlataformaJogo', updatePlataformaJogos);
 
 // Os metódos DELETE da nossa API, chamando as querys de cada banco.
 
-router.delete('/deleteUsuario', deleteUsuario);
+router.get('/deleteUsuario/:idUser', deleteUsuario);
 router.get('/deleteJogo/:idJogos', deleteJogo);
 router.get('/deletePlataforma/:idPlataforma', deletePlataforma);
 router.delete('/deleteNotaJogo', deleteNotaJogo);

@@ -22,6 +22,34 @@ function MeuPerfil() {
         return navigate('/meuPerfil/edit');
     }
 
+    const excluir = () => {
+        const confirmation = window.confirm('Você tem certeza que deseja sair da nossa plataforma?')
+
+        if(confirmation) {
+            window.alert('Uma pena! Lembre que se você excluir sua conta, perdera todas as suas avaliações');
+            fetch(`http://localhost:3000/deleteUsuario/${userId}`, {
+                method:'GET',
+                headers: {
+                    'Content-Type':'application/json'
+                },
+            })
+                .then(resp => {
+                    if(!resp.ok) {
+                        throw new Error('Erro ao excluir sua conta.');
+                    }
+                    return resp.json();
+                })
+                .then(() => {
+                    window.alert("Uma pena que você nós deixou! Espero que retorne! <3");
+                    navigate('/');
+                })
+                .catch(err => {
+                    console.error('Erro ao excluir o usuario', err);
+                    window.alert('Erro ao excluir o usuario');
+                })
+        }
+    }
+
     useEffect(() => {
 
         fetch(`http://localhost:3000/usuario/${userId}`, {
@@ -91,15 +119,25 @@ function MeuPerfil() {
                         </div>
                     </div>
                     <div className="userButtons">
-                            <ButtonMenu 
-                                texto="Editar" 
-                                classe="button-user" 
-                                event={editar}
-                            />                            <ButtonMenu 
-                                texto="Voltar"
-                                classe="button-user"
-                                event={voltar}
-                            />
+                            <div className="userButtons-row">
+                                <ButtonMenu 
+                                    texto="Editar" 
+                                    classe="button-user" 
+                                    event={editar}
+                                />
+                                <ButtonMenu 
+                                    texto="Excluir" 
+                                    classe="button-user" 
+                                    event={excluir}
+                                />
+                            </div>        
+                            <div className="userButtons-x">
+                                <ButtonMenu 
+                                    texto="Voltar"
+                                    classe="button-user"
+                                    event={voltar}
+                                />    
+                            </div>                  
                         </div>
                 </section>
             </main>

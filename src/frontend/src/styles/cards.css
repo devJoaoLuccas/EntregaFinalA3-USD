@@ -243,6 +243,17 @@ main {
 
 }
 
+.userButtons-row {
+    display: flex;
+    flex: row;
+    gap: 2rem;
+    margin-left: 5rem;
+}
+
+.userButtons-x {
+    margin-right: 5rem;
+}
+
 .button-user {
     width: 15rem;
     height: 4rem;
@@ -250,8 +261,6 @@ main {
     font: 400 1.5rem 'black ops one';
     background-color: var(--botao);
 
-    margin-left: 6rem;
-    margin-right: 6rem;
 
     border: none;
     border-radius: 1rem;
