@@ -1,4 +1,5 @@
 import '../../styles/button.css'
+import '../../styles/global.css'
 
 function ButtonMenu({texto, event, classe}) {
 

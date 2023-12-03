@@ -1,18 +1,4 @@
-.buttonLogin {
-    border: none;
-    border-radius: 0.8rem;
-
-    width: 15rem;
-    height: 4rem;
-    
-    background-color: #ffa3fd;
-    font: bolder 2rem 'Arial';
-
-    cursor: pointer;
-    transition: all .5s ease-in-out;
-}
-
-.buttonLogin:hover, .buttonMenu:hover, .buttonAddPlataform:hover, .buttonAddGames:hover{
+.buttonMenu:hover, .buttonAddPlataform:hover, .buttonAddGames:hover{
     transition: .5s;
     transform: scale(1.02);
 

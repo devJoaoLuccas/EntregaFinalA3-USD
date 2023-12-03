@@ -1,10 +1,12 @@
-import Button from "../../components/buttons/ButtonLogin";
 import InputPassword from "../../components/forms/InputPassword";
 import InputText from "../../components/forms/InputText";
 import Select from "../../components/forms/SelectPlataforma";
 
 import { useState, useEffect } from "react";
-import { json, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
+import '../../styles/global.css'
+import ButtonMenu from "../../components/buttons/ButtonMenu";
 
 function Login() {
 
@@ -13,6 +15,10 @@ function Login() {
     const [userPassword, setUserPassword] = useState('');
 
     const handleContactLogin = () => {
+        if(userLogin === '' && userPassword === '') {
+            window.alert("Por favor, insira suas credenciais");
+        }
+
         if(userLogin && userPassword) {
             fetch('http://localhost:3000/login', {
                 method: 'POST',
@@ -63,24 +69,29 @@ function Login() {
                     <div className="card-inputs">
                         <InputText 
                             label="INICIAR SESSÃO COM O NOME DE USUÁRIO:" 
+                            classeLabel="input-label"
                             texto="Insira seu username" 
                             textoCapturado={setUserLogin} 
                             classe="input-text" 
                         />
                         <InputPassword 
                             label="SENHA:" 
+                            classeLabel="input-label"
                             texto="Insira a senha" 
-                            setPassword={setUserPassword} 
+                            classe="input-text"
+                            textoCapturado={setUserPassword} 
                         />
                     </div>
-                    <footer className="footer-login">
-                        <Button 
-                            texto="Login"  
-                            classe='buttonLogin'
+                    <ButtonMenu
+                            texto="Login"
+                            classe="buttonLogin"
                             event={handleContactLogin}
                         />
-                            
-                        <a href="">Cadastre-se Aqui</a>
+                    
+                    <footer className="footer-login">
+                        <Link to={'/cadastroDeUsuario'}>
+                            Cadastre-se aqui
+                        </Link>
                     </footer>
                 </div>
             </section>

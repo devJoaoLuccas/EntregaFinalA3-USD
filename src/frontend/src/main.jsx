@@ -19,6 +19,8 @@ import AddPlataform from './pages/forms/AddPlataform.jsx';
 import PlataformEdit from './pages/details/PlataformEdit.jsx';
 import EditarDeletar from './pages/menus/EditarDeletar.jsx';
 import FaleConosco from './pages/forms/faleConosco.jsx';
+import MeuPerfil from './pages/menus/MeuPerfil.jsx';
+import EditUser from './pages/menus/EditUser.jsx';
 
 const router = createBrowserRouter([
   {
@@ -85,6 +87,14 @@ const router = createBrowserRouter([
         {
           path:'/faleConosco',
           element: <FaleConosco />,
+        },
+        {
+          path:'/meuPerfil',
+          element: <MeuPerfil />
+        },
+        {
+          path:'/meuPerfil/edit',
+          element: <EditUser />
         }
     ]
   }

@@ -130,14 +130,19 @@ export async function updateUsuario(req, res) {
         await db.run(
             `
                 UPDATE usuarios
-                SET username=?,password=? 
+                SET username=?,email=?,password=? 
                 WHERE idUser=?
-            `, [usuario.username, usuario.password, usuario.idUser]);
+            `, [usuario.username,usuario.email, usuario.password, usuario.idUser]);
+
+        console.log(`O usuario foi atualizado com sucesso,` [usuario.username]);
 
         res.json ({
             "statusCode": 200
         });
     } catch (error) {
+        res.json({
+            "statusCode": 401
+        })
         console.log(`Não foi possivel atualizar o usuário`)        
     }
 

@@ -3,7 +3,7 @@ import { Router } from "express";
 import { selectUsuarios, selectUsuario, adicionarUsuario, updateUsuario, deleteUsuario, verificarUsuario } from '../model/usuario.js';
 import { selectJogo, selectJogos, adicionarJogo, updateJogo, deleteJogo } from "../model/jogos.js";
 import { adicionarPlataforma, deletePlataforma, selectPlataforma, selectPlataformas, updatePlataforma } from "../model/plataformas.js";
-import { adicionarNotaJogo, deleteNotaJogo, selectNotasJogos, updateNotaJogo } from "../model/notaJogo.js";
+import { adicionarNotaJogo, deleteNotaJogo, selectNotaJogo, selectNotasJogos, updateNotaJogo } from "../model/notaJogo.js";
 import { adicionarPlataformaJogos, deletePlataformaJogos, selectPlataformaJogos, updatePlataformaJogos } from "../model/jogoPlataforma.js";
 import { selectCategorias } from "../model/categoria.js";
 
@@ -15,9 +15,10 @@ const router = Router();
 router.get('/jogo/:idJogos', selectJogo);
 router.get('/usuario/:idUser', selectUsuario);
 router.get('/plataforma/:idPlataforma', selectPlataforma);
-router.get('/notasJogos', selectNotasJogos);
+router.get('/notaJogo/:idUser', selectNotaJogo);
 router.get('/plataformasJogos', selectPlataformaJogos);
 
+router.get('/notasJogos', selectNotasJogos);
 router.get('/categorias', selectCategorias);
 router.get('/jogos', selectJogos);
 router.get('/usuarios', selectUsuarios);
