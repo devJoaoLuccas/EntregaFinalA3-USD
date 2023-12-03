@@ -2,18 +2,19 @@ import PropTypes from 'prop-types'
 import '../../styles/global.css'
 import { useState } from 'react'
 
-function InputPassword({label,texto, setPassword}) {
+function InputPassword({label,texto, textoCapturado, classe, classeLabel, desativado}) {
 
     const [name, setName] = useState();
 
     return (
         <>
-            <label className='input-label' name="password">{label}</label>
-            <input className="input-text" 
+            <label className={classeLabel} name="password">{label}</label>
+            <input className={classe}
+                disabled={desativado}
                 type="password" 
                 name="password" 
                 placeholder={texto} 
-                onChange={(e) => setPassword(e.target.value)}/>
+                onChange={(e) => textoCapturado(e.target.value)}/>
         </>
     )
 

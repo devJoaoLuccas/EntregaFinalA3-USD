@@ -51,7 +51,9 @@ function Dropdown({userId}) {
                     {user.username}
                 </span>
                 <div className="dropdown-content">
-                    <a href="" id="perfil-link">Meu Perfil</a>
+                    <Link to={'/meuPerfil'}>
+                        Meu Perfil
+                    </Link>
                     {user.admin ? (
                         <Link onClick={handleContactPainelAdmin}>
                             Painel de administrador

@@ -141,6 +141,142 @@ main {
     color: #fff;
 }
 
+.card-user {
+    background-color: var(--cor-card);
+    
+    width: 75rem;
+    height: 75rem;
+    border-radius: 2rem;
+}
+
+.user-infos {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 4rem;
+}
+
+.user-infos h2 {
+    font: 400 2rem 'Arial';
+}
+
+.user-infos-row {
+    display: flex;
+    gap: 5rem;
+
+    height: 44rem;
+}
+
+.user-infos-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-infosLabel {
+    color: #fff;
+    font: 400 1.5rem 'Arial';
+
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.card-infosInput, .card-infosInputEnabled {
+    border: none;
+    background: none;
+    
+    border-bottom: solid .1rem #fff;
+    padding-left: 0.2rem;
+
+    width: 30rem;
+    height: 4rem;
+    cursor:not-allowed;
+}
+
+.card-infosInputEnabled {
+    color: #fff;
+    cursor:text;
+}
+
+.card-infosInputEnabled::placeholder {
+    color: red;
+}
+
+.classe-infosLista {
+    font: 400 1.5rem 'Arial';
+    color: #fff;
+    margin-top: 0.5rem;
+    margin-left: 6.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.classe-infosSpan {
+    color: var(--botao);
+    font-weight: bolder;
+    transition: all .4s ease-in-out;
+}
+
+.classe-infosSpan:hover {
+    font-size: 2rem;
+    transition: .4s;
+}
+
+.userPhoto {
+    margin-top: 1rem;
+    width: 25rem;
+    height: 15rem;
+}
+
+.username {
+    font: 600 3rem 'black ops one';
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.userButtons {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.userButtons-row {
+    display: flex;
+    flex: row;
+    gap: 2rem;
+    margin-left: 5rem;
+}
+
+.userButtons-x {
+    margin-right: 5rem;
+}
+
+.button-user {
+    width: 15rem;
+    height: 4rem;
+
+    font: 400 1.5rem 'black ops one';
+    background-color: var(--botao);
+
+
+    border: none;
+    border-radius: 1rem;
+    
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.button-user:hover {
+    transition: .4s;
+    transform: scale(1.1);
+    font-size: 1.8rem;
+
+    background-color: var(--cor-fundo);
+    color: #fff;
+}
 
 @media only screen and (max-width: 768px) {
 

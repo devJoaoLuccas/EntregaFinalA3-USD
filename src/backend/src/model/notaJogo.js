@@ -110,6 +110,28 @@ export async function selectNotasJogos(req, res) {
 
 }
 
+export async function selectNotaJogo(req, res) {
+
+    const id = req.params.idUser;
+
+    try {
+        const notas = await db.all(
+            `
+                SELECT jogos.name_game, notas_jogos.note
+                FROM notas_jogos
+                JOIN jogos ON notas_jogos.idJogo = jogos.idJogo
+                JOIN usuarios ON notas_jogos.idUser = usuarios.idUser
+                WHERE usuarios.idUser=?
+            `,[id]    
+        )
+
+        res.json(notas);
+    } catch(err) {
+        console.log("Não foi possivel selecionar as notas do usuário", [id]);
+    }
+
+}
+
 export async function adicionarNotaJogo(req, res) {
 
     try {

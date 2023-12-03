@@ -107,17 +107,20 @@ export async function adicionarUsuario(req,res) {
         await db.run(
             `
                 INSERT INTO usuarios 
-                (username, email, password, data_nascimento) 
-                VALUES (?,?,?,?)'
-            `, [usuario.username, usuario.email,usuario.password, usuario.data_nascimento]);
+                (username, email, password, data_nascimento, admin) 
+                VALUES (?,?,?,?,?)
+            `, [usuario.username, usuario.email,usuario.password, usuario.data_nascimento, usuario.admin]);
+
+        console.log("O usuario foi adicionado com sucesso", usuario.username);
 
         res.json ({
             "statusCode": 200
         });    
     } catch (error) {
-        console.log(`Não foi possivel adicionar usuário`);
+        console.log("Não foi possivel adicionar o usuario");
     }
-    
+
+ 
 }
 
 // Query feita para atualizar um usuário em especificio da tabela. 
@@ -130,14 +133,19 @@ export async function updateUsuario(req, res) {
         await db.run(
             `
                 UPDATE usuarios
-                SET username=?,password=? 
+                SET username=?,email=?,password=? 
                 WHERE idUser=?
-            `, [usuario.username, usuario.password, usuario.idUser]);
+            `, [usuario.username,usuario.email, usuario.password, usuario.idUser]);
+
+        console.log(`O usuario foi atualizado com sucesso,` [usuario.username]);
 
         res.json ({
             "statusCode": 200
         });
     } catch (error) {
+        res.json({
+            "statusCode": 401
+        })
         console.log(`Não foi possivel atualizar o usuário`)        
     }
 
@@ -147,15 +155,17 @@ export async function updateUsuario(req, res) {
 
 export async function deleteUsuario(req, res) {
 
-    const username = req.body.username;
+    const id = req.params.idUser;
 
     try {
         await db.all(
             `
                 DELETE FROM
                 usuarios 
-                WHERE username=?
-            `, [username]);
+                WHERE idUser=?
+            `, [id]);
+
+    console.log(`O usuário de ${id} id, foi deletado do nosso banco`);
 
         res.json ({
                 "statusCode": 200
