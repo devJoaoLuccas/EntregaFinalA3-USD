@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import '../../styles/menu.css'
 import '../../styles/global.css'
+import { useEffect, useState } from "react";
 
 
 
@@ -11,6 +12,8 @@ function MenuPrincipal() {
 
     const navigate = useNavigate();
     const userId = localStorage.getItem('userId');
+
+    const [user, setUser] = useState([]);
 
     const handleContactJogos = () => {
         return navigate('/jogos');
@@ -23,6 +26,29 @@ function MenuPrincipal() {
     const handleContactFaleConosco = () => {
         return navigate('/faleConosco');
     }
+
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/usuario/${userId}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        })
+          .then((response) =>  {
+              if (!response.ok) {
+                throw new Error('Erro ao buscar detalhes do usuario');
+              }
+              return response.json();
+            })
+          .then((usuario) => {
+            setUser(usuario);
+          })
+          .catch((error) => {
+            console.error('Erro ao buscar detalhes do usuario:', error);
+          });
+      }, [userId]);
+
 
     return (
 
@@ -48,12 +74,12 @@ function MenuPrincipal() {
                     />
                 </div>
                 <div className="footerMenu">
-                    <div class="dropdown">
+                    <div className="dropdown">
                         <div>
-                            <span class="dropdown-text">
-                                {userId}
+                            <span className="dropdown-text">
+                                {user.username}
                             </span>
-                            <div class="dropdown-content">
+                            <div className="dropdown-content">
                                 <a href="" id="perfil-link">Meu Perfil</a>
                                 <a href="" id="adm-link">Painel de administrador</a>
                                 <a href="" id="sair-link">Sair</a>

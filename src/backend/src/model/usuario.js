@@ -68,16 +68,27 @@ export async function selectUsuarios(req, res) {
 
 export async function selectUsuario(req,res) {
 
-    const username = req.body.username;
+    const id = req.params.idUser;
 
     try {    
-        await db.get(
+        const usuario = await db.get(
             `
                 SELECT *
                 FROM usuarios 
-                WHERE username=? 
-            `, [username])
-                .then(usuario => res.json(usuario));
+                WHERE idUser=? 
+            `, [id])
+        
+        console.log('O usuario foi encontrado:', usuario)
+        
+        if(!usuario) {
+            return res.json( {
+                "statusCode":404,
+                error:"Usuario não encontrado"
+            })
+        }
+        
+       res.json(usuario); 
+
     } catch (error) {
         console.log(`Não foi possivel selecionar o usuario`)
     }
