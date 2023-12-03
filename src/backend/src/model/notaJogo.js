@@ -115,7 +115,7 @@ export async function adicionarNotaJogo(req, res) {
     try {
         const notas = req.body;
 
-        await db.run(
+        const nota = await db.run(
             `
                 INSERT INTO notas_jogos 
                 (idUser, note, idJogo)
@@ -124,6 +124,8 @@ export async function adicionarNotaJogo(req, res) {
             `,
             [notas.idUser, notas.note, notas.idJogo]
         );
+
+        console.log(`A nota foi cadastrada com sucesso:`, notas)
 
         res.json({
             "statusCode":200

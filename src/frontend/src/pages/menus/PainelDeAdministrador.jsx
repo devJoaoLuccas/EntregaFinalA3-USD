@@ -1,38 +1,68 @@
 import ButtonMenu from "../../components/buttons/ButtonMenu";
+import Dropdown from '../../components/navbar/Dropdown';
 
 import '../../styles/menu.css'
 import '../../styles/global.css'
+import { useNavigate } from "react-router-dom";
 
 
 
 function PainelDeAdministrador() {
 
-    return (
+    const navigate = useNavigate();
 
+    const addJogos = () => {
+        return navigate('/adicionarJogo');
+    }
+
+    const addPlataform = () => {
+        return navigate('/adicionarPlataforma');
+    }
+
+    const editarDeletar = () => {
+        return navigate('/editarDeletar');
+    }
+
+    const voltar = () => {
+        return navigate('/menuPrincipal');
+    }
+
+    const userId = localStorage.getItem('userId');
+
+    return (
         <main className="containerMenu">
             <section className="cardPainel">
                 <div className="card-infos">
                     <h1>PAINEL DE <span>ADMINISTRADOR</span></h1>
                     <h2>MENU:</h2>
-                    <ButtonMenu texto="ADICIONAR JOGOS" />
-                    <ButtonMenu texto="ADICIONAR PLATAFORMAS" />
-                    <ButtonMenu texto="EDITAR E DELETAR" />
-                    <ButtonMenu texto="<- VOLTAR" />
+                    <ButtonMenu 
+                        texto="ADICIONAR JOGOS"
+                        classe={"buttonMenu"} 
+                        event={addJogos}
+                    />
+                    <ButtonMenu 
+                        texto="ADICIONAR PLATAFORMAS" 
+                        classe={"buttonMenu"}
+                        event={addPlataform} 
+                    />
+                    <ButtonMenu 
+                        texto="EDITAR E DELETAR"
+                        classe={"buttonMenu"}
+                        event={editarDeletar}  
+                    />
+                    <ButtonMenu 
+                        texto="<- VOLTAR"
+                        classe={"buttonMenu"}
+                        event={voltar}  
+                    />
                 </div>
-                <div className="footerMenu">
-                    <div class="dropdown">
-                        <div>
-                            <span class="dropdown-text">
-                                GUILHERMEX2
-                            </span>
-                            <div class="dropdown-content">
-                                <a href="" id="perfil-link">Meu Perfil</a>
-                                <a href="" id="adm-link">Painel de administrador</a>
-                                <a href="" id="sair-link">Sair</a>
-                            </div>
-                        </div>
+                <div className="footerMenu-admin">
+                    <div>
+                        <Dropdown 
+                            userId={userId}
+                        />
                     </div>
-                        <img className="logo" src="src\assets\logo.png" alt="" />
+                        <img className="logoAdmin" src="src\assets\logo.png" alt="" />
                 </div>
 
             </section>

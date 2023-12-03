@@ -5,6 +5,8 @@ import InputText from '../../components/forms/InputText';
 import '../../styles/global.css';
 import '../../styles/forms.css';
 import ButtonLogin from '../../components/buttons/ButtonLogin';
+import { useNavigate } from 'react-router-dom';
+import ButtonMenu from '../../components/buttons/ButtonMenu';
 
 
 function AddPlataform() {
@@ -13,8 +15,13 @@ function AddPlataform() {
     const [isPending, setIsPending] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const navigate = useNavigate();
+
+    const voltar = () => {
+        return navigate('/painelAdmin');
+    }
+
+    const handleSubmit = () => {
 
         setIsPending(true);
 
@@ -32,6 +39,7 @@ function AddPlataform() {
                 console.log(`new plataform added ${plataformName}`)
                 setIsPending(false);
                 setIsSubmitted(true);
+                return navigate('/painelAdmin')
             })    
         } catch (error) {
             window.alert("Não é possivel inserir essa plataforma")
@@ -51,17 +59,25 @@ function AddPlataform() {
     return (
         <main className='containerForms'>
             <section className='card-addPlataform'>
-                <form onSubmit={handleSubmit} className='card-infoPlataform  '>
+                <div className='card-infoPlataform  '>
                     <img className='logoPlataform' src="../src/assets/logo.png" alt="" /> 
                         <div>
                             <h1>Adicionar Plataforma</h1>
                         </div>
                         <InputText label="Nome da plataforma" classe="input-text" textoCapturado={setPlataformName}  classeLabel='input-label' />
                         <div className='footer-plataform'>
-                            <ButtonLogin texto='Enviar'  classe='buttonAddPlataform'/>
-                            <ButtonLogin texto='Cancelar'  classe='buttonAddPlataform'/>
+                            <ButtonMenu 
+                                texto='Enviar'  
+                                classe='buttonAddPlataform'
+                                event={handleSubmit}    
+                            />
+                            <ButtonMenu 
+                                texto='Cancelar'  
+                                classe='buttonAddPlataform'
+                                event={voltar}
+                            />
                         </div>   
-                </form>
+                </div>
             </section>
         </main>
     )

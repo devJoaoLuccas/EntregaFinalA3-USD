@@ -73,6 +73,14 @@ header h1 {
     
 }
 
+.card-infos h1 {
+    margin: 0;
+}
+
+.card-infos h2 {
+    margin: 0;
+}
+
 .card-infosF {
     gap: 3rem;
 }
@@ -86,9 +94,14 @@ header h1 {
     gap: 2rem;
 }
 
-.logo { 
-    margin-left: 2.5rem;
+.logo, .logoAdmin { 
+    margin-right: 4rem;
     width: 15rem;
+}
+
+.logoAdmin {
+    margin-right: 0;
+    margin-left: 2rem;
 }
 
 
@@ -147,7 +160,7 @@ header h1 {
 }
 
 .dropdown-textF {
-    margin-right: 55rem;
+    margin-right: 60rem;
 }
 
 .dropdown-content {

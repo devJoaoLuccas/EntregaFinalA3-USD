@@ -6,9 +6,51 @@ import '../../styles/global.css';
 import InputText from '../../components/forms/InputText';
 import TextArea from '../../components/forms/TextArea';
 import ButtonLogin from '../../components/buttons/ButtonLogin';
+import { useNavigate } from 'react-router-dom';
+import ButtonMenu from '../../components/buttons/ButtonMenu';
 
 
 function FaleConosco() {
+
+    const navigate = useNavigate();
+    const [user, setUser] = useState([]);
+    const userId = localStorage.getItem('userId');
+
+    const enviar = () => {
+        const confirmation = window.confirm("Essa é a mensagem que você deseja enviar?");
+
+        if(confirmation) {
+            window.alert("Mensagem enviada com sucesso!");
+            return navigate('/menuPrincipal')
+        } else {
+            window.alert("Ok! Quando estiver pronto, pode fazer o envio!");
+        }
+    }
+    
+    const voltar = () => {
+        return navigate('/menuPrincipal');
+    }
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/usuario/${userId}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        })
+          .then((response) =>  {
+              if (!response.ok) {
+                throw new Error('Erro ao buscar detalhes do usuario');
+              }
+              return response.json();
+            })
+          .then((usuario) => {
+            setUser(usuario);
+          })
+          .catch((error) => {
+            console.error('Erro ao buscar detalhes do usuario:', error);
+          });
+      }, [userId]);
 
     return ( 
         <main className='containerForms'>
@@ -20,11 +62,11 @@ function FaleConosco() {
                             <div className='card-infos-row'>
                                 <label 
                                     className='infosLabel'>
-                                    Seu nome:
+                                    Seu nome: 
                                 </label>
                                 <InputText 
                                     classe='card-inputMsg' 
-                                    texto='GUILHERMEX2'
+                                    texto={user.username}
                                     desativado='true' 
                                 />
                             </div>
@@ -35,7 +77,7 @@ function FaleConosco() {
                                 </label>
                                 <InputText 
                                     classe='card-inputMsg' 
-                                    texto='GuiGoncalves@gmail.com' 
+                                    texto={user.email} 
                                     desativado='true' 
                                 />
                             </div>
@@ -57,8 +99,16 @@ function FaleConosco() {
                             </div>
                         </div>
                         <div className='footer-plataform'>
-                            <ButtonLogin texto='Enviar'  classe='buttonAddPlataform'/>
-                            <ButtonLogin texto='Cancelar'  classe='buttonAddPlataform'/>
+                            <ButtonMenu 
+                                texto='Enviar'  
+                                classe='buttonAddPlataform'
+                                event={enviar}
+                            />
+                            <ButtonMenu 
+                                texto='Voltar'  
+                                classe='buttonAddPlataform'
+                                event={voltar}
+                            />
                         </div>   
                     </div>
                 </form>

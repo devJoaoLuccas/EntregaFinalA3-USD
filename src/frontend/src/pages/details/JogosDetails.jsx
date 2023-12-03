@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { json, useNavigate, useParams } from "react-router-dom";
 import InputText from "../../components/forms/InputText";
 import InputDate from "../../components/forms/InputDate";
 import InputNumber from "../../components/forms/inputNumber";
 import SelectPlataforma from "../../components/forms/SelectPlataforma";
-import ButtonLogin from "../../components/buttons/ButtonLogin"
+import SelectCategorias from "../../components/forms/SelectCategorias";
+import ButtonMenu from "../../components/buttons/ButtonMenu";
 
 import '../../styles/details.css'
 
@@ -13,7 +14,42 @@ function JogosDetails() {
 
     const { idJogos } = useParams();
     const [jogos, setJogos] = useState([]);
-    const [plataforma, setPlataformas] = useState([]);
+    const navigate = useNavigate();
+
+    const handleContactVoltar = () => {
+        navigate('/editarDeletar');
+    }
+
+    const handleEditJogos = () => {
+      navigate(`editJogos`)
+    }
+
+    const handleDelete = () => {
+      const confirmation = window.confirm(`Tem certeza que deseja excluir o jogo ${jogos.name_game}?`);
+
+      if (confirmation) {
+          fetch(`http://localhost:3000/deleteJogo/${jogos.idJogo}`, {
+              method: 'GET',
+              headers: {
+                  'Content-Type': 'application/json',
+              }
+          })
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error('Erro ao excluir o jogo');
+                  }
+                  return response.json();
+              })
+              .then(() => {
+                  window.alert(`O jogo ${jogos.name_game} foi deletado`);
+                  navigate('/editarDeletar');
+              })
+              .catch(error => {
+                  console.error('Erro ao excluir o jogo:', error);
+                  window.alert(`Erro ao excluir o jogo ${jogos.name_game}`);
+              });
+      }
+  }
 
     useEffect(() => {
       fetch(`http://localhost:3000/jogo/${idJogos}`, {
@@ -53,14 +89,14 @@ function JogosDetails() {
                                 classeLabel="details-label"
                                 texto={jogos.name_game}
                                 classe="details-input"
-                                desativado="true"
+                                desativado={true}
                               />
                               <InputText 
                                 label="Desenvolvido por:"
                                 classeLabel="details-label"
                                 texto={jogos.developed_by}
                                 classe="details-input"
-                                desativado="true"
+                                desativado={true}
                               />
                               <SelectPlataforma 
                                 classeLabel="details-label"
@@ -68,28 +104,46 @@ function JogosDetails() {
                                 classeSelect="details-input-select"
                                 valor="Plataformas disponíveis:"
                               />
+                              <SelectCategorias 
+                                  texto='Categorias:'
+                                  classeLabel='details-label' 
+                                  classeSelect='details-input-select'
+                                  valor={jogos.category_name}
+                              />
                               <InputDate
                                 texto="Data de criação:"
                                 classeLabel="details-label"
                                 valor={jogos.data_criacao}
                                 classe="details-input"
+                                desativado={true}
                                />
                                <InputNumber 
                                 texto="Nota:"
                                 classeLabel="details-label"
                                 valor={jogos.note}
                                 classe="details-input"
-                                desativado="true"
+                                desativado={true}
                               />
                           </div>
                       </div>
                   </div>
                   <div className='footer-details'>
                             <div className="button-row">
-                              <ButtonLogin texto='Enviar'  classe='button-details'/>
-                              <ButtonLogin texto='Deletar'  classe='button-details'/>
+                              <ButtonMenu 
+                                texto='Editar'  
+                                classe='button-details'
+                                event={handleEditJogos}
+                              />
+                              <ButtonMenu 
+                                texto='Deletar'  
+                                classe='button-details'
+                                event={handleDelete}
+                              />
                             </div>
-                            <ButtonLogin texto='Cancelar'  classe='button-details'/>
+                            <ButtonMenu 
+                              texto='Voltar'  classe='button-details'
+                              event={handleContactVoltar}
+                            />
                         </div>   
               </section>
             </main>

@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { selectUsuarios, selectUsuario, adicionarUsuario, updateUsuario, deleteUsuario } from '../model/usuario.js';
+import { selectUsuarios, selectUsuario, adicionarUsuario, updateUsuario, deleteUsuario, verificarUsuario } from '../model/usuario.js';
 import { selectJogo, selectJogos, adicionarJogo, updateJogo, deleteJogo } from "../model/jogos.js";
 import { adicionarPlataforma, deletePlataforma, selectPlataforma, selectPlataformas, updatePlataforma } from "../model/plataformas.js";
 import { adicionarNotaJogo, deleteNotaJogo, selectNotasJogos, updateNotaJogo } from "../model/notaJogo.js";
@@ -13,8 +13,8 @@ const router = Router();
 // Os metódos GET da nossa API, chamando as querys de cada banco. 
 
 router.get('/jogo/:idJogos', selectJogo);
-router.get('/usuario', selectUsuario);
-router.get('/plataforma', selectPlataforma);
+router.get('/usuario/:idUser', selectUsuario);
+router.get('/plataforma/:idPlataforma', selectPlataforma);
 router.get('/notasJogos', selectNotasJogos);
 router.get('/plataformasJogos', selectPlataformaJogos);
 
@@ -42,9 +42,13 @@ router.put('/updatePlataformaJogo', updatePlataformaJogos);
 // Os metódos DELETE da nossa API, chamando as querys de cada banco.
 
 router.delete('/deleteUsuario', deleteUsuario);
-router.delete('/deleteJogo', deleteJogo);
-router.delete('/deletePlataforma', deletePlataforma);
+router.get('/deleteJogo/:idJogos', deleteJogo);
+router.get('/deletePlataforma/:idPlataforma', deletePlataforma);
 router.delete('/deleteNotaJogo', deleteNotaJogo);
 router.delete('/deletePlataformaJogo', deletePlataformaJogos)
+
+//  O metodo para verificar se possui login
+
+router.post('/login', verificarUsuario);
 
 export default router;

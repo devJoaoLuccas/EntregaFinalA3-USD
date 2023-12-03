@@ -1,6 +1,15 @@
 import ButtonLogin from '../buttons/ButtonLogin.jsx';
+import ButtonMenu from '../buttons/ButtonMenu.jsx';
+
+import { useNavigate } from 'react-router-dom';
 
 function CardGame({jogos}) {
+
+    const navigate = useNavigate();
+
+    const avaliar = (idJogos) => {
+        return navigate(`/jogos/avaliar/${idJogos}`)
+    }
 
     return (
         <>
@@ -13,11 +22,15 @@ function CardGame({jogos}) {
                             <li>Desenvolvido por: <b>{jogo.developed_by}</b></li>
                             <li>Categoria: <b>{jogo.category_name}</b></li>
                             <li>Data de lançamento: <b>{jogo.data_criacao}</b></li>
-                            <li>Nota: <b> {jogo.note}</b></li>
+                            <li>Nota: <b> {jogo.note.toFixed(2)}</b></li>
                         </ul>
                     </div>
                     <div>
-                        <ButtonLogin classe='button-avaliar' texto='Avaliar' />
+                        <ButtonMenu 
+                            classe='button-avaliar' 
+                            texto='Avaliar'
+                            event={() => avaliar(jogo.idJogo)} 
+                        />
                     </div>
                 </div>
                             )
