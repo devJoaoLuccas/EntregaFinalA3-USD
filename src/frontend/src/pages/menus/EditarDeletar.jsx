@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ListGames from "../../components/infos/ListGames";
 import ListPlataforms from "../../components/infos/LitsPlataforms";
 
@@ -24,9 +25,9 @@ function EditarDeletar() {
                     </div>
                     <footer>
                         <div className="logotipo">
-                            <a href="">
+                            <Link to={'/painelAdmin'} >
                                 <img className="logo" src="src/assets/logo.png" alt="" />
-                            </a>
+                            </Link>
                         </div>
                     </footer>
                 </div>

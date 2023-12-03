@@ -7,6 +7,8 @@ import ButtonLogin from '../../components/buttons/ButtonLogin';
 import '../../styles/global.css'
 import '../../styles/forms.css'
 import InputDate from '../../components/forms/InputDate';
+import ButtonMenu from '../../components/buttons/ButtonMenu';
+import { useNavigate } from 'react-router-dom';
 
 function AddGames() {
 
@@ -18,11 +20,16 @@ function AddGames() {
 
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isPending, setIsPending] = useState(false)
+    const navigate = useNavigate();
 
     const handleChangeCategory = event => {
         event.preventDefault();
         console.log(`{category}`)
         setCategory(event.target.value);
+    }
+
+    const voltar = () => {
+        return navigate('/painelAdmin')
     }
 
     useEffect(() => {
@@ -33,11 +40,8 @@ function AddGames() {
     }, [isSubmitted]);
 
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        try {
-            
+    const handleSubmit = () => {
+        try {           
             setIsPending(true);
 
             fetch('http://localhost:3000/inserirJogo', {
@@ -57,6 +61,7 @@ function AddGames() {
                     console.log(`a new game was added ${nameGame}`);
                     setIsPending(false);
                     setIsSubmitted(true);
+                    return navigate('/painelAdmin')
                 })
 
         } catch (error) {
@@ -68,7 +73,6 @@ function AddGames() {
     return ( 
         <main className='container'> 
             <section className='card-addGames'>
-                <form onSubmit={handleSubmit}>
                     <div className='card-infoGames'>
                         <img className='logoPlataform' src="../src/assets/logo.png" alt="" /> 
                         <h1>Adicionar Jogo</h1>
@@ -110,15 +114,19 @@ function AddGames() {
                             </div>
                         </div>
                         <div className="footer-plataform">
-                            <ButtonLogin 
+                            <ButtonMenu 
                                 texto='Enviar'  
-                                classe='buttonAddGames'/>
-                            <ButtonLogin 
+                                classe='buttonAddGames'
+                                event={handleSubmit}
+                                />
+                                
+                            <ButtonMenu 
                                 texto='Cancelar'  
-                                classe='buttonAddGames'/>
+                                classe='buttonAddGames'
+                                event={voltar}
+                                />
                         </div>
                     </div>
-                </form>
             </section>
         </main>
     )

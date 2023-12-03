@@ -9,8 +9,6 @@ import { useNavigate } from "react-router-dom";
 
 function Jogos() {
 
-    const navigate = useNavigate();
-
     const [jogos, setJogos] = useState([]);
 
     useEffect (() => {
