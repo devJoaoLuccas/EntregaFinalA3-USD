@@ -1,10 +1,11 @@
 import ButtonLogin from "../../components/buttons/ButtonLogin";
 import ButtonMenu from "../../components/buttons/ButtonMenu";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import '../../styles/menu.css'
 import '../../styles/global.css'
 import { useEffect, useState } from "react";
+import Dropdown from "../../components/navbar/Dropdown";
 
 
 
@@ -25,6 +26,22 @@ function MenuPrincipal() {
 
     const handleContactFaleConosco = () => {
         return navigate('/faleConosco');
+    }
+
+    const handleContactPainelAdmin = () => {
+        return navigate('/painelAdmin')
+    }
+
+    const confirmLogof = () => {
+        const confirmation = window.confirm("Você tem certeza que deseja sair da plataforma?");
+
+        if(confirmation) {
+            window.alert("Log off realizado com sucesso! Muito obrigado por acessar nossa plataforma!");
+            return navigate('/')
+        } else {
+            window.alert("Ufa! Ainda bem que você vai ficar um pocuo mais conosco!");
+            return navigate('/menuPrincipal');
+        }
     }
 
 
@@ -74,17 +91,10 @@ function MenuPrincipal() {
                     />
                 </div>
                 <div className="footerMenu">
-                    <div className="dropdown">
-                        <div>
-                            <span className="dropdown-text">
-                                {user.username}
-                            </span>
-                            <div className="dropdown-content">
-                                <a href="" id="perfil-link">Meu Perfil</a>
-                                <a href="" id="adm-link">Painel de administrador</a>
-                                <a href="" id="sair-link">Sair</a>
-                            </div>
-                        </div>
+                    <div>
+                        <Dropdown 
+                            userId={userId}
+                        />
                     </div>
                         <img className="logo" src="src\assets\logo.png" alt="" />
                 </div>

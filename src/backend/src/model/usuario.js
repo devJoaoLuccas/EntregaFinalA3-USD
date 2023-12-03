@@ -15,7 +15,8 @@ export async function createTableUsuarios() {
                 username TEXT CHECK(LENGTH(username) <= 20) NOT NULL, 
                 email TEXT CHECK (LENGTH(email) <= 255) NOT NULL, 
                 password TEXT CHECK (LENGTH(password) <= 20) NOT NULL, 
-                data_nascimento BLOB NOT NULL)
+                data_nascimento BLOB NOT NULL,
+                admin BOOLEAN NOT NULL)
             `
         );
 
@@ -26,18 +27,18 @@ export async function initInserirUsuario() {
     try {
         await db.run(
             `
-            INSERT INTO usuarios (idUser, username, email, password, data_nascimento) 
+            INSERT INTO usuarios (idUser, username, email, password, data_nascimento, admin) 
             VALUES
-                (1,"joaodemais1503", "joao.marques@gmail.com", "Paula1503", "29/12/2003"),
-                (2,"marcos1503", "marcos.marques@gmail.com", "marcos1503", "15/03/1998"),
-                (3,"sadmarques", "joaodemais29@gmail.com", "joaodemais1503", "29/11/2005"),
-                (4, "nightwing", "dick.grayson@bludhavenmail.com", "W1ngs_N1ght", "20/03/1995"),
-                (5, "batman", "the_dark_knight@wayneenterprises.com", "G0th@m!T3rr1t0ry", "07/04/1985"),
-                (6, "kilerjoker", "jokerized@arkhamasylum.com", "H@h@H@_Sm1l3", "19/09/1980"),
-                (7, "batgirl", "oracle_rises@gmail.com", "B@tG1rlB@rbara", "15/03/2023"),
-                (8, "alfredp", "butlerextraordinaire@gmail.com", "TeaT1m3_Bruce", "08/02/1945"),
-                (9, "damianwayne005", "robin5@waynecorp.com", "S0n_0f_B@t", "19/12/2000"),
-                (10, "timdrake", "tim.drake@redrobin.com", "R0b1nR3b0rn", "17/09/1999");
+                (1,"joaodemais1503", "joao.marques@gmail.com", "Paula1503", "29/12/2003", 1),
+                (2,"marcos1503", "marcos.marques@gmail.com", "marcos1503", "15/03/1998", 0),
+                (3,"sadmarques", "joaodemais29@gmail.com", "joaodemais1503", "29/11/2005", 1),
+                (4, "nightwing", "dick.grayson@bludhavenmail.com", "W1ngs_N1ght", "20/03/1995", 1),
+                (5, "batman", "the_dark_knight@wayneenterprises.com", "G0th@m!T3rr1t0ry", "07/04/1985", 1),
+                (6, "kilerjoker", "jokerized@arkhamasylum.com", "H@h@H@_Sm1l3", "19/09/1980", 1),
+                (7, "batgirl", "oracle_rises@gmail.com", "B@tG1rlB@rbara", "15/03/2023", 1),
+                (8, "alfredp", "butlerextraordinaire@gmail.com", "TeaT1m3_Bruce", "08/02/1945", 1),
+                (9, "damianwayne005", "robin5@waynecorp.com", "S0n_0f_B@t", "19/12/2000", 1),
+                (10, "timdrake", "tim.drake@redrobin.com", "R0b1nR3b0rn", "17/09/1999", 1);
                 `
         );
     } catch (error) {

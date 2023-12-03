@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './pages/menus/ErrorPage.jsx';
 import Login from './pages/login/Login.jsx';
 import MenuPrincipal from './pages/menus/MenuPrincipal.jsx';
+import PainelDeAdministrador from './pages/menus/PainelDeAdministrador.jsx'
 import Jogos from './pages/menus/Jogos.jsx';
 import JogosDetails from './pages/details/JogosDetails.jsx';
 import AddGames from './pages/forms/AddGames.jsx';
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
           element:<MenuPrincipal />,
         },
         {
+          path:'/painelAdmin',
+          element:<PainelDeAdministrador />,
+        },
+        {
           path:'/jogos',
           element:<Jogos />,
         },
@@ -66,8 +71,8 @@ const router = createBrowserRouter([
           element: <PlataformEdit />
         },
         {
-          path:'plataforma/adicionarPlataforma',
-          element:<AddPlataform.jsx />
+          path:'/adicionarPlataforma',
+          element:<AddPlataform />
         },
         {
           path:'/editarDeletar',

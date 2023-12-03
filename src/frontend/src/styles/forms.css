@@ -73,6 +73,7 @@
     color: #fff;
 }
 
+
 .card-infoGames-inputs {
     display: flex;
     flex-direction: column;
@@ -142,6 +143,7 @@
     border-radius: 0.8rem;
 
     background-color: var(--cor-secundaria);
+    color: #fff;
 
     margin-left: 2.8rem;
     padding-left: 1rem;

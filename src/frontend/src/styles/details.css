@@ -30,7 +30,7 @@
     height: 64rem;
 }
 
-h1 {
+.card-details h1 {
     font: 600 4rem 'black ops one';
     text-align: center;
 
