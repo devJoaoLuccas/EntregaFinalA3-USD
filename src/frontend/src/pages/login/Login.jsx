@@ -89,7 +89,7 @@ function Login() {
                         />
                     
                     <footer className="footer-login">
-                        <Link to={'/cadastroDeUsuario'}>
+                        <Link to={'/cadastroUsuario'}>
                             Cadastre-se aqui
                         </Link>
                     </footer>

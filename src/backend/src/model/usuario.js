@@ -107,17 +107,20 @@ export async function adicionarUsuario(req,res) {
         await db.run(
             `
                 INSERT INTO usuarios 
-                (username, email, password, data_nascimento) 
-                VALUES (?,?,?,?)'
-            `, [usuario.username, usuario.email,usuario.password, usuario.data_nascimento]);
+                (username, email, password, data_nascimento, admin) 
+                VALUES (?,?,?,?,?)
+            `, [usuario.username, usuario.email,usuario.password, usuario.data_nascimento, usuario.admin]);
+
+        console.log("O usuario foi adicionado com sucesso", usuario.username);
 
         res.json ({
             "statusCode": 200
         });    
     } catch (error) {
-        console.log(`Não foi possivel adicionar usuário`);
+        console.log("Não foi possivel adicionar o usuario");
     }
-    
+
+ 
 }
 
 // Query feita para atualizar um usuário em especificio da tabela. 
@@ -161,6 +164,7 @@ export async function deleteUsuario(req, res) {
                 usuarios 
                 WHERE username=?
             `, [username]);
+
 
         res.json ({
                 "statusCode": 200
