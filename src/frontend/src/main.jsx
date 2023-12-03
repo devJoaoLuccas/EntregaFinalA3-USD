@@ -55,6 +55,10 @@ const router = createBrowserRouter([
           element: <GameEdit />,
         },
         {
+          path:'jogos/avaliar/:idJogos',
+          element: <AvaliarJogos />
+        },
+        {
           path:'/adicionarJogo',
           element: <AddGames />
         },

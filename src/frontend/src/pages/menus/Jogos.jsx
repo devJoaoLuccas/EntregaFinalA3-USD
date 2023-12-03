@@ -5,8 +5,11 @@ import CardGame from '../../components/cards/CardGame.jsx';
 
 import '../../styles/cards.css'
 import '../../styles/global.css'
+import { useNavigate } from "react-router-dom";
 
 function Jogos() {
+
+    const navigate = useNavigate();
 
     const [jogos, setJogos] = useState([]);
 
@@ -30,7 +33,9 @@ function Jogos() {
                 <main>
                     <section className="grupo-game">
                         <div className="card-rowGames">
-                            <CardGame jogos={jogos} />
+                            <CardGame 
+                                jogos={jogos}
+                            />
                         </div>  
                     </section>
                 </main>

@@ -181,7 +181,7 @@
 }
 
 .input-label-avaliarY {
-    text-align: end;
+    text-align: start;
 }
 
 
@@ -262,4 +262,9 @@
     width: 15rem;
 }
 
+.dropdown-container {
+    text-align: start;
+
+    margin-top: 3rem;
+}
 
