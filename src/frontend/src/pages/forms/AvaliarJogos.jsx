@@ -1,14 +1,12 @@
-import InputNumber from "../../components/forms/inputNumber";
-import InputText from "../../components/forms/InputText";
-import SelectStatus from "../../components/forms/SelectStatus";
-import ButtonLogin from "../../components/buttons/ButtonLogin";
-
-import '../../styles/forms.css';
-import '../../styles/global.css';
-import ButtonMenu from "../../components/buttons/ButtonMenu";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
+import ButtonMenu from "../../components/buttons/ButtonMenu";
+import InputNumber from "../../components/forms/inputNumber";
+import SelectStatus from "../../components/forms/SelectStatus";
 import Dropdown from "../../components/navbar/Dropdown";
+
+import styles from '../../styles/forms/AvaliarJogos.module.css'
 
 function AvaliarJogo() {
 
@@ -77,49 +75,49 @@ function AvaliarJogo() {
 
     return (
 
-        <main className="container">
-            <section className="card-avaliar">
-                    <div className="card-infosF">
+        <main className={styles.container}>
+            <section className={styles.card_avaliar}>
+                    <div className={styles.card_infos}>
                         <div>
                             <h1>
                                 Avaliar 
                                 <span> {jogos.name_game}</span>
                             </h1>
                         </div>
-                        <div className="cardRow-avaliar">
-                                <div className="cardColumn-avaliar">
+                        <div className={styles.cardRow}>
+                                <div className={styles.cardColumn}>
                                     <SelectStatus 
-                                        classeLabel='input-label-avaliarX'  
-                                        classeSelect='card-infoGames-selectX'
+                                        classeLabel={styles.input_label_avaliarX}  
+                                        classeSelect={styles.card_info_inputNumber}
                                         texto='Status' 
                                         textoCapturado={setStatus}
                                     />
                                 </div>
-                                <div className="cardColumn-avaliar">
+                                <div className={styles.cardColumn}>
                                     <InputNumber 
                                         texto='Selecione a nota:'
                                         textoCapturado={setNota} 
                                         valor='0'
-                                        classe="card-info-inputNumber" 
-                                        classeLabel='input-label-avaliarY'
+                                        classe={styles.card_info_inputNumber} 
+                                        classeLabel={styles.input_label_avaliarX}
                                     />
                                 </div>
                         </div>
                         <footer>
-                            <div className='footer-plataform'>
+                            <div className={styles.footer_plataform}>
                                 <ButtonMenu 
                                     texto='Avaliar'  
-                                    classe='buttonAddPlataform'
+                                    classe={styles.buttonAddPlataform}
                                     event={avaliar}
                                 />
                                 <ButtonMenu 
                                     texto='Voltar'  
-                                    classe='buttonAddPlataform'
+                                    classe={styles.buttonAddPlataform}
                                     event={voltar}
                                 />
                             </div>
                         </footer>
-                        <div className="dropdown-container">
+                        <div className={styles.dropdown_container}>
                             <Dropdown 
                                 userId={userId} 
                             />

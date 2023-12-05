@@ -8,7 +8,7 @@ import ButtonLogin from '../../components/buttons/ButtonLogin';
 import InputDate from '../../components/forms/InputDate';
 import ButtonMenu from '../../components/buttons/ButtonMenu';
 
-import '../../styles/forms/AddGames.module.css'
+import styles from '../../styles/forms/AddGames.module.css'
 
 
 function AddGames() {
@@ -72,56 +72,58 @@ function AddGames() {
 
 
     return ( 
-        <main className='container'> 
-            <section className='card-addGames'>
-                    <div className='card-infoGames'>
-                        <img className='logoPlataform' src="../src/assets/logo.png" alt="" /> 
+        <main className={styles.container}> 
+            <section className={styles.card_addGames}>
+                    <div className={styles.card_infoGames}>
+                        <img className={styles.logoPlataform} src="../src/assets/logo.png" alt="" /> 
                         <h1>Adicionar Jogo</h1>
-                        <div className='card-infoGames-inputs'>
+                        <div className={styles.card_infoGames_inputs}>
                             <InputText 
                                 label="Nome do jogo:" 
                                 texto="Baldurs Gate 3" 
-                                classe="card-infoGames-inputText" 
-                                classeLabel='input-label' 
+                                classe={styles.card_infoGames_inputText} 
+                                classeLabel={styles.input_label} 
                                 textoCapturado={setNameGame}/> 
                             <InputText 
                                 label="Desenvolvido por:" 
                                 texto="Larian Studios" 
-                                classe="card-infoGames-inputText"  
-                                classeLabel='input-label' 
+                                classe={styles.card_infoGames_inputText} 
+                                classeLabel={styles.input_label}
                                 textoCapturado={setDevelopedBy}/>
-                            <div className='card-infoGames-selects'>
-                                <div className='cardColumn'>
+                            <div className={styles.cardRow}>
+                                <div className={styles.cardColumn}>
                                     <SelectCategorias 
                                         texto='Categorias:'
-                                        classeLabel='card-infoGames-label' 
-                                        classeSelect='card-infoGames-select' 
+                                        classeLabel={styles.input_label} 
+                                        classeSelect={styles.card_infoGames_select}
                                         textoCapturado={handleChangeCategory}
                                         valor={category} />
+                                </div>
+                                <div className={styles.cardColumn}>
                                     <SelectPlataforma 
-                                        classeSelect='card-infoGames-select'
-                                        classeLabel='card-infoGames-label' 
+                                        classeSelect={styles.card_infoGames_select}
+                                        classeLabel={styles.input_label}  
                                         texto='Plataformas:' />
                                 </div>
                             </div>
-                            <div className='cardRow'>
+                            <div className={styles.cardRow_date}>
                                 <InputDate 
                                     texto='Data de criação:' 
-                                    classeInput='card-inputDate' 
-                                    classeLabel='card-infoGames-label' 
+                                    classe={styles.card_inputDate} 
+                                    classeLabel={styles.input_label_date} 
                                     textoCapturado={setDate} />
                             </div>
                         </div>
-                        <div className="footer-plataform">
+                        <div className={styles.footer_plataform}>
                             <ButtonMenu 
                                 texto='Enviar'  
-                                classe='buttonAddGames'
+                                classe={styles.buttonAddGames}
                                 event={handleSubmit}
                                 />
                                 
                             <ButtonMenu 
                                 texto='Cancelar'  
-                                classe='buttonAddGames'
+                                classe={styles.buttonAddGames}
                                 event={voltar}
                                 />
                         </div>

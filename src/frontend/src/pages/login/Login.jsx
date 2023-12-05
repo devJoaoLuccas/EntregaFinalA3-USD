@@ -5,7 +5,7 @@ import Select from "../../components/forms/SelectPlataforma";
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-import '../../styles/global.css'
+
 import ButtonMenu from "../../components/buttons/ButtonMenu";
 
 function Login() {

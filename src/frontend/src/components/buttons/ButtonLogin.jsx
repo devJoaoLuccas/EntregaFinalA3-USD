@@ -1,5 +1,3 @@
-import '../../styles/button.css';
-import PropTypes from 'prop-types';
 
 import { useState } from 'react';
 
@@ -16,8 +14,6 @@ function ButtonLogin({event, classe, texto, handleSubmit, data}) {
 
 }
 
-ButtonLogin.propTypes = {
-    texto: PropTypes.string
-}
+
 
 export default ButtonLogin;

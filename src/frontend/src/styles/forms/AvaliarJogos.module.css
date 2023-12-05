@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@300&family=Teko:wght@300&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +19,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 
     align-items: center;
     justify-content: center;
@@ -27,101 +27,82 @@
     background-color: #865dff;
 }
 
-.card_addGames {
+.card_avaliar {
     display: flex;
     flex-direction: column;
 
     width: 70rem;
-    height: 60rem;
+    height: 33rem;
 
     background-color: var(--cor-card);
-    border: none;
     border-radius: 2rem;
+    border: none;
 
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.card_infoGames {
+.card_infos {
     display: flex;
     flex-direction: column;
-    
+
     align-items: center;
-    justify-content: center;
+    text-align: center;
 
-    color: #fff;
-    gap: 2rem;
-}
-
-.logoPlataform {
-    width: 15rem;
     margin-top: 3rem;
+    gap: 3rem;
+
+    font: 400 1.5rem 'Arial';
+    color: #fff;
 }
 
-.card_infoGames h1 {
-    font: 500 3rem 'black ops one';
+.card_infos span {
+    color: var(--cor-fundo);
 }
 
-.card_infoGames_inputs {
+.card_infos h1 {
+    font: 600 3rem 'black ops one';
+}
+
+.cardRow {
+    display: flex;
+
+    gap: 4rem;
+}
+
+.cardColumn {
     display: flex;
     flex-direction: column;
 }
 
-.card_infoGames_inputText, .card-inputDate, .card_infoGames_select, .card_inputDate  {
-    width: 54rem;
+.input_label_avaliarX {
+    font: 400 1.8rem 'Arial';
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+
+    text-align: start;
+}
+
+.card_info_inputNumber {
+    width: 20rem;
     height: 4rem;
 
     border: none;
-    outline: none;
     border-radius: 0.8rem;
+    outline: none;
 
     background-color: var(--cor-secundaria);
-    color: #fff;
+    color: rgb(255, 255, 255);
 
     padding-left: 1rem;
     margin-bottom: 2rem;
     margin-top: 0.5rem;
 }
 
-.card_infoGames_select {
-    width: 25rem;
-    height: 4rem;
-}
-
-.card_inputDate {
-    width: 12rem;
-}
-
-.card_infoGames::placeholder {
-    color: var(--cinza);
-}
-
-.input_label, .input_label_date {
-    font: 600 1.5rem 'Arial';
-    padding-left: 0.5rem;
-}
-
-.input_label_date {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 2rem;
-}
-
-
-.cardRow, .cardRow_date {
-    display: flex;
-    flex-direction: row;
-    gap: 5rem;
-}
-
-.cardRow_date {
-    gap: 1rem;
-}
-
-.cardColumn {
-    display: flex;
-    flex-direction: column;
+.input_label_avaliar {
+    font: 400 1.8rem 'Arial';
+    margin-right: 1rem;
+    text-align: start;
 }
 
 .footer_plataform {
@@ -131,24 +112,29 @@
     gap: 5rem;
 }
 
-.buttonAddGames {
-    width: 25rem;
+.buttonAddPlataform {
+    width: 20rem;
     height: 5rem;
-    
+
+    background-color: var(--botao);
+    font: 600 2.5rem 'black ops one';
+
     border: none;
     border-radius: 0.8rem;
-
-    background-color: #ffa3fd;
-    font: bolder 2.5rem 'black ops one';
 
     cursor: pointer;
     transition: all .5s ease-in-out;
 }
 
-.buttonAddGames:hover {
+.buttonAddPlataform:hover {
     transition: .5s;
     transform: scale(1.02);
 
-    background-color: #865dff;
+    background-color: var(--cor-fundo);
     color: #fff;
+
+}
+
+.dropdown_container {
+    text-align: start;
 }

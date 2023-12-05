@@ -3,7 +3,6 @@ import InputText from "../../components/forms/InputText";
 import InputDate from "../../components/forms/InputDate";
 
 
-import '../../styles/cadastro.css'
 import ButtonMenu from "../../components/buttons/ButtonMenu";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom'

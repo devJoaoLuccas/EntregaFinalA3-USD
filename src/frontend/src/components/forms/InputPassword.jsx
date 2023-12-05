@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import '../../styles/global.css'
 import { useState } from 'react'
 
 function InputPassword({label,texto, textoCapturado, classe, classeLabel, desativado}) {

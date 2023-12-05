@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 
 import CardPlataform from "../../components/cards/CardPlataform";
 
-import '../../styles/cards.css'
-import '../../styles/global.css'
 import Navbar from "../../components/navbar/Navbar";
 
 

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import '../../styles/global.css'
 
 function InputText({label,texto, textoCapturado, classe, desativado, classeLabel}) {
 

@@ -5,7 +5,7 @@ import InputPassword from "../../components/forms/InputPassword";
 import ButtonMenu from "../../components/buttons/ButtonMenu";
 import ListNotasUser from "../../components/infos/ListNotasUser";
 
-import '../../styles/cards.css'
+
 
 function EditUser() {
 

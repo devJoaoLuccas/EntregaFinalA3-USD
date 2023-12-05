@@ -2,8 +2,6 @@ import ButtonLogin from "../../components/buttons/ButtonLogin";
 import ButtonMenu from "../../components/buttons/ButtonMenu";
 import { Link, useNavigate } from "react-router-dom";
 
-import '../../styles/menu.css'
-import '../../styles/global.css'
 import { useEffect, useState } from "react";
 import Dropdown from "../../components/navbar/Dropdown";
 

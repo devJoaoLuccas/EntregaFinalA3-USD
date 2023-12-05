@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react'
 
-import '../../styles/forms.css';
-import '../../styles/global.css';
-
 import InputText from '../../components/forms/InputText';
 import TextArea from '../../components/forms/TextArea';
 import ButtonLogin from '../../components/buttons/ButtonLogin';
