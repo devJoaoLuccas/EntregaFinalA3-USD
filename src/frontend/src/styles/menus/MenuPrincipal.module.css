@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@300&family=Teko:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+    --cinza: #cac2c2;
+}
+
+.containerMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: 100vh;
+    background-color: #303030;
+}
+
+.cardMenu {
+    display: flex;
+    flex-direction: column;
+
+    width: 75rem;
+    height: 65rem;
+
+    background-color: var(--cor-card);
+    border-radius: 2rem;
+    border: none;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.card_infos {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    text-align: center;
+
+    margin-top: 3rem;
+    gap: 4rem;
+
+    font: 400 1.5rem 'Arial';
+    color: #fff;
+}
+
+h1 {
+    font: bold 3.5rem 'black ops one';
+    color: #fff;
+}
+
+h2 {
+    font: 300 2.8rem 'black ops one';
+}
+
+span {
+    color: var(--cor-fundo);
+}
+
+.buttonMenu {
+    border: none;
+    border-radius: 0.8rem;
+
+    width: 50rem;
+    height: 7rem;
+
+    background-color: #ffa3fd;
+    font: bolder 2.5rem 'black ops one';
+
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.buttonMenu:hover {
+    transition: .5s;
+    transform: scale(1.02);
+
+    background-color: #865dff;
+    color: #fff;
+}
+
+.footerMenu { 
+    display: flex;
+    flex-direction: row;
+
+    align-items: flex-end;
+    justify-content: space-around;
+    margin-top: 7rem;
+    margin-right: 22rem;
+}
+
+.logo  { 
+    width: 15rem;
+}

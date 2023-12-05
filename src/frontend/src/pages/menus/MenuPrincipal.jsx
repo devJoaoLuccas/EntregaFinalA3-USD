@@ -1,11 +1,12 @@
-import ButtonLogin from "../../components/buttons/ButtonLogin";
-import ButtonMenu from "../../components/buttons/ButtonMenu";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { useEffect, useState } from "react";
+import ButtonLogin from "../../components/buttons/ButtonLogin";
+import ButtonMenu from "../../components/buttons/ButtonMenu";
 import Dropdown from "../../components/navbar/Dropdown";
 
 
+import styles from '../../styles/menus/MenuPrincipal.module.css'
 
 function MenuPrincipal() {
 
@@ -67,34 +68,34 @@ function MenuPrincipal() {
 
     return (
 
-        <main className="containerMenu">
-            <section className="cardMenu">
-                <div className="card-infos">
+        <main className={styles.containerMenu}>
+            <section className={styles.cardMenu}>
+                <div className={styles.card_infos}>
                     <h1>BEM VINDO AO <span>THE GAME BAY</span></h1>
                     <h2>MENU:</h2>
                     <ButtonMenu 
                         texto="JOGOS"
-                        classe='buttonMenu'
+                        classe={styles.buttonMenu}
                         event={handleContactJogos} 
                     />
                     <ButtonMenu 
                         texto="PLATAFORMAS"
-                        classe='buttonMenu'
+                        classe={styles.buttonMenu}
                         event={handleContactPlataforma} 
                     />
                     <ButtonMenu 
                         texto="FALE CONOSCO"
-                        classe='buttonMenu'
+                        classe={styles.buttonMenu}
                         event={handleContactFaleConosco} 
                     />
                 </div>
-                <div className="footerMenu">
+                <div className={styles.footerMenu}>
                     <div>
                         <Dropdown 
                             userId={userId}
                         />
                     </div>
-                        <img className="logo" src="src\assets\logo.png" alt="" />
+                        <img className={styles.logo} src="src\assets\logo.png" alt="" />
                 </div>
 
             </section>
