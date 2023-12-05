@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import InputText from '../../components/forms/InputText';
 import SelectPlataforma from '../../components/forms/SelectPlataforma';
 import SelectCategorias from '../../components/forms/SelectCategorias';
 import ButtonLogin from '../../components/buttons/ButtonLogin';
-
-import '../../styles/global.css'
-import '../../styles/forms.css'
 import InputDate from '../../components/forms/InputDate';
 import ButtonMenu from '../../components/buttons/ButtonMenu';
-import { useNavigate } from 'react-router-dom';
+
+import '../../styles/forms/AddGames.module.css'
+
 
 function AddGames() {
 
@@ -97,8 +98,6 @@ function AddGames() {
                                         classeSelect='card-infoGames-select' 
                                         textoCapturado={handleChangeCategory}
                                         valor={category} />
-                                </div>    
-                                <div className='cardColumn'>
                                     <SelectPlataforma 
                                         classeSelect='card-infoGames-select'
                                         classeLabel='card-infoGames-label' 
