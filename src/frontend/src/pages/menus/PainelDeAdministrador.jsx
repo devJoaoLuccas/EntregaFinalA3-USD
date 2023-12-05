@@ -1,8 +1,6 @@
 import ButtonMenu from "../../components/buttons/ButtonMenu";
 import Dropdown from '../../components/navbar/Dropdown';
 
-import '../../styles/menu.css'
-import '../../styles/global.css'
 import { useNavigate } from "react-router-dom";
 
 

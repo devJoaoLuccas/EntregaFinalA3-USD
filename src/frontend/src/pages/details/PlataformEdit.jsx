@@ -4,8 +4,6 @@ import InputText from "../../components/forms/InputText";
 import ButtonMenu from "../../components/buttons/ButtonMenu";
 
 
-import '../../styles/details.css'
-
 function PlataformEdit() {
 
     const { idPlataforma } = useParams();

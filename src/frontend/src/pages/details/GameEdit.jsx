@@ -7,7 +7,6 @@ import SelectPlataforma from "../../components/forms/SelectPlataforma";
 import SelectCategorias from "../../components/forms/SelectCategorias";
 import ButtonMenu from "../../components/buttons/ButtonMenu";
 
-import '../../styles/details.css'
 
 function GameEdit() {
 

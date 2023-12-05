@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import ListGames from "../../components/infos/ListGames";
 import ListPlataforms from "../../components/infos/LitsPlataforms";
 
-import '../../styles/global.css';
-import '../../styles/menu.css';
 
 
 function EditarDeletar() {

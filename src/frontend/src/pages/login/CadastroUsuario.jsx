@@ -1,12 +1,12 @@
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom'
+
 import InputPassword from "../../components/forms/InputPassword";
 import InputText from "../../components/forms/InputText";
 import InputDate from "../../components/forms/InputDate";
-
-
-import '../../styles/cadastro.css'
 import ButtonMenu from "../../components/buttons/ButtonMenu";
-import { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+
+import styles from '../../styles/login/CadastroUsuario.module.css'
 
 function CadastroUsuario() {
 
@@ -59,66 +59,66 @@ function CadastroUsuario() {
 
     return (
         <body>
-            <main className="container">
-                <section className="cardCadastro">
-                    <div  className="card-infos">
+            <main className={styles.container}>
+                <section className={styles.cardCadastro}>
+                    <div  className={styles.card_infos}>
                     <h1>Cadastre-se no <span>THE GAME BAY</span></h1>
-                        <div className="card-inputs">
-                            <div className="card-inputs-column">
+                        <div className={styles.card_inputs}>
+                            <div className={styles.card_inputs_column }>
                                 <InputText 
                                     label="Username:"
-                                    classeLabel="label_input"
-                                    classe="inputUser"
+                                    classeLabel={styles.label_input}
+                                    classe={styles.inputUser}
                                     texto="Insira seu nome de usuário:"
                                     textoCapturado={setUsername}
                                 />
                             </div>                            
-                            <div className="card-inputs-column">
+                            <div className={styles.card_inputs_column }>
                                 <InputText 
                                     label="Email:"
-                                    classeLabel="label_input"
-                                    classe="inputUser"
+                                    classeLabel={styles.label_input}
+                                    classe={styles.inputUser}
                                     texto="Insira seu email:"
                                     textoCapturado={setEmail}
                                 />
                             </div>
-                            <div className="card-inputs-column">
+                            <div className={styles.card_inputs_column }>
                                 <InputPassword 
                                     label="Senha:"
-                                    classeLabel="label_input"
-                                    classe="inputUser"
+                                    classeLabel={styles.label_input}
+                                    classe={styles.inputUser}
                                     texto="Insira sua senha:"
                                     textoCapturado={setPassword}
                                 />
                             </div>
-                            <div className="card-inputs-column">
+                            <div className={styles.card_inputs_column }>
                                 <InputPassword 
                                     label="Confirme a senha:"
-                                    classeLabel="label_input"
-                                    classe="inputUser"
+                                    classeLabel={styles.label_input}
+                                    classe={styles.inputUser}
                                     texto="Insira a mesma senha:"
                                     textoCapturado={setPasswordConfirm}
                                 />
                             </div>
-                            <div className="card-inputs-column">
+                            <div className={styles.card_inputs_column }>
                                 <InputDate 
                                     texto="Data de nascimento:"
-                                    classeLabel="label_input"
-                                    classe="inputUser"
+                                    classeLabel={styles.label_input}
+                                    classe={styles.inputUser}
                                     textoCapturado={setDate}
                                 />
                             </div>
                         </div>
                     </div>
-                    <div className="card-buttons">
+                    <div className={styles.card_buttons}>
                         <ButtonMenu 
                             texto="Cadastrar"
-                            classe="btn-cadastro"
+                            classe={styles.btn_cadastro}
                             event={cadastrarUsuario}
                         />
                         <ButtonMenu 
                             texto="Cancelar"
-                            classe="btn-cadastro"
+                            classe={styles.btn_cadastro}
                             event={voltar}
                         />
                     </div>

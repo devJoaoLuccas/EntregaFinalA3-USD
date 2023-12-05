@@ -5,11 +5,12 @@
   "main": "index.js",
   "type":"module",
   "scripts": {
-    "dev": "nodemon src/backend/src/app.js",
-    "devFront":"cd src/frontend && npm run dev",
-    "install": "cd src/backend/src && npm install sqlite && npm install sqlite3 && npm install express && npm install cors",
+    "dev:back": "nodemon src/backend/src/app.js",
+    "dev:front":"cd src/frontend && npm run dev",
+    "install:back": "cd src/backend/src && npm install sqlite && npm install sqlite3 && npm install express && npm install cors",
     "install:front": "cd src/frontend && npm install react && npm install react-router-dom",
-    "install:all": "npm run install && npm run install:front",
+    "install:all": "npm run install:back && npm run install:front",
+    "start:all":"npm run dev:front && npm run dev:back",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js"
   },

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import styles from '../../styles/nav/Dropdown.module.css'
+
 
 function Dropdown({userId}) {
 
@@ -45,12 +47,14 @@ function Dropdown({userId}) {
       }, [userId]);
 
       return(
-        <div className="dropdown">
+        <div className={styles.dropdown}>
             <div>
-                <span className="dropdown-text">
-                    {user.username}
+                <span>
+                    <p className={styles.dropdown_text}>
+                      {user.username}
+                    </p>
                 </span>
-                <div className="dropdown-content">
+                <div className={styles.dropdown_content}>
                     <Link to={'/meuPerfil'}>
                         Meu Perfil
                     </Link>

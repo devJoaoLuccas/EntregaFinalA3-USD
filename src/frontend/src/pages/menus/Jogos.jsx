@@ -3,8 +3,6 @@ import { useState ,useEffect } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import CardGame from '../../components/cards/CardGame.jsx';
 
-import '../../styles/cards.css'
-import '../../styles/global.css'
 import { useNavigate } from "react-router-dom";
 
 function Jogos() {

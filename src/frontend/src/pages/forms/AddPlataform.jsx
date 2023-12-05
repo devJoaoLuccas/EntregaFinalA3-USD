@@ -1,13 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
  
 import InputText from '../../components/forms/InputText';
-
-import '../../styles/global.css';
-import '../../styles/forms.css';
-import ButtonLogin from '../../components/buttons/ButtonLogin';
-import { useNavigate } from 'react-router-dom';
 import ButtonMenu from '../../components/buttons/ButtonMenu';
 
+import styles from '../../styles/forms/AddPlataform.module.css'
 
 function AddPlataform() {
 
@@ -57,23 +54,26 @@ function AddPlataform() {
 
 
     return (
-        <main className='containerForms'>
-            <section className='card-addPlataform'>
-                <div className='card-infoPlataform  '>
-                    <img className='logoPlataform' src="../src/assets/logo.png" alt="" /> 
-                        <div>
+        <main className={styles.containerForms}>
+            <section className={styles.card_appPlataform}>
+                <div className={styles.card_infoPlataform}>
+                    <img className={styles.logoPlataform} src="../src/assets/logo.png" alt="" /> 
                             <h1>Adicionar Plataforma</h1>
-                        </div>
-                        <InputText label="Nome da plataforma" classe="input-text" textoCapturado={setPlataformName}  classeLabel='input-label' />
-                        <div className='footer-plataform'>
+                        <InputText 
+                            label="Nome da plataforma" 
+                            classe={styles.input_text} 
+                            textoCapturado={setPlataformName}  
+                            classeLabel={styles.input_label} 
+                        />
+                        <div className={styles.footer_plataform}>
                             <ButtonMenu 
                                 texto='Enviar'  
-                                classe='buttonAddPlataform'
+                                classe={styles.buttonAddPlataform}
                                 event={handleSubmit}    
                             />
                             <ButtonMenu 
                                 texto='Cancelar'  
-                                classe='buttonAddPlataform'
+                                classe={styles.buttonAddPlataform}
                                 event={voltar}
                             />
                         </div>   

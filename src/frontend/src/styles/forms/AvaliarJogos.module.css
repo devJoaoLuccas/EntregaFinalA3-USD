@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@300&family=Teko:wght@300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+    --cinza: #cac2c2;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    background-color: #865dff;
+}
+
+.card_avaliar {
+    display: flex;
+    flex-direction: column;
+
+    width: 70rem;
+    height: 33rem;
+
+    background-color: var(--cor-card);
+    border-radius: 2rem;
+    border: none;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card_infos {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+
+    margin-top: 3rem;
+    gap: 3rem;
+
+    font: 400 1.5rem 'Arial';
+    color: #fff;
+}
+
+.card_infos span {
+    color: var(--cor-fundo);
+}
+
+.card_infos h1 {
+    font: 600 3rem 'black ops one';
+}
+
+.cardRow {
+    display: flex;
+
+    gap: 4rem;
+}
+
+.cardColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_label_avaliarX {
+    font: 400 1.8rem 'Arial';
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+
+    text-align: start;
+}
+
+.card_info_inputNumber {
+    width: 20rem;
+    height: 4rem;
+
+    border: none;
+    border-radius: 0.8rem;
+    outline: none;
+
+    background-color: var(--cor-secundaria);
+    color: rgb(255, 255, 255);
+
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+}
+
+.input_label_avaliar {
+    font: 400 1.8rem 'Arial';
+    margin-right: 1rem;
+    text-align: start;
+}
+
+.footer_plataform {
+    display:flex;
+    flex-direction: row;
+
+    gap: 5rem;
+}
+
+.buttonAddPlataform {
+    width: 20rem;
+    height: 5rem;
+
+    background-color: var(--botao);
+    font: 600 2.5rem 'black ops one';
+
+    border: none;
+    border-radius: 0.8rem;
+
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.buttonAddPlataform:hover {
+    transition: .5s;
+    transform: scale(1.02);
+
+    background-color: var(--cor-fundo);
+    color: #fff;
+
+}
+
+.dropdown_container {
+    text-align: start;
+}

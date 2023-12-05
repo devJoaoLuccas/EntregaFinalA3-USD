@@ -1,0 +1,50 @@
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown_text, .dropdown_textF {
+    font: 300 1.5rem 'black ops one';
+    color: #fff;
+}
+
+.dropdown_textF {
+    margin-right: 60rem;
+}
+
+.dropdown_content {
+    display: none;
+    position: absolute;
+    align-items: flex-end;
+    
+    min-width: 160px;
+    
+    margin-left: 2%;
+    padding: 10px 5px;
+    
+    z-index: 1;
+    
+    color: #fff;
+    font: normal 15px 'black ops one';
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #ffa3fd;
+    cursor: pointer;
+}
+
+.dropdown_content a {
+    color: #000;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown_content a:hover {
+    background-color: #865dff;
+    color: #fff;
+    transition: .4s;
+}
+
+.dropdown:hover .dropdown_content {
+    display: block;
+  }
