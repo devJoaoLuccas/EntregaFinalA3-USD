@@ -11,9 +11,7 @@ function EditarDeletar() {
         <main className={styles.containerEdit}>
             <section className={styles.cardMenu}>
                 <div className={styles.infos_edit}>
-                    <nav>
-                        <h1>Itens</h1>
-                    </nav>
+                    <h1>Itens</h1>
                     <div className={styles.infos_edit_gamePlataforms}>
                         <div>
                             <ListGames />

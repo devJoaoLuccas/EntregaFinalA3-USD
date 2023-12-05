@@ -140,3 +140,69 @@
     background-color: var(--cor-fundo);
     color: #fff;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .cardDetails {
+        width: 30rem;
+        height: 55rem;
+    }
+
+    .cardDetails h1 {
+        font-size: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .img_details {
+        display: none;
+    }
+
+    .cardDetails_info {
+        margin-bottom: 1rem;
+    }
+
+    .details_inputs, .details_input_select {
+        width: 20rem;
+        height: 3rem;
+    }
+
+    .details_input_select {
+        width: 21rem;
+    }
+
+    .infos_edit_games_plataforms {
+        justify-content: center;
+        height: 0;
+        margin-top: 0;
+    }
+
+    .infos_edit_gamePlataforms li {
+        font: 1.2rem;
+
+    }
+
+    .details_label {
+        font-size: 1.3rem;
+    }
+
+    .footer_details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    
+
+    .button_details {
+        width: 10rem;
+        height: 3rem;
+    }
+
+    .button_row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+}

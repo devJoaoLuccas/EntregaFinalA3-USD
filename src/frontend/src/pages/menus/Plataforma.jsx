@@ -5,6 +5,8 @@ import CardPlataform from "../../components/cards/CardPlataform";
 import Navbar from "../../components/navbar/Navbar";
 
 
+import styles from '../../styles/menus/Plataforma.module.css'
+
 function Plataforma() {
 
     const [plataforma, setPlataformas] = useState([]);
@@ -26,9 +28,9 @@ function Plataforma() {
     return (
         <body>
             <Navbar />
-            <main className="container">
-                    <section className="grupo">
-                        <div className="card-row">
+            <main className={styles.container}>
+                    <section className={styles.grupo}>
+                        <div className={styles.card_row}>
                             <CardPlataform plataformas={plataforma} />
                         </div>
                     </section>

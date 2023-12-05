@@ -105,3 +105,46 @@ span {
 .logo  { 
     width: 15rem;
 }
+
+@media only screen and (max-width: 768px) {
+
+    html { 
+        min-width: fit-content;
+    }
+
+    .cardMenu {
+        width: 30rem;
+        height: 40rem;
+    }
+
+    .cardMenu h1 {
+        font-size: 2rem;
+    }
+
+    .cardMenu h2 {
+        font-size: 1.5rem;
+    }
+
+    .card_infos {
+        margin-top: 1rem;
+        gap: 2rem;
+    }
+
+    .footerMenu {
+        margin-top: 3rem;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    .logo {
+        width: 10rem;
+    }
+
+    .buttonMenu {
+        font-size: 1.5rem;
+        
+        width: 20rem;
+        height: 4rem;
+    }
+}

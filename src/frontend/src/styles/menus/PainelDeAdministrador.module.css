@@ -93,3 +93,41 @@
     margin-left: 2rem;
     width: 15rem;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .cardPainel {
+        width: 30rem;
+        height: 41rem;
+    }
+
+    .cardPainel h1 {
+        font-size: 1.8rem;
+    }
+
+    .cardPainel h2 {
+        font-size: 1.8rem;
+    }
+
+    .card_infos {
+        margin-top: 1rem;
+        gap: 2rem;
+    }
+
+    .footerMenu_admin {
+        margin-top: 3rem;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    .logo_admin {
+        width: 10rem;
+    }
+
+    .buttonMenu {
+        font-size: 1.5rem;
+        
+        width: 20rem;
+        height: 4rem;
+    }
+}

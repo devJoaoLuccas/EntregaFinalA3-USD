@@ -98,3 +98,52 @@
 .logo {
     width: 15rem;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .cardMenu {
+        width: 31rem;
+        height: 60rem;
+    }
+
+    .cardMenu h1 {
+        margin-top: 1rem;
+        font-size: 1.8rem;
+    }
+
+    .cardMenu h2 {
+        font-size: 1.8rem;
+    }
+
+    .infos_edit {
+        gap: 0;
+    }
+
+    .infos_edit_games_plataforms {
+        justify-content: center;
+        height: 0;
+        margin-top: 0;
+    }
+
+    .infos_edit_gamePlataforms li {
+        font: 1.2rem;
+
+    }
+
+    .footerMenu_admin {
+        margin-top: 3rem;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    .logo {
+        width: 10rem;
+    }
+
+    .buttonMenu {
+        font-size: 1.5rem;
+        
+        width: 20rem;
+        height: 4rem;
+    }
+}

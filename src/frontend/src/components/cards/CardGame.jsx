@@ -3,6 +3,8 @@ import ButtonMenu from '../buttons/ButtonMenu.jsx';
 
 import { useNavigate } from 'react-router-dom';
 
+import styles from '../../styles/menus/Jogos.module.css'
+
 function CardGame({jogos}) {
 
     const navigate = useNavigate();
@@ -14,10 +16,10 @@ function CardGame({jogos}) {
     return (
         <>
             {jogos.map((jogo) => (
-                <div className="cardGame">
+                <div className={styles.cardGame}>
                     <h2>{jogo.name_game}</h2>
-                    <img className="game-icon" src={`src/assets/jogos/${jogo.name_game}.png`} alt={jogo.name_game} />
-                    <div className='game-info'>
+                    <img className={styles.game_icon} src={`src/assets/jogos/${jogo.name_game}.png`} alt={jogo.name_game} />
+                    <div className={styles.game_info}>
                         <ul>
                             <li>Desenvolvido por: <b>{jogo.developed_by}</b></li>
                             <li>Categoria: <b>{jogo.category_name}</b></li>
@@ -27,7 +29,7 @@ function CardGame({jogos}) {
                     </div>
                     <div>
                         <ButtonMenu 
-                            classe='button-avaliar' 
+                            classe={styles.button_avaliar} 
                             texto='Avaliar'
                             event={() => avaliar(jogo.idJogo)} 
                         />

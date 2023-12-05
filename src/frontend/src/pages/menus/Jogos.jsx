@@ -1,9 +1,10 @@
 import { useState ,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Navbar from "../../components/navbar/Navbar";
 import CardGame from '../../components/cards/CardGame.jsx';
 
-import { useNavigate } from "react-router-dom";
+import styles from '../../styles/menus/Jogos.module.css';
 
 function Jogos() {
 
@@ -26,9 +27,9 @@ function Jogos() {
     return (
         <>
             <Navbar />
-                <main>
-                    <section className="grupo-game">
-                        <div className="card-rowGames">
+                <main className={styles.container}>
+                    <section className={styles.grupoGame}>
+                        <div className={styles.card_rowGames}>
                             <CardGame 
                                 jogos={jogos}
                             />
