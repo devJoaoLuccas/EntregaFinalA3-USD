@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@300&family=Teko:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+    --cinza: #cac2c2;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    background-color: #865dff;
+}
+
+.cardDetails {
+    display: flex;
+    flex-direction: column;
+
+    width: 85rem;
+    height: 60rem;
+
+    border: none;
+    border-radius: 3rem;
+
+    background-color: var(--cor-card);
+}
+
+.cardDetails h1 {
+    font: 600 4rem 'black ops one';
+    text-align: center;
+
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.cardDetails_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 5rem;
+}
+
+.img_details {
+    width: 40rem;
+    height: 33rem;
+
+    border-radius: 2rem;
+}
+
+.game_details {
+    display: flex;
+    flex-direction: column;
+    
+    width: 25rem;
+    height: 33rem;
+}
+
+.details_label {
+    font: 300 1.8rem 'Arial';
+    color: #fff;
+
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+}
+
+.details_inputs, .details_input_select, .details_input_selectEnabled, .details_inputEnabled  {
+    font: 300 1.3rem 'Arial';
+    color: #fff;
+
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: 0.5rem;
+
+    padding-left: 1rem;
+    outline: none;
+
+    width: 24rem;
+    height: 3rem;
+    cursor: not-allowed;
+}
+
+.details_input_select, .details_input_selectEnabled {
+    width: 25rem;
+}
+
+.details_input_selectEnabled, .details_inputEnabled {
+    cursor: text;
+}
+
+.details_inputs::placeholder, .details-inputPlataform::placeholder, .details_inputEnabled {
+    color: #fff;
+}
+.footer_details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button_row {
+    display: flex;
+    gap: 1rem;
+}
+
+.button_details {
+    background-color: var(--botao);
+    border: none;
+    border-radius: 0.6rem;
+
+    font: 400 1.8rem 'black ops one';
+    color: #000;
+
+    width: 15rem;
+    height: 4rem;
+    
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.button_details:hover {
+    transition: .4s;
+    transform: scale(1.1);
+    
+    background-color: var(--cor-fundo);
+    color: #fff;
+}

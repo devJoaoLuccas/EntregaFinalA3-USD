@@ -5,7 +5,7 @@ import InputPassword from "../../components/forms/InputPassword";
 import ButtonMenu from "../../components/buttons/ButtonMenu";
 import ListNotasUser from "../../components/infos/ListNotasUser";
 
-
+import styles from '../../styles/menus/MeuPerfil.module.css'
 
 function MeuPerfil() {
 
@@ -76,65 +76,66 @@ function MeuPerfil() {
     return (
 
         <body>
-            <main className="container">
-                <section className="card-user">
-                    <div className="user-infos">
+            <main className={styles.container}>
+                <section className={styles.card_user}>
+                    <div className={styles.user_infos}>
                         <div>
-                            <img className="userPhoto" src="src\assets\user.png"/>
-                            <h1 className="username">
+                            <img className={styles.userPhoto} src="src\assets\user.png"/>
+                            <h1 className={styles.username}>
                                 {user.username}
                             </h1>  
                         </div>
-                        <div className="user-infos-row">
-                            <div className="user-infos-column">
+                        <div className={styles.user_infos_row}>
+                            <div className={styles.user_infos_column}>
                                 <InputText 
-                                    classeLabel="card-infosLabel"
-                                    classe="card-infosInput"
+                                    classeLabel={styles.user_infosLabel}
+                                    classe={styles.user_infosInput}
                                     label="Usuário:"
                                     texto={user.username}
                                     desativado={true}
                                 />
                                 <InputText 
-                                    classeLabel="card-infosLabel"
-                                    classe="card-infosInput"
+                                    classeLabel={styles.user_infosLabel}
+                                    classe={styles.user_infosInput}
                                     label="Email:"
-                                    texto={user.email}                        desativado={true}  
+                                    desativado={true}  
+                                    texto={user.email}                        
                                 />
                                 <InputPassword 
-                                    classeLabel="card-infosLabel"
-                                    classe="card-infosInput"
+                                    classeLabel={styles.user_infosLabel}
+                                    classe={styles.user_infosInput}
                                     label="Senha:"
                                     texto="*********"
                                     desativado={true}
                                 />
                             </div>
-                            <div className="infos-avaliacao">
+                            <div>
                                 <h2>Minhas avaliações:</h2>
                                 <ListNotasUser 
                                     userId={userId}
-                                    classe="classe-infosLista"
-                                    classeSpan="classe-infosSpan"
+                                    classe={styles.classe_infosLista}
+                                    classeSpan={styles.classe_infosSpan}
                                 />
                             </div>
                         </div>
                     </div>
-                    <div className="userButtons">
-                            <div className="userButtons-row">
+                    <div className={styles.userButtons}>
+                            <div className={styles.userButtons_row}>
                                 <ButtonMenu 
                                     texto="Editar" 
-                                    classe="button-user" 
+                                    classe={styles.button_user}
                                     event={editar}
                                 />
                                 <ButtonMenu 
                                     texto="Excluir" 
-                                    classe="button-user" 
+                                    classe={styles.button_user}
                                     event={excluir}
                                 />
                             </div>        
-                            <div className="userButtons-x">
+                            <div className={styles.userButtons_x}>
                                 <ButtonMenu 
                                     texto="Voltar"
-                                    classe="button-user"
+                                    classe={styles.button_user}
                                     event={voltar}
                                 />    
                             </div>                  

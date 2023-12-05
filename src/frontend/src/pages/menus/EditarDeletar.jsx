@@ -3,17 +3,18 @@ import ListGames from "../../components/infos/ListGames";
 import ListPlataforms from "../../components/infos/LitsPlataforms";
 
 
+import styles from '../../styles/menus/EditarDeletar.module.css'
 
 function EditarDeletar() {
     return (
 
-        <main className="containerEdit">
-            <section className="cardMenu">
-                <div className="infos-edit">
+        <main className={styles.containerEdit}>
+            <section className={styles.cardMenu}>
+                <div className={styles.infos_edit}>
                     <nav>
                         <h1>Itens</h1>
                     </nav>
-                    <div className="infos-edit-gamesPlataforms">
+                    <div className={styles.infos_edit_gamePlataforms}>
                         <div>
                             <ListGames />
                         </div>
@@ -22,9 +23,9 @@ function EditarDeletar() {
                         </div>
                     </div>
                     <footer>
-                        <div className="logotipo">
+                        <div className={styles.logotipo}>
                             <Link to={'/painelAdmin'} >
-                                <img className="logo" src="src/assets/logo.png" alt="" />
+                                <img className={styles.logo} src="src/assets/logo.png" alt="" />
                             </Link>
                         </div>
                     </footer>

@@ -4,6 +4,8 @@ import InputText from "../../components/forms/InputText";
 import ButtonMenu from "../../components/buttons/ButtonMenu";
 
 
+import styles from '../../styles/details/PlataformasDetails.module.css'
+
 function PlataformEdit() {
 
     const { idPlataforma } = useParams();
@@ -74,33 +76,33 @@ function PlataformEdit() {
 
     return(
             <body>
-                <main className="container">
-                    <section className="cardDetails-plataform">
+                <main className={styles.container}>
+                    <section className={styles.cardDetails_plataform}>
                         <div>
                             <h1>{plataformas.nome_plataforma}</h1>
                         </div>
-                        <div className="cardDetails-infoPlataforma">
-                            <img className="imgDetails" src={`../../src/assets/plataformas/${plataformas.nome_plataforma}.png`} alt={plataformas.nome_plataforma} />
+                        <div className={styles.cardDetails_plataform_info}>
+                            <img className={styles.img_details} src={`../../src/assets/plataformas/${plataformas.nome_plataforma}.png`} alt={plataformas.nome_plataforma} />
                             <InputText 
                                 label="Nome da Plataforma:"
-                                classeLabel="details-label"
+                                classeLabel={styles.details_label}
                                 texto={plataformas.nome_plataforma}
-                                classe="details-inputPlataform-enabled"
+                                classe={styles.details_input_plataformEnabled}
                                 textoCapturado={setNomePlataforma}
                                 desativado={false}
                             />
                         </div>
-                        <div className='footer-details'>
-                            <div className="button-row">
+                        <div className={styles.footer_details}>
+                            <div className={styles.button_row}>
                               <ButtonMenu 
                                 texto='Enviar'  
-                                classe='button-details'
+                                classe={styles.button_details}
                                 event={handleContactEnviar}
                               />
                             </div>
                             <ButtonMenu 
                                 texto='Voltar'  
-                                classe='button-details'
+                                classe={styles.button_details}
                                 event={handleContactVoltar}
                             />
                         </div>   
