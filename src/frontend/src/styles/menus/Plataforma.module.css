@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@300&family=Teko:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+    --cinza: #cac2c2;
+}
+main {
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container {
+
+    background-color: #865dff;
+}
+
+.grupo { 
+    display: flex;
+    width: 150rem;
+}
+
+.card_row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    gap: 15rem;
+    
+    margin-top: 10rem;
+}
+
+.cardPlataform {
+    display: flex;
+    flex-direction: column;
+
+    width: 20rem;
+    height: 20em;
+
+    align-items: center;
+    color: #fff;
+
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: 2rem;
+
+    transition: all .4s ease-in-out;
+    cursor:pointer;
+}
+
+.cardPlataform:hover {
+    transition: .4s;
+    transform: scale(1.1);
+
+    background-color: var(--botao);
+    color: #000;
+}
+
+.plataform_icon {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 15rem;
+    height: 12.5rem;
+}
+
+.plataform_text {
+    font: 300 1.8rem 'black ops one';
+}
+
+@media only screen and (max-width: 768px) {
+
+    html { 
+        min-width: fit-content;
+    }
+
+    .grupo {
+        width: 30rem;
+    }
+}

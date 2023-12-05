@@ -1,0 +1,47 @@
+nav {
+    height: 8rem;
+    background-color: #000;
+}
+
+footer {
+    height: 2rem;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+}
+
+.logoNav {
+    margin-top: 1rem;
+    margin-left: 12rem;
+    width: 12rem;
+    height: 7rem;
+}
+
+.cabecalho_dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.cabecalho_dropdown_text {
+    display: flex;
+
+    margin-top: 3rem;
+    padding-right: 2rem;
+
+    font: 300 1.8rem 'black ops one';
+    color: #fff;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    html { 
+        min-width: fit-content;
+    }
+
+   .logoNav {
+        margin-left: 0rem;
+   }
+}

@@ -1,6 +1,6 @@
-
-
 import { useNavigate } from 'react-router-dom';
+
+import styles from '../../styles/menus/Plataforma.module.css'
 
 function CardPlataform({plataformas}) {
 
@@ -13,9 +13,9 @@ function CardPlataform({plataformas}) {
     return (
         <>
             {plataformas.map((plataforma) => (
-                <div className="cardPlataform" onClick={avancar}>
-                    <img className='plataform-icon' src={`src/assets/plataformas/${plataforma.nome_plataforma}.png` }alt="teste" />
-                    <h2 className='plataform-text'>{plataforma.nome_plataforma}</h2>
+                <div className={styles.cardPlataform} onClick={avancar}>
+                    <img className={styles.plataform_icon} src={`src/assets/plataformas/${plataforma.nome_plataforma}.png` }alt="teste" />
+                    <h2 className={styles.plataform_text}>{plataforma.nome_plataforma}</h2>
                     </div>
                 ))
             }

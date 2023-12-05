@@ -28,12 +28,12 @@
     background-color: #303030;
 }
 
-.cardMenu {
+.cardPainel {
     display: flex;
     flex-direction: column;
 
-    width: 75rem;
-    height: 65rem;
+    width: 65rem;
+    height: 72rem;
 
     background-color: var(--cor-card);
     border-radius: 2rem;
@@ -42,32 +42,18 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-
 .card_infos {
     display: flex;
     flex-direction: column;
-    
+
     align-items: center;
     text-align: center;
 
     margin-top: 3rem;
-    gap: 4rem;
+    gap: 3rem;
 
     font: 400 1.5rem 'Arial';
     color: #fff;
-}
-
-h1 {
-    font: bold 3.5rem 'black ops one';
-    color: #fff;
-}
-
-h2 {
-    font: 300 2.8rem 'black ops one';
-}
-
-span {
-    color: var(--cor-fundo);
 }
 
 .buttonMenu {
@@ -92,37 +78,35 @@ span {
     color: #fff;
 }
 
-.footerMenu { 
+.footerMenu_admin {
     display: flex;
     flex-direction: row;
 
     align-items: flex-end;
     justify-content: space-around;
-    margin-top: 7rem;
+    margin-top: 3rem;
     margin-right: 22rem;
 }
 
-.logo  { 
+.logo_admin {
+    margin-right: 0;
+    margin-left: 2rem;
     width: 15rem;
 }
 
 @media only screen and (max-width: 768px) {
 
-    html { 
-        min-width: fit-content;
-    }
-
-    .cardMenu {
+    .cardPainel {
         width: 30rem;
-        height: 40rem;
+        height: 41rem;
     }
 
-    .cardMenu h1 {
-        font-size: 2rem;
+    .cardPainel h1 {
+        font-size: 1.8rem;
     }
 
-    .cardMenu h2 {
-        font-size: 1.5rem;
+    .cardPainel h2 {
+        font-size: 1.8rem;
     }
 
     .card_infos {
@@ -130,14 +114,13 @@ span {
         gap: 2rem;
     }
 
-    .footerMenu {
+    .footerMenu_admin {
         margin-top: 3rem;
-        justify-content: center;
         align-items: center;
         margin-right: 0;
     }
 
-    .logo {
+    .logo_admin {
         width: 10rem;
     }
 

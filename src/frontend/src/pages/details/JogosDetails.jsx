@@ -7,7 +7,7 @@ import SelectPlataforma from "../../components/forms/SelectPlataforma";
 import SelectCategorias from "../../components/forms/SelectCategorias";
 import ButtonMenu from "../../components/buttons/ButtonMenu";
 
-
+import styles from '../../styles/details/JogosDetails.module.css'
 
 function JogosDetails() {
 
@@ -74,73 +74,73 @@ function JogosDetails() {
         
     return (
         <body>
-            <main className="container">
-              <section className="cardDetails">
+            <main className={styles.container}>
+              <section className={styles.cardDetails}>
                   <div>
                       <h1>{jogos.name_game}</h1>
                   </div>
                   <div>
-                      <div className="cardDetails-info">
-                        <img className="imgDetails" src={`../src/assets/jogos/${jogos.name_game}.png`} alt={jogos.name_game} />
-                          <div className="gameDetails">
+                      <div className={styles.cardDetails_info}>
+                        <img className={styles.img_details} src={`../src/assets/jogos/${jogos.name_game}.png`} alt={jogos.name_game} />
+                          <div className={styles.game_details}>
                               <InputText 
                                 label="Nome do Jogo:"
-                                classeLabel="details-label"
+                                classeLabel={styles.details_label}
                                 texto={jogos.name_game}
-                                classe="details-input"
+                                classe={styles.details_inputs}
                                 desativado={true}
                               />
                               <InputText 
                                 label="Desenvolvido por:"
-                                classeLabel="details-label"
+                                classeLabel={styles.details_label}
                                 texto={jogos.developed_by}
-                                classe="details-input"
+                                classe={styles.details_inputs}
                                 desativado={true}
                               />
                               <SelectPlataforma 
-                                classeLabel="details-label"
+                                classeLabel={styles.details_label}
                                 texto="Plataforma:"
-                                classeSelect="details-input-select"
+                                classeSelect={styles.details_input_select}
                                 valor="Plataformas disponíveis:"
                               />
                               <SelectCategorias 
                                   texto='Categorias:'
-                                  classeLabel='details-label' 
-                                  classeSelect='details-input-select'
+                                  classeLabel={styles.details_label} 
+                                  classeSelect={styles.details_input_select}
                                   valor={jogos.category_name}
                               />
                               <InputDate
                                 texto="Data de criação:"
-                                classeLabel="details-label"
+                                classeLabel={styles.details_label}
                                 valor={jogos.data_criacao}
-                                classe="details-input"
+                                classe={styles.details_inputs}
                                 desativado={true}
                                />
                                <InputNumber 
                                 texto="Nota:"
-                                classeLabel="details-label"
+                                classeLabel={styles.details_label}
                                 valor={jogos.note}
-                                classe="details-input"
+                                classe={styles.details_inputs}
                                 desativado={true}
                               />
                           </div>
                       </div>
                   </div>
-                  <div className='footer-details'>
-                            <div className="button-row">
+                  <div className={styles.footer_details}>
+                            <div className={styles.button_row}>
                               <ButtonMenu 
                                 texto='Editar'  
-                                classe='button-details'
+                                classe={styles.button_details}
                                 event={handleEditJogos}
                               />
                               <ButtonMenu 
                                 texto='Deletar'  
-                                classe='button-details'
+                                classe={styles.button_details}
                                 event={handleDelete}
                               />
                             </div>
                             <ButtonMenu 
-                              texto='Voltar'  classe='button-details'
+                              texto='Voltar'  classe={styles.button_details}
                               event={handleContactVoltar}
                             />
                         </div>   
