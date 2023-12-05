@@ -1,12 +1,12 @@
-import InputPassword from "../../components/forms/InputPassword";
-import InputText from "../../components/forms/InputText";
-import Select from "../../components/forms/SelectPlataforma";
-
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-
+import InputPassword from "../../components/forms/InputPassword";
+import InputText from "../../components/forms/InputText";
 import ButtonMenu from "../../components/buttons/ButtonMenu";
+
+import styles from '../../styles/login/Login.module.css'
+
 
 function Login() {
 
@@ -59,36 +59,36 @@ function Login() {
 
     
     return (
-       <main className="container">
-            <section className="card-login">
-                <div className="card-infos">
+       <main className={styles.container}>
+            <section className={styles.card_login}>
+                <div className={styles.card_infos}>
                     <header>
-                        <img className="logo" src="src\assets\logo.png" alt="teste" />
+                        <img className={styles.logo} src="src\assets\logo.png" alt="teste" />
                         <h1>Iniciar Sessão</h1>
                     </header>
-                    <div className="card-inputs">
+                    <div className={styles.card_inputs}>
                         <InputText 
                             label="INICIAR SESSÃO COM O NOME DE USUÁRIO:" 
-                            classeLabel="input-label"
+                            classeLabel={styles.input_label}
                             texto="Insira seu username" 
                             textoCapturado={setUserLogin} 
-                            classe="input-text" 
+                            classe={styles.input_text}
                         />
                         <InputPassword 
                             label="SENHA:" 
-                            classeLabel="input-label"
+                            classeLabel={styles.input_label}
                             texto="Insira a senha" 
-                            classe="input-text"
+                            classe={styles.input_text}
                             textoCapturado={setUserPassword} 
                         />
                     </div>
                     <ButtonMenu
                             texto="Login"
-                            classe="buttonLogin"
+                            classe={styles.buttonLogin}
                             event={handleContactLogin}
                         />
                     
-                    <footer className="footer-login">
+                    <footer className={styles.footer_login}>
                         <Link to={'/cadastroUsuario'}>
                             Cadastre-se aqui
                         </Link>

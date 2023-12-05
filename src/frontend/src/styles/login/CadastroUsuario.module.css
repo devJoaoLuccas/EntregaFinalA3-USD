@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@300&family=Teko:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+    --cor-fundo: #865dff;
+    --cor-card: #191825;
+    --cor-secundaria: #514869;
+    --botao: #ffa3fd;
+    --branco: #ffffffdc;
+    --cinza: #cac2c2;
+}
+
+.container { 
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    background-color: #865dff;
+}
+
+.cardCadastro {
+    display: flex;
+    flex-direction: column;
+
+    width: 60rem;
+    height: 60rem;
+
+    border-radius: 2.5rem;
+    border: none;
+
+    background-color: #201b2c;   
+}
+
+.cardCadastro span{
+    color: #865dff;
+}
+
+.cardCadastro h1 {
+    font: 600 3rem 'black ops one';
+    text-align:center;
+    
+}
+
+.card_infos {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    text-align: center;
+
+    margin-top: 3rem;
+    gap: 4rem;
+
+    font: 400 1.5rem 'Arial';
+    color: #fff;
+}
+
+.card_inputs {
+    display: flex;
+    flex-direction: column;
+
+    text-align: start;
+
+    gap: 2rem;
+}
+
+.card_inputs_column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+.label_input{
+    font: 400 1.5rem 'Arial';
+    color: #fff;
+    margin-left: 0.5rem;
+}
+
+.inputUser {
+    background-color: var(--cor-secundaria);
+    color: #fff;
+
+    height: 4rem;
+    width: 48.5rem;
+
+    border: none;
+    outline: none;
+
+    padding-left: 0.5rem;
+    border-radius: 0.8rem;
+}
+
+.card_buttons {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 4rem;
+    justify-content: space-around;
+}
+
+.btn_cadastro {
+    background-color: #ffa3fd;
+    font: 400 1.7rem 'black ops one';
+    
+    width: 15rem;
+    height: 4rem;
+
+    border: none;
+    border-radius: 1rem;
+
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.btn_cadastro:hover {
+    background-color: #865dff;
+
+    transition: all .4s ease-in-out;
+    transform: scale(1.1);
+
+    font-size: 2rem;
+}
